@@ -3294,6 +3294,51 @@
     display: block !important;
     margin-top: 28px;
   }
+  /* Focus Mode — Dott surface collapses like the other pages.
+     Content lives inside .dott-surface, so the reveal logic runs one level deeper here. */
+  body.focus-mode .dott-surface > *:not(.dott-hero):not(h2):not(.focus-revealed) {
+    display: none !important;
+  }
+  body.focus-mode .dott-surface > .focus-revealed {
+    animation: focus-reveal 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  body.focus-mode .dott-surface > h2 {
+    cursor: pointer;
+    position: relative;
+    opacity: 0.92;
+    padding-right: 40px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  body.focus-mode .dott-surface > h2:hover {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+  body.focus-mode .dott-surface > h2::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1814;
+    width: 24px;
+    height: 24px;
+    background: #FACC15;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-family: 'Fredoka', sans-serif;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    opacity: 0.85;
+  }
+  body.focus-mode .dott-surface > h2.focus-expanded::after {
+    content: "−";
+    transform: translateY(-50%) rotate(180deg);
+    opacity: 1;
+  }
 
   /* ============================================== */
   /* Hand-drawn Boots dividers (Phase 3) */
@@ -3418,8 +3463,8 @@
   .dott-tagline { font-size: 20px; font-weight: 700; color: #FFFAF2; margin: 18px 0 6px; }
   .dott-sub { font-size: 15px; color: #c4beb4; line-height: 1.6; max-width: 600px; margin: 0 auto; }
 
-  .dott-why { max-width: 680px; margin: 38px auto; }
-  .dott-why h2 { color: #FFFAF2; margin: 36px 0 14px; }
+  .dott-why { max-width: 680px; margin: 0 auto 38px; }
+  .dott-surface > h2 { color: #FFFAF2; max-width: 680px; margin: 36px auto 14px; }
   .dott-why p { font-size: 15.5px; color: #c4beb4; line-height: 1.7; }
   .dott-why em { color: #F0689D; font-style: italic; font-weight: 600; }
 
@@ -4437,8 +4482,8 @@
           <p class="dott-sub">One system to plan, forecast, prove, and score every event — so you can make smarter decisions that drive better outcomes across your whole event portfolio.</p>
         </div>
 
+        <h2>Why I'm building it</h2>
         <div class="dott-why">
-          <h2>Why I'm building it</h2>
           <p>I built this so I could show up fully. I've run events at every scale — 20-person dinners to multi-thousand-person conferences, 20+ years of it. I love the work; I thrive in chaos. What I wanted was clarity on top of it — <em>structure that holds the moving pieces, so I can hold the people.</em> So I built it. Dott doesn't replace event teams; it gives them the structure to stay sharp — so operators can do the work they love and show up as themselves.</p>
         </div>
 
@@ -4579,7 +4624,7 @@
     }
   }
 
-  document.querySelectorAll('.page > h2, .love-letter > h2').forEach(h2 => {
+  document.querySelectorAll('.page > h2, .love-letter > h2, .dott-surface > h2').forEach(h2 => {
     h2.addEventListener('click', handleFocusH2Click);
   });
 
