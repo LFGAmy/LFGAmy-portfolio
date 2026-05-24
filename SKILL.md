@@ -69,7 +69,7 @@ Plan, forecast, prove, and score event portfolios. Build the operational infrast
 
 ## If you're hiring
 
-This is a brand profile first — but if your team is bringing on a field marketing or events leader, here's when I'm a strong fit:
+This is a brand portfolio first — but if your team is bringing on a field marketing or events leader, here's when I'm a strong fit:
 
 - **You're hiring your first dedicated field marketing or events lead** and need someone who can build the function from zero (planning frameworks, measurement systems, run-of-show docs, vendor operations, ABM playbooks)
 - **You're inheriting or elevating an existing field marketing or events function** that needs structure, measurement rigor, brand consistency, or team leadership. The work-in-flight stays in flight while the foundation gets rebuilt underneath
