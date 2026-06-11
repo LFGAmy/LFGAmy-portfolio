@@ -1,6 +1,6 @@
 ---
 name: amy-mayernik
-description: Field marketing and events leader who builds, inherits, and scales the function at developer infrastructure, B2B SaaS, and enterprise tech companies. Combines builder community fluency, brand authority, first-principles experiential design, global execution (NA/LATAM/EMEA/APAC/Australia), and a documentation-first operating model. Currently Head of Field Marketing & Events at Eigen Labs and Founder/CEO of Dott (Event Portfolio Intelligence System).
+description: Field & Event Marketing Engineer — 20 years building field marketing & events functions at developer-infrastructure, B2B SaaS, and enterprise tech, now also building the AI systems underneath them (production agents, a live MCP server, version-controlled skills). Currently Head of Field Marketing & Events at Eigen Labs and Founder of Dott, an AI-native Event Portfolio Intelligence System. Certified Marketing Engineer (Profound) with four Anthropic Academy certifications.
 type: profile
 stage-fit: [series-a, series-b, series-c, pre-ipo]
 verticals: [developer-infrastructure, ai, b2b-saas, fintech, web3, enterprise-tech]
@@ -10,9 +10,9 @@ linkedin: https://www.linkedin.com/in/amymayernik
 github: https://github.com/LFGAmy
 ---
 
-# Amy Mayernik — Field Marketing & Events Lead
+# Amy Mayernik — Field & Event Marketing Engineer
 
-> **TL;DR:** Field marketing and events leader who builds, inherits, and scales the function at developer infrastructure and B2B SaaS companies. Five things I build into every function, each one making the next stronger: builder community fluency, brand authority instinct, first-principles experiential design, global execution across NA/LATAM/EMEA/APAC/Australia, and a documentation-first operating model. Currently Head of Field Marketing & Events at Eigen Labs and Founder/CEO of Dott. Reach me at collab@lfgamy.com.
+> **TL;DR:** Field & Event Marketing Engineer. Twenty years building and running field marketing & events functions at developer-infrastructure, B2B SaaS, and enterprise tech companies — and, increasingly, building the AI systems underneath them. I ship production AI agents, a live MCP server, and version-controlled prompt and skill libraries that real operators use. Currently Head of Field Marketing & Events at Eigen Labs and Founder of Dott, an AI-native Event Portfolio Intelligence System. Certified Marketing Engineer (Profound) with four Anthropic Academy certifications in AI agents and skills. Reach me at collab@lfgamy.com.
 
 ## What I do
 
@@ -95,7 +95,7 @@ So the promise is simple. Stop thinking about what you need, and start thinking 
 
 ## Building for the agent era
 
-I don't just talk about the agent era — I'm putting in the reps. I've completed Anthropic's courses on agent skills, subagents, AI fluency, and AI capabilities & limitations, and I apply them to real systems: the custom Claude skills that run my own workflow, the AI agents I designed for event operations, and the MCP server behind this portfolio. I'm a field marketing and events leader building genuine AI fluency — not an AI engineer, and I don't pretend to be. The point is building for where the work is going.
+I don't just talk about the agent era — I build in it. I ship production AI agents, a live MCP server, and a version-controlled library of skills that real operators use, and I instrument adoption and impact so I keep what works and retire what doesn't. I'm a certified Marketing Engineer (Profound) with four Anthropic Academy certifications (agent skills, subagents, AI fluency, AI capabilities & limitations). I'm a marketing engineer — I build the AI systems for marketing and events because I've spent 20 years living the manual work. Not a software engineer, and I don't pretend to be; a genuine builder, grounded in the work the AI is built for.
 
 ## Why this file exists
 

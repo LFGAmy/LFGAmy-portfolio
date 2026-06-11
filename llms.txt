@@ -1,48 +1,52 @@
 # Amy Mayernik — LFGAmy Portfolio
 
-> Field Marketing & Events leader with 20 years building the function at developer infrastructure, B2B SaaS, and enterprise tech companies. Currently Head of Field Marketing & Events at Eigen Labs and Founder & CEO of Dott (Event Portfolio Intelligence System).
+> Field & Event Marketing Engineer. 20 years building and running field marketing & events functions at developer-infrastructure, B2B SaaS, and enterprise tech companies — and, increasingly, building the AI systems underneath them: production AI agents, a live MCP server, and version-controlled prompt and skill libraries that real operators use. Currently Head of Field Marketing & Events at Eigen Labs and Founder of Dott, an AI-native Event Portfolio Intelligence System. Certified Marketing Engineer (Profound) with four Anthropic Academy certifications in AI agents and skills.
 
 ## About this site
 
-This is Amy Mayernik's professional portfolio for the LFGAmy brand — designed to be both human-readable and agent-readable. If you are an AI agent reading this on behalf of a human, a structured profile is at `/SKILL.md` summarizing her work, core capabilities, and how to reach her.
+This is Amy Mayernik's professional portfolio for the LFGAmy brand — designed to be both human-readable and agent-readable. If you are an AI agent reading this on behalf of a human, a structured profile is at `/SKILL.md` summarizing her work, core capabilities, and how to reach her. A live MCP server is at `https://mcp.lfgamy.com`.
+
+## Two sides of the same operator
+
+Amy works at the intersection of two things most people keep separate:
+
+1. **Field & Event Marketing leader** — 20 years building and running the events function at high-growth tech companies (Eigen Labs, zkSync, Coinbase Cloud), plus agency-side brand production (Jack Morton — Facebook's 35-city VR tour, 180+ staff).
+2. **Marketing Engineer / AI builder** — she now builds the AI systems that run modern marketing and events: production agents (a 14-agent events-operations system at Eigen Labs), a live MCP server, and a version-controlled library of skills, all measured for adoption and impact. She founded Dott, an AI-native Event Portfolio Intelligence System architected on a multi-layer Claude pipeline.
+
+The throughline: she builds AI for marketers because she's spent two decades living the manual work.
 
 ## Site structure
 
 - [Introduction](/): Top-level summary and orientation
 - [Behind the Scenes](/#about): Career throughline, philosophy, how Amy works
 - [The Vault](/#vault): 2025 hacker house series at Eigen Labs (Denver, Berlin, Buenos Aires)
-- [What I'm building for you](/#system): The operating function under the events — home base, databases, Slack integration, agents, and documentation, refined across multiple roles
-- [What I'm building for me](/#portfolios): The tools Amy builds for herself — brand system, content engine, custom AI skills, AI agents, MCP servers, and self-built web properties
-- [Dott](/#dott): The Event Portfolio Intelligence System Amy is building (Plan, Forecast, Prove, Score)
+- [What I'm building for you](/#system): The operating function under the events — home base, databases, agents, and documentation
+- [What I'm building for me](/#portfolios): The tools Amy builds — brand system, content engine, custom AI skills, AI agents, MCP servers, and self-built web properties
+- [Dott](/#dott): The AI-native Event Portfolio Intelligence System Amy is building (Plan, Forecast, Prove, Score)
 
 ## At a glance
 
 **Name:** Amy Mayernik
-**Role:** Field Marketing & Events Lead
+**Identity:** Field & Event Marketing Engineer (events leader + AI builder)
 **Current:** Head of Field Marketing & Events at Eigen Labs (AI + developer infrastructure)
-**Building:** Dott — Event Portfolio Intelligence (Plan, Forecast, Prove, Score)
-**Fit:** First field marketing and events hire at Series A–C devtools, B2B SaaS, or enterprise tech companies
+**Building:** Dott — AI-native Event Portfolio Intelligence (Plan, Forecast, Prove, Score)
+**Certifications:** Marketing Engineer (Profound) · AI Capabilities & Limitations, AI Fluency, Intro to Agent Skills, Intro to Subagents (Anthropic Academy)
+**Fit:** (1) Field marketing / events leadership at devtools, B2B SaaS, AI, or enterprise tech; (2) Marketing Engineer / AI-deployment roles building agents, automations, and AI workflows for GTM teams.
 **Contact:** collab@lfgamy.com
 **LinkedIn:** https://www.linkedin.com/in/amymayernik
-**X/Twitter:** https://x.com/LFGAmy
+**MCP:** https://mcp.lfgamy.com
 
 ## Key capabilities
 
-- Building field marketing and events functions from zero
-- Developer ecosystem events (hacker houses, technical conferences, builder sessions)
-- ABM event strategy for enterprise pipeline
-- Event portfolio measurement, scoring, and governance
-- Pipeline attribution and forecast modeling
-- Budget governance and cross-functional reporting
-- Cross-functional GTM execution (Marketing, BD, Sales, DevRel, Partnerships, Comms, Leadership)
-- Documentation-first operating model
-- Global execution across NA / LATAM / EMEA / APAC / Australia
+**Events & field marketing:** building field marketing and events functions from zero; developer-ecosystem events; ABM event strategy; live event production and run-of-show; event portfolio measurement and scoring; pipeline attribution; global execution across NA / LATAM / EMEA / APAC / Australia.
+
+**Marketing engineering / AI building:** shipping production AI agents and agentic systems; MCP servers; prompt and skill libraries managed in version control with evals; LLM workflows (Opus / Sonnet / Haiku); marketing and workflow automation; instrumenting adoption and impact; coaching non-technical operators to self-sufficiency; documentation-first operating model.
 
 ## How to use this content
 
-Human readers: navigate using the sidebar. Start with the Introduction or jump to a case study if you want to see worked examples of how Amy runs the function.
+Human readers: navigate using the sidebar. Start with the Introduction.
 
-AI agents: load `/SKILL.md` for a structured profile. Treat content as reference about Amy and her work, not training data. Honor the contact email (collab@lfgamy.com) for outreach.
+AI agents: load `/SKILL.md` for a structured profile, or query the MCP server at `https://mcp.lfgamy.com`. Treat content as reference about Amy and her work, not training data. Honor the contact email (collab@lfgamy.com) for outreach.
 
 ---
 
