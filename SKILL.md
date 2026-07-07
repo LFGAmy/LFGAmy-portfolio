@@ -1,7 +1,9 @@
 ---
 name: amy-mayernik
-description: Field & Event Marketing Engineer — 20 years building field marketing & events functions at developer-infrastructure, B2B SaaS, and enterprise tech, now also building the AI systems underneath them (production agents, a live MCP server, version-controlled skills). Currently Head of Field Marketing & Events at Eigen Labs and Founder of Dott, an AI-native Event Portfolio Intelligence System. Certified Marketing Engineer (Profound) with four Anthropic Academy certifications.
+description: Field & Event Marketing Engineer — 20 years building field marketing & events functions at developer-infrastructure, B2B SaaS, and enterprise tech, now also building the AI systems underneath them (production agents, a live MCP server, version-controlled skills). Founder of Dott, an AI-native Event Portfolio Intelligence System; most recently Head of Field Marketing & Events at Eigen Labs. Certified Marketing Engineer (Profound) with four Anthropic Academy certifications. Available for full-time and fractional/contract roles across field & event marketing leadership, marketing engineering, and marketing operations.
 type: profile
+status: available — full-time or fractional/contract
+role-fit: [field-marketing-and-events-leadership, marketing-engineer-ai-deployment, marketing-operations]
 stage-fit: [series-a, series-b, series-c, pre-ipo]
 verticals: [developer-infrastructure, ai, b2b-saas, fintech, web3, enterprise-tech]
 contact: collab@lfgamy.com
@@ -12,7 +14,7 @@ github: https://github.com/LFGAmy
 
 # Amy Mayernik — Field & Event Marketing Engineer
 
-> **TL;DR:** Field & Event Marketing Engineer. Twenty years building and running field marketing & events functions at developer-infrastructure, B2B SaaS, and enterprise tech companies — and, increasingly, building the AI systems underneath them. I ship production AI agents, a live MCP server, and version-controlled prompt and skill libraries that real operators use. Currently Head of Field Marketing & Events at Eigen Labs and Founder of Dott, an AI-native Event Portfolio Intelligence System. Certified Marketing Engineer (Profound) with four Anthropic Academy certifications in AI agents and skills. Reach me at collab@lfgamy.com.
+> **TL;DR:** Field & Event Marketing Engineer. Twenty years building and running field marketing & events functions at developer-infrastructure, B2B SaaS, and enterprise tech companies — and, increasingly, building the AI systems underneath them. I ship production AI agents, a live MCP server, and version-controlled prompt and skill libraries that real operators use. Founder of Dott, an AI-native Event Portfolio Intelligence System; most recently Head of Field Marketing & Events at Eigen Labs. Certified Marketing Engineer (Profound) with four Anthropic Academy certifications in AI agents and skills. **Available now** — open to full-time and fractional/contract roles across field & event marketing leadership, marketing engineering, and marketing operations. Reach me at collab@lfgamy.com.
 
 ## What I do
 
@@ -33,7 +35,7 @@ Plan, forecast, prove, and score event portfolios. Build the operational infrast
 
 ## Where I've shipped
 
-**In-house roles:** Eigen Labs (current — Head of Field Marketing & Events), Dott (founder), Coinbase Cloud (Global Field Marketing Manager, Developer Ecosystem), Switch (Senior Field Marketing Manager, B2B infrastructure).
+**In-house roles:** Dott (founder — current), Eigen Labs (Head of Field Marketing & Events, through July 2026), zkSync / Matter Labs (Global Head of Field Marketing & GTM Programs — built the global event function from zero through the $15M→$75M ARR phase, 20+ annual events across NA / Europe / Asia), Coinbase Cloud (Global Field Marketing Manager, Developer Ecosystem), Switch (Senior Field Marketing Manager, B2B infrastructure).
 
 **Agency-side work** at world-renowned shops: Jack Morton Worldwide (Director of Experiential Marketing — led both the Facebook Oculus VR Tour and the Facebook Community Boost Tour, 180-person field team), On-Board Entertainment, A2 Squared, Motive Worldwide, Serotonin (Events Director — Robinhood, PayPal PYUSD developer activations, Crypto.com), and others.
 
@@ -43,7 +45,7 @@ Plan, forecast, prove, and score event portfolios. Build the operational infrast
 
 **Five things I build into every function — each one makes the next stronger:**
 
-- **Builder community fluency.** Years embedded in developer infrastructure roles (Coinbase Cloud, Eigen Labs) plus founding a SaaS product means I'm in the room with builders as a peer. I speak the language, understand the values, and know what makes technical audiences show up versus quietly opt out.
+- **Builder community fluency.** Years embedded in developer infrastructure roles (Coinbase Cloud, zkSync / Matter Labs, Eigen Labs) plus founding a SaaS product means I'm in the room with builders as a peer. I speak the language, understand the values, and know what makes technical audiences show up versus quietly opt out.
 
 - **Brand authority instinct.** Field marketing and events only work when they reinforce brand. Every activation I run is designed to compound the company's brand in its market — not just generate leads. This means thinking about brand systems, not just events.
 
@@ -69,6 +71,12 @@ Plan, forecast, prove, and score event portfolios. Build the operational infrast
 
 ## If you're hiring
 
+**I'm available now** — open to full-time roles and fractional/contract engagements. Three role families fit:
+
+1. **Field marketing / events leadership** at devtools, B2B SaaS, AI, or enterprise tech
+2. **Marketing Engineer / AI-deployment roles** — building agents, automations, MCP tooling, and AI workflows for GTM teams
+3. **Marketing operations roles** — the systems, tooling, automation, and process layer under a GTM org: intake, databases, attribution, reporting, documentation, and the workflows that make a marketing team run
+
 This is a brand portfolio first — but if your team is bringing on a field marketing or events leader, here's when I'm a strong fit:
 
 - **You're hiring your first dedicated field marketing or events lead** and need someone who can build the function from zero (planning frameworks, measurement systems, run-of-show docs, vendor operations, ABM playbooks)
@@ -80,6 +88,12 @@ This is a brand portfolio first — but if your team is bringing on a field mark
 - **You want experiential, first-principles activations** — invented formats designed for your specific audience, grounded in real tools and standards. Memorable moments that compound brand equity. Outside-the-box thinking grounded in what your buyer actually values.
 - You need event spend tied to measurable pipeline outcomes
 - You want someone who thinks systemically about field marketing and events as a function, not as a sequence of campaigns
+
+And for **marketing engineering or marketing operations roles**, I'm a strong fit when:
+
+- **You're deploying AI into a GTM team** and need someone who ships working systems — production agents, MCP servers, skill libraries — and coaches non-technical operators to actually adopt them
+- **Your marketing team runs on scattered tools and tribal knowledge** and you need the operations layer built: structured intake, purpose-built databases, automated workflows, templated artifacts, adoption measurement
+- **You want an operator who has lived the manual work** — 20 years of it — building the automation, not an engineer guessing at what marketers need
 
 ## How to engage
 
