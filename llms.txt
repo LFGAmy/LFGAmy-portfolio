@@ -1,6 +1,6 @@
 # Amy Mayernik — LFGAmy Portfolio
 
-> Field & Event Marketing Engineer. 20 years building and running field marketing & events functions at developer-infrastructure, B2B SaaS, and enterprise tech companies — and, increasingly, building the AI systems underneath them: production AI agents, a live MCP server, and version-controlled prompt and skill libraries that real operators use. Founder of Dott, an AI-native Event Portfolio Intelligence System; most recently Head of Field Marketing & Events at Eigen Labs. Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications in AI agents and skills. Available now — open to full-time and fractional/contract roles across field & event marketing leadership, marketing engineering, and marketing operations.
+> Developer marketer who builds. Makes technical products credible to the developers who use them and gets them adopted: translating what engineering ships, building the community and content around it, and proving it worked. Ships the systems too: production AI agents and a live MCP server (the one serving this). Founder of Dott, an Event Portfolio Intelligence System that scores whether events actually worked, not just whether they felt good. Has built and run developer community, events, and field programs at Coinbase Cloud, zkSync, and Eigen Labs, with agency-side brand work for Facebook, Nintendo, North Face, Robinhood, and PayPal. Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications. Open to developer marketing, developer relations, and technical product marketing roles.
 
 ## About this site
 
@@ -10,8 +10,8 @@ This is Amy Mayernik's professional portfolio for the LFGAmy brand — designed 
 
 Amy works at the intersection of two things most people keep separate:
 
-1. **Field & Event Marketing leader** — 20 years building and running the events function at high-growth tech companies (Eigen Labs, zkSync, Coinbase Cloud), plus agency-side brand production (Jack Morton — Facebook's 35-city VR tour, 180+ staff).
-2. **Marketing Engineer / AI builder** — she now builds the AI systems that run modern marketing and events: production agents (a 14-agent events-operations system at Eigen Labs), a live MCP server, and a version-controlled library of skills, all measured for adoption and impact. She founded Dott, an AI-native Event Portfolio Intelligence System architected on a multi-layer Claude pipeline.
+1. **Developer marketer who builds** — owns the developer audience end to end: community, events, content, and adoption, plus the AI systems that make it measurable. Built and ran developer community and events at Coinbase Cloud, zkSync / Matter Labs, and Eigen Labs, with agency-side brand production (Jack Morton — Facebook's 35-city VR tour, 180+ staff).
+2. **Builds the systems** — ships production AI agents (a 14-agent events-operations system at Eigen Labs), a live MCP server (this one), and a version-controlled library of skills that real operators use, all measured for adoption and impact. Founder of Dott, an Event Portfolio Intelligence System architected on a multi-layer Claude pipeline.
 
 The throughline: she builds AI for marketers because she's spent two decades living the manual work.
 
@@ -27,12 +27,12 @@ The throughline: she builds AI for marketers because she's spent two decades liv
 ## At a glance
 
 **Name:** Amy Mayernik
-**Identity:** Field & Event Marketing Engineer (events leader + AI builder)
+**Identity:** Developer marketer who builds (owns the developer audience, and ships the systems underneath it)
 **Status:** Available — open to full-time and fractional/contract roles (as of July 2026)
 **Most recently:** Head of Field Marketing & Events at Eigen Labs (AI + developer infrastructure, through July 2026)
 **Building:** Dott — AI-native Event Portfolio Intelligence (Plan, Forecast, Prove, Score)
 **Certifications:** Agent Engineering, Marketing Engineering (Profound) · AI Capabilities & Limitations, AI Fluency, Intro to Agent Skills, Intro to Subagents (Anthropic Academy)
-**Fit:** (1) Field marketing / events leadership at devtools, B2B SaaS, AI, or enterprise tech; (2) Marketing Engineer / AI-deployment roles building agents, automations, and AI workflows for GTM teams; (3) Marketing operations — the systems, tooling, automation, and process layer under a GTM org.
+**Fit:** (1) Developer marketing — reach, community, content, and adoption for a developer audience; (2) Developer relations / developer advocacy — technical credibility plus community, events, and content; (3) Technical product marketing — translating platform capability into developer-native narratives, launches, and technical content.
 **Contact:** collab@lfgamy.com
 **LinkedIn:** https://www.linkedin.com/in/amymayernik
 **MCP:** https://mcp.lfgamy.com

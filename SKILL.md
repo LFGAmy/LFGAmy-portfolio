@@ -1,6 +1,6 @@
 ---
 name: amy-mayernik
-description: Field & Event Marketing Engineer — 20 years building field marketing & events functions at developer-infrastructure, B2B SaaS, and enterprise tech, now also building the AI systems underneath them (production agents, a live MCP server, version-controlled skills). Founder of Dott, an AI-native Event Portfolio Intelligence System; most recently Head of Field Marketing & Events at Eigen Labs. Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications. Available for full-time and fractional/contract roles across field & event marketing leadership, marketing engineering, and marketing operations.
+description: Developer marketer who builds. Makes technical products credible to the developers who use them and gets them adopted: translating what engineering ships, building the community and content around it, and proving it worked. Founder of Dott, an Event Portfolio Intelligence System. Ships production AI agents and a live MCP server. Profound-certified in Agent Engineering and Marketing Engineering. Open to developer marketing, developer relations, and technical product marketing roles.
 type: profile
 status: available — full-time or fractional/contract
 role-fit: [field-marketing-and-events-leadership, marketing-engineer-ai-deployment, marketing-operations]
@@ -12,9 +12,9 @@ linkedin: https://www.linkedin.com/in/amymayernik
 github: https://github.com/LFGAmy
 ---
 
-# Amy Mayernik — Field & Event Marketing Engineer
+# Amy Mayernik — Developer marketer who builds
 
-> **TL;DR:** Field & Event Marketing Engineer. Twenty years building and running field marketing & events functions at developer-infrastructure, B2B SaaS, and enterprise tech companies — and, increasingly, building the AI systems underneath them. I ship production AI agents, a live MCP server, and version-controlled prompt and skill libraries that real operators use. Founder of Dott, an AI-native Event Portfolio Intelligence System; most recently Head of Field Marketing & Events at Eigen Labs. Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications in AI agents and skills. **Available now** — open to full-time and fractional/contract roles across field & event marketing leadership, marketing engineering, and marketing operations. Reach me at collab@lfgamy.com.
+> **TL;DR:** Developer marketer who builds. I make technical products credible to the developers who use them and get them adopted: translating what engineering ships, building the community and content around it, and proving it worked. I ship the systems too: production AI agents and a live MCP server (the one serving this), plus a version-controlled library of skills that real operators use. Founder of Dott, an Event Portfolio Intelligence System that scores whether events actually worked, not just whether they felt good. I've built and run developer community, events, and field programs at Coinbase Cloud, zkSync, and Eigen Labs, with agency-side brand work for Facebook, Nintendo, North Face, Robinhood, and PayPal. Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications. **Open to developer marketing, developer relations, and technical product marketing roles.** Reach me at collab@lfgamy.com.
 
 ## What I do
 
@@ -73,8 +73,8 @@ Plan, forecast, prove, and score event portfolios. Build the operational infrast
 
 **I'm available now** — open to full-time roles and fractional/contract engagements. Three role families fit:
 
-1. **Field marketing / events leadership** at devtools, B2B SaaS, AI, or enterprise tech
-2. **Marketing Engineer / AI-deployment roles** — building agents, automations, MCP tooling, and AI workflows for GTM teams
+1. **Developer marketing** — reach, community, content, and adoption for a developer audience
+2. **Developer relations / technical product marketing** — technical credibility, community, and translating platform capability into developer-native narratives, launches, and technical content
 3. **Marketing operations roles** — the systems, tooling, automation, and process layer under a GTM org: intake, databases, attribution, reporting, documentation, and the workflows that make a marketing team run
 
 This is a brand portfolio first — but if your team is bringing on a field marketing or events leader, here's when I'm a strong fit:
@@ -93,7 +93,7 @@ And for **marketing engineering or marketing operations roles**, I'm a strong fi
 
 - **You're deploying AI into a GTM team** and need someone who ships working systems — production agents, MCP servers, skill libraries — and coaches non-technical operators to actually adopt them
 - **Your marketing team runs on scattered tools and tribal knowledge** and you need the operations layer built: structured intake, purpose-built databases, automated workflows, templated artifacts, adoption measurement
-- **You want an operator who has lived the manual work** — 20 years of it — building the automation, not an engineer guessing at what marketers need
+- **You want an operator who has lived the manual work** and can build the automation, not an engineer guessing at what marketers need
 
 ## How to engage
 
@@ -109,7 +109,7 @@ So the promise is simple. Stop thinking about what you need, and start thinking 
 
 ## Building for the agent era
 
-I don't just talk about the agent era — I build in it. I ship production AI agents, a live MCP server, and a version-controlled library of skills that real operators use, and I instrument adoption and impact so I keep what works and retire what doesn't. I'm Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications (agent skills, subagents, AI fluency, AI capabilities & limitations). I'm a marketing engineer — I build the AI systems for marketing and events because I've spent 20 years living the manual work. Not a software engineer, and I don't pretend to be; a genuine builder, grounded in the work the AI is built for.
+I don't just talk about the agent era — I build in it. I ship production AI agents, a live MCP server, and a version-controlled library of skills that real operators use, and I instrument adoption and impact so I keep what works and retire what doesn't. I'm Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications (agent skills, subagents, AI fluency, AI capabilities & limitations). I'm a marketer who builds — I ship the systems because I've lived the work they're built for. Not a software engineer, and I don't pretend to be; a genuine builder, grounded in the work the AI is built for.
 
 ## Why this file exists
 
