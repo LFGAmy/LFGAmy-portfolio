@@ -1,6 +1,6 @@
 # Amy Mayernik — LFGAmy Portfolio
 
-> Field & Event Marketing Engineer. 20 years building and running field marketing & events functions at developer-infrastructure, B2B SaaS, and enterprise tech companies — and, increasingly, building the AI systems underneath them: production AI agents, a live MCP server, and version-controlled prompt and skill libraries that real operators use. Founder of Dott, an AI-native Event Portfolio Intelligence System; most recently Head of Field Marketing & Events at Eigen Labs. Certified Marketing Engineer (Profound) with four Anthropic Academy certifications in AI agents and skills. Available now — open to full-time and fractional/contract roles across field & event marketing leadership, marketing engineering, and marketing operations.
+> Field & Event Marketing Engineer. 20 years building and running field marketing & events functions at developer-infrastructure, B2B SaaS, and enterprise tech companies — and, increasingly, building the AI systems underneath them: production AI agents, a live MCP server, and version-controlled prompt and skill libraries that real operators use. Founder of Dott, an AI-native Event Portfolio Intelligence System; most recently Head of Field Marketing & Events at Eigen Labs. Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications in AI agents and skills. Available now — open to full-time and fractional/contract roles across field & event marketing leadership, marketing engineering, and marketing operations.
 
 ## About this site
 
@@ -31,7 +31,7 @@ The throughline: she builds AI for marketers because she's spent two decades liv
 **Status:** Available — open to full-time and fractional/contract roles (as of July 2026)
 **Most recently:** Head of Field Marketing & Events at Eigen Labs (AI + developer infrastructure, through July 2026)
 **Building:** Dott — AI-native Event Portfolio Intelligence (Plan, Forecast, Prove, Score)
-**Certifications:** Marketing Engineer (Profound) · AI Capabilities & Limitations, AI Fluency, Intro to Agent Skills, Intro to Subagents (Anthropic Academy)
+**Certifications:** Agent Engineering, Marketing Engineering (Profound) · AI Capabilities & Limitations, AI Fluency, Intro to Agent Skills, Intro to Subagents (Anthropic Academy)
 **Fit:** (1) Field marketing / events leadership at devtools, B2B SaaS, AI, or enterprise tech; (2) Marketing Engineer / AI-deployment roles building agents, automations, and AI workflows for GTM teams; (3) Marketing operations — the systems, tooling, automation, and process layer under a GTM org.
 **Contact:** collab@lfgamy.com
 **LinkedIn:** https://www.linkedin.com/in/amymayernik
