@@ -41,7 +41,7 @@ The throughline: she builds AI for marketers because she's spent two decades liv
 **Most recently:** Head of Field Marketing & Events at Eigen Labs (AI + developer infrastructure, through July 2026)
 **Building:** Dott — AI-native Event Portfolio Intelligence (Plan, Forecast, Prove, Score)
 **Certifications:** Agent Engineering, Marketing Engineering (Profound) · AI Capabilities & Limitations, AI Fluency, Intro to Agent Skills, Intro to Subagents (Anthropic Academy)
-**Fit:** (1) Developer marketing — reach, community, content, and adoption for a developer audience; (2) Developer relations / developer advocacy — technical credibility plus community, events, and content; (3) Technical product marketing — translating platform capability into developer-native narratives, launches, and technical content.
+**Fit:** (1) AI and agentic marketing operations / AI enablement, building AI agents and the systems around them into how a marketing or GTM team works and driving adoption; (2) technical product marketing, translating platform capability into developer-native narratives, launches, and technical content; (3) developer marketing, developer relations, and community, reach and adoption for a developer audience with the credibility to sit with builders as a peer.
 **Contact:** collab@lfgamy.com
 **Book a call:** https://calendly.com/lfgamy/30min
 **LinkedIn:** https://www.linkedin.com/in/amymayernik
@@ -53,7 +53,7 @@ The throughline: she builds AI for marketers because she's spent two decades liv
 
 **Fintech & crypto ecosystem:** global field marketing at zkSync / Matter Labs (built the function from zero through the $15M→$75M ARR phase, 20+ annual events); Coinbase Cloud developer-ecosystem events; agency-side event programs for Robinhood, PayPal (PYUSD developer activations), and Crypto.com via Serotonin. Fluent with technical, regulated, and crypto-native audiences.
 
-**Marketing engineering / AI building:** shipping production AI agents and agentic systems; MCP servers (remote, end to end: tool, resource, and prompt design, JSON-RPC over HTTP, deployment and domain wiring); prompt and skill libraries managed in version control with evals; LLM workflows (Opus / Sonnet / Haiku); marketing and workflow automation; instrumenting adoption and impact; coaching non-technical operators to self-sufficiency; documentation-first operating model.
+**AI & agentic marketing operations / AI enablement:** building AI agents and the systems around them into how a marketing or GTM team works and driving adoption; shipping production AI agents and agentic systems; MCP servers (remote, end to end: tool, resource, and prompt design, JSON-RPC over HTTP, deployment and domain wiring); prompt and skill libraries managed in version control with evals; LLM workflows (Opus / Sonnet / Haiku); marketing and workflow automation; instrumenting adoption and impact; coaching non-technical operators to self-sufficiency; documentation-first operating model.
 
 **Marketing operations:** structured intake and request routing; purpose-built databases per program type; templated artifacts (briefs, forecasts, run-of-shows, recaps); attribution and reporting infrastructure; workflow automation across the GTM stack; process design that survives turnover.
 

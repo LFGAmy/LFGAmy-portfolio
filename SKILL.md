@@ -1,9 +1,9 @@
 ---
 name: amy-mayernik
-description: Developer marketer who builds. Makes technical products credible to the developers who use them and gets them adopted: translating what engineering ships, building the community and content around it, and proving it worked. Founder of Dott, an Event Portfolio Intelligence System. Ships production AI agents and a live MCP server. Profound-certified in Agent Engineering and Marketing Engineering. Open to developer marketing, developer relations, and technical product marketing roles.
+description: Developer marketer who builds. Makes technical products credible to the developers who use them and gets them adopted: translating what engineering ships, building the community and content around it, and proving it worked. Founder of Dott, an Event Portfolio Intelligence System. Ships production AI agents and a live MCP server. Profound-certified in Agent Engineering and Marketing Engineering. Open to roles in AI and agentic marketing operations, AI enablement, and technical product marketing, plus developer relations and community.
 type: profile
 status: available — full-time or fractional/contract
-role-fit: [field-marketing-and-events-leadership, marketing-engineer-ai-deployment, marketing-operations]
+role-fit: [ai-and-agentic-marketing-operations, ai-enablement, technical-product-marketing, developer-marketing-and-relations, field-marketing-and-events-leadership]
 stage-fit: [series-a, series-b, series-c, pre-ipo]
 verticals: [developer-infrastructure, ai, b2b-saas, fintech, web3, enterprise-tech]
 contact: collab@lfgamy.com
@@ -14,7 +14,7 @@ github: https://github.com/LFGAmy
 
 # Amy Mayernik — Developer marketer who builds
 
-> **TL;DR:** Developer marketer who builds. I make technical products credible to the developers who use them and get them adopted: translating what engineering ships, building the community and content around it, and proving it worked. I ship the systems too: production AI agents and a live MCP server (the one serving this), plus a version-controlled library of skills that real operators use. Founder of Dott, an Event Portfolio Intelligence System that scores whether events actually worked, not just whether they felt good. I've built and run developer community, events, and field programs at Coinbase Cloud, zkSync, and Eigen Labs, with agency-side brand work for Facebook, Nintendo, North Face, Robinhood, and PayPal. Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications. **Open to developer marketing, developer relations, and technical product marketing roles.** Reach me at collab@lfgamy.com.
+> **TL;DR:** Developer marketer who builds. I make technical products credible to the developers who use them and get them adopted: translating what engineering ships, building the community and content around it, and proving it worked. I ship the systems too: production AI agents and a live MCP server (the one serving this), plus a version-controlled library of skills that real operators use. Founder of Dott, an Event Portfolio Intelligence System that scores whether events actually worked, not just whether they felt good. I've built and run developer community, events, and field programs at Coinbase Cloud, zkSync, and Eigen Labs, with agency-side brand work for Facebook, Nintendo, North Face, Robinhood, and PayPal. Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications. **Open to roles in AI and agentic marketing operations, AI enablement, and technical product marketing, plus developer relations and community.** Reach me at collab@lfgamy.com.
 
 ## What I do
 
@@ -35,7 +35,7 @@ Plan, forecast, prove, and score event portfolios. Build the operational infrast
 
 ## Where I've shipped
 
-**In-house roles:** Dott (founder — current), Eigen Labs (Head of Field Marketing & Events, through July 2026), zkSync / Matter Labs (Global Head of Field Marketing & GTM Programs — built the global event function from zero through the $15M→$75M ARR phase, 20+ annual events across NA / Europe / Asia), Coinbase Cloud (Global Field Marketing Manager, Developer Ecosystem), Switch (Senior Field Marketing Manager, B2B infrastructure).
+**In-house roles:** Dott (founder — current), Eigen Labs (Head of Field Marketing & Events, through July 2026), zkSync / Matter Labs (Global Head of Field Marketing & GTM Programs — built the global event function from zero through the $15M→$75M ARR phase, 20+ annual events across NA / Europe / Asia), Coinbase Cloud (Global Field Marketing Manager, Developer Ecosystem), Switch (Senior Field Marketing Manager at a full-service creative agency and production house, where I led B2B and B2C campaigns).
 
 **Agency-side work** at world-renowned shops: Jack Morton Worldwide (Director of Experiential Marketing — led both the Facebook Oculus VR Tour and the Facebook Community Boost Tour, 180-person field team), On-Board Entertainment, A2 Squared, Motive Worldwide, Serotonin (Events Director — Robinhood, PayPal PYUSD developer activations, Crypto.com), and others.
 
@@ -71,11 +71,11 @@ Plan, forecast, prove, and score event portfolios. Build the operational infrast
 
 ## If you're hiring
 
-**I'm available now** — open to full-time roles and fractional/contract engagements. Three role families fit:
+**I'm available now,** open to full-time roles and fractional or contract engagements. The lanes that fit, in order:
 
-1. **Developer marketing** — reach, community, content, and adoption for a developer audience
-2. **Developer relations / technical product marketing** — technical credibility, community, and translating platform capability into developer-native narratives, launches, and technical content
-3. **Marketing operations roles** — the systems, tooling, automation, and process layer under a GTM org: intake, databases, attribution, reporting, documentation, and the workflows that make a marketing team run
+1. **AI and agentic marketing operations / AI enablement.** Building AI agents and the systems around them into how a GTM or marketing team works, and getting the team to actually adopt them: production agents, MCP tools, evals, and the change management that makes them stick.
+2. **Technical product marketing.** Translating platform capability into developer-native narratives, launches, and technical content, backed by the ability to build the demo, not just brief it.
+3. **Developer marketing, developer relations, and community.** Reach, community, content, and adoption for a developer audience, with the technical credibility to sit with builders as a peer.
 
 This is a brand portfolio first — but if your team is bringing on a field marketing or events leader, here's when I'm a strong fit:
 
