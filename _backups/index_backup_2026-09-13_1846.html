@@ -1,0 +1,4746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amy Mayernik — Developer marketer who builds</title>
+<meta name="description" content="Developer marketer who builds. Makes technical products credible to the developers who use them and gets them adopted: translating what engineering ships, building the community and content around it, and proving it worked. Founder of Dott, an Event Portfolio Intelligence System. Ships production AI agents and a live MCP server. Profound-certified in Agent Engineering and Marketing Engineering. Open to developer marketing, developer relations, and technical product marketing roles.">
+<link rel="icon" type="image/svg+xml" href="images/lfgamy-favicon.svg">
+<link rel="apple-touch-icon" href="images/LFGAmy%20Boots.png">
+<!-- Open Graph / share card -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lfgamy.com">
+<meta property="og:title" content="Amy Mayernik — Developer marketer who builds">
+<meta property="og:description" content="Developer marketer who builds. Makes technical products credible to the developers who use them and gets them adopted: translating what engineering ships, building the community and content around it, and proving it worked. Founder of Dott, an Event Portfolio Intelligence System. Ships production AI agents and a live MCP server. Profound-certified in Agent Engineering and Marketing Engineering. Open to developer marketing, developer relations, and technical product marketing roles.">
+<meta property="og:image" content="https://lfgamy.com/images/og-card.jpg">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amy Mayernik — Developer marketer who builds">
+<meta name="twitter:description" content="Developer marketer who builds. Makes technical products credible to the developers who use them and gets them adopted: translating what engineering ships, building the community and content around it, and proving it worked. Founder of Dott, an Event Portfolio Intelligence System. Ships production AI agents and a live MCP server. Profound-certified in Agent Engineering and Marketing Engineering. Open to developer marketing, developer relations, and technical product marketing roles.">
+<meta name="twitter:image" content="https://lfgamy.com/images/og-card.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* LFGAmy palette — Melody-space-girl confident kawaii */
+    --soft-pink: #F8A0C2;           /* Bubblegum pink — primary kawaii pink */
+    --soft-pink-light: #FFD5E5;     /* Bubble pink — softer, brighter than before */
+    --soft-pink-whisper: #FFF0F6;
+    --melody-pink: #F0689D;         /* Bold pink accent — used sparingly */
+    --denim-blue: #A6DDF0;          /* Sky / Melody blue — confident baby blue */
+    --denim-blue-light: #DDF0F7;
+    --denim-blue-deep: #6FB8D5;
+    --boots-yellow: #FFD93D;        /* Sunny yellow — cheerful, ducky-bright */
+    --boots-yellow-soft: #FFEC8A;
+    --boots-yellow-pale: #FFF6CC;
+    --fox-orange: #FF8C42;          /* Boots orange — slightly punchier */
+    --melody-red: #E63950;
+    --warm-cream: #FFFAF2;
+    --warm-cream-deep: #FFF0DB;
+    --charcoal: #1A1A1A;
+    --medium-gray: #666666;
+    --light-gray: #EFECE6;
+    --white: #FFFFFF;
+    /* Legacy aliases for safety */
+    --dott-yellow: var(--boots-yellow);
+    --dott-yellow-soft: var(--boots-yellow-soft);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    background: #FDFCF8;
+    color: var(--charcoal);
+    line-height: 1.65;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    min-height: 100vh;
+  }
+  .sidebar {
+    background: #FFDCE8;
+    border-right: 2px solid #F8A0C2;
+    padding: 32px 26px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: inset -8px 0 20px rgba(248, 160, 194, 0.18), 2px 0 6px rgba(248, 160, 194, 0.2);
+  }
+  .sidebar-header {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #F0E5E8;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  .boots-placeholder {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px;
+    background: linear-gradient(135deg, var(--fox-orange) 0%, var(--dott-yellow) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    border: 3px solid var(--soft-pink);
+    box-shadow: 0 4px 12px rgba(244, 184, 193, 0.4);
+  }
+  .boots-img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    border: 3px solid var(--soft-pink);
+    box-shadow: 0 4px 12px rgba(244, 184, 193, 0.4);
+    object-fit: cover;
+    background: var(--white);
+    animation: boots-bob 4s ease-in-out infinite;
+    transition: transform 0.25s ease;
+    cursor: pointer;
+  }
+  .boots-img:hover {
+    animation: boots-wiggle 0.6s ease-in-out;
+    border-color: var(--denim-blue);
+  }
+  @keyframes boots-bob {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-4px) rotate(-1deg); }
+  }
+  @keyframes boots-wiggle {
+    0%, 100% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(-8deg) scale(1.08); }
+    50% { transform: rotate(0deg) scale(1.1); }
+    75% { transform: rotate(8deg) scale(1.08); }
+  }
+  .sidebar-header h1 {
+    font-family: "Fredoka", "Inter", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+  }
+  .sidebar-header p {
+    font-size: 13px;
+    color: var(--medium-gray);
+    font-weight: 500;
+  }
+  .sidebar-header .badge {
+    display: inline-block;
+    background: var(--boots-yellow);
+    color: var(--charcoal);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 22px;
+    border-radius: 2px;
+    margin-top: 14px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    transform: rotate(-2.5deg);
+    box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.12);
+    font-family: "Fredoka", "Inter", sans-serif;
+    position: relative;
+    text-align: center;
+  }
+  .sidebar-header .badge::before,
+  .sidebar-header .badge::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    background: repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4) 2px,
+      transparent 2px,
+      transparent 4px
+    );
+  }
+  .sidebar-header .badge::before { left: 0; }
+  .sidebar-header .badge::after { right: 0; }
+  .nav-group {
+    margin-bottom: 24px;
+  }
+  .nav-group-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--fox-orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    padding-left: 4px;
+  }
+  .nav-group ul {
+    list-style: none;
+  }
+  .nav-group li a {
+    display: block;
+    padding: 8px 12px;
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    margin-bottom: 3px;
+    transition: all 0.18s;
+    cursor: pointer;
+  }
+  .nav-group li a:hover {
+    background: var(--white);
+    color: var(--fox-orange);
+    transform: translateX(2px);
+  }
+  .nav-group li a {
+    position: relative;
+  }
+  .nav-group li a.active {
+    background: var(--dott-yellow);
+    color: var(--charcoal);
+    font-weight: 700;
+  }
+  .nav-group li a.active::before,
+  .nav-group li a.active::after {
+    content: "";
+    position: absolute;
+    width: 36px;
+    height: 12px;
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.14);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.9;
+  }
+  .nav-group li a.active::before {
+    top: -5px;
+    left: 8px;
+    transform: rotate(-12deg);
+    background: repeating-linear-gradient(-45deg, var(--fox-orange) 0, var(--fox-orange) 5px, #FFF0E0 5px, #FFF0E0 10px);
+  }
+  .nav-group li a.active::after {
+    top: -5px;
+    right: 8px;
+    transform: rotate(10deg);
+    background: repeating-linear-gradient(-45deg, var(--denim-blue) 0, var(--denim-blue) 5px, var(--denim-blue-light) 5px, var(--denim-blue-light) 10px);
+  }
+  .nav-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px dashed var(--soft-pink);
+    text-align: center;
+    font-size: 11px;
+    color: var(--medium-gray);
+    font-weight: 600;
+  }
+  .nav-footer .brand-code {
+    color: var(--fox-orange);
+    letter-spacing: 1px;
+  }
+  .nav-footer .ip-notice {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(160, 160, 160, 0.35);
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 9px;
+    line-height: 1.55;
+    letter-spacing: 0.5px;
+    color: var(--medium-gray);
+    font-weight: 400;
+    text-transform: none;
+    opacity: 0.85;
+  }
+  .nav-footer .ip-notice .ip-line-1 {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .nav-footer .ip-notice .ip-line-2 {
+    display: block;
+    font-style: italic;
+  }
+  .nav-footer .ip-notice .dott-mark {
+    color: var(--fox-orange);
+    font-weight: 600;
+  }
+  main {
+    padding: 64px 88px 96px;
+    max-width: 960px;
+    background-color: #FFFAF2;
+    background-image:
+      radial-gradient(rgba(248, 160, 194, 0.22) 1.2px, transparent 1.8px),
+      radial-gradient(rgba(166, 221, 240, 0.20) 1.2px, transparent 1.8px),
+      radial-gradient(rgba(255, 217, 61, 0.16) 1px, transparent 1.5px),
+      radial-gradient(rgba(0, 0, 0, 0.05) 0.8px, transparent 1.4px);
+    background-size: 30px 30px, 40px 40px, 50px 50px, 18px 18px;
+    background-position: 0 0, 15px 15px, 25px 25px, 0 0;
+    min-height: 100vh;
+    position: relative;
+  }
+  main::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 300px;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 800px 500px at 100% 0%, rgba(244,184,193,0.10), transparent 70%),
+      radial-gradient(ellipse 700px 500px at 0% 100%, rgba(168,192,208,0.07), transparent 70%),
+      radial-gradient(ellipse 500px 600px at 50% 50%, rgba(245,224,161,0.04), transparent 70%);
+    z-index: 0;
+  }
+  main > * { position: relative; z-index: 1; }
+  .page { display: none; animation: fadeIn 0.3s ease-out; }
+  .page.active { display: block; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .page-hero {
+    padding: 0 0 44px;
+    margin-bottom: 52px;
+    position: relative;
+  }
+  .page-hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 14px;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='14' viewBox='0 0 80 14'><path d='M0 7 Q 10 1 20 7 T 40 7 T 60 7 T 80 7' fill='none' stroke='%23F8A0C2' stroke-width='2.5' stroke-linecap='round'/></svg>") repeat-x left center;
+    background-size: 80px 14px;
+    opacity: 0.7;
+  }
+  .page-hero::before {
+    content: "✨";
+    position: absolute;
+    top: -16px;
+    right: 4px;
+    font-size: 40px;
+    animation: sparkle 3s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+  }
+  .page-hero .doodle {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  .doodle-star {
+    color: var(--boots-yellow);
+    font-size: 22px;
+    top: 8px;
+    right: 60px;
+    animation: float 4s ease-in-out infinite;
+  }
+  .doodle-heart {
+    color: var(--soft-pink);
+    font-size: 18px;
+    bottom: 36px;
+    right: 30px;
+    animation: float 5s ease-in-out infinite reverse;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .page-hero .hero-decoration {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 22px;
+    opacity: 0.5;
+    animation: sparkle 3s ease-in-out infinite;
+  }
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.9; transform: scale(1.15) rotate(15deg); }
+  }
+  h1.page-title {
+    font-family: "Fredoka", "Inter", sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    line-height: 1.1;
+    color: var(--charcoal);
+  }
+  .page-description {
+    font-size: 17px;
+    color: var(--medium-gray);
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  h2 {
+    font-family: "Fredoka", "Inter", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 48px 0 18px;
+    letter-spacing: -0.3px;
+    color: var(--charcoal);
+    position: relative;
+    padding-left: 38px;
+    line-height: 1.2;
+  }
+  h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 24px;
+    height: 24px;
+    background: var(--soft-pink);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  h3 {
+    font-family: "Fredoka", "Inter", sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    margin: 28px 0 12px;
+    color: var(--charcoal);
+    letter-spacing: -0.2px;
+  }
+  p {
+    margin-bottom: 16px;
+    color: var(--charcoal);
+  }
+  p.tagline {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--charcoal);
+    line-height: 1.45;
+    margin: 24px 0;
+    padding: 20px 24px;
+    background: #FFFAEC;
+    border-radius: 10px;
+    border-left: 4px solid var(--dott-yellow);
+  }
+  a {
+    color: var(--fox-orange);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  a:hover { text-decoration: underline; }
+  hr {
+    border: none;
+    height: 18px;
+    margin: 48px 0;
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='18' viewBox='0 0 80 18'><path d='M0 9 Q 10 1 20 9 T 40 9 T 60 9 T 80 9' fill='none' stroke='%23F8A0C2' stroke-width='3' stroke-linecap='round'/></svg>") repeat-x center;
+    background-size: 80px 18px;
+    opacity: 0.85;
+  }
+  .note, .tip {
+    border-left: 4px solid;
+    padding: 18px 22px;
+    border-radius: 10px;
+    margin: 20px 0;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .note {
+    background: #FFF7F9;
+    border-color: var(--soft-pink);
+    color: var(--charcoal);
+  }
+  .tip {
+    background: #FFFAEC;
+    border-color: var(--dott-yellow);
+    color: var(--charcoal);
+  }
+  .note strong, .tip strong { color: var(--charcoal); }
+  .card-grid {
+    display: grid;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .card-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .card-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+  .card {
+    background: var(--white);
+    border: 1.5px solid #E8E5DD;
+    border-radius: 14px;
+    padding: 24px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card:hover {
+    border-color: var(--soft-pink);
+    box-shadow: 0 8px 24px rgba(244, 184, 193, 0.2);
+    transform: translateY(-3px);
+  }
+  .card .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--soft-pink-light);
+    color: var(--charcoal);
+    border-radius: 12px;
+    font-size: 26px;
+    margin-bottom: 18px;
+  }
+  .card.accent-blue .icon {
+    background: var(--denim-blue-light);
+  }
+  .agent-block {
+    background: #F7F9FA;
+    border: 1.5px solid #D8E3EB;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 13.5px;
+    line-height: 1.7;
+    position: relative;
+  }
+  .agent-block::before {
+    content: "👾 FOR AI AGENTS READING THIS SITE";
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--denim-blue-deep);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+  }
+  .agent-block .field {
+    margin-bottom: 6px;
+  }
+  .agent-block .field-name {
+    color: var(--fox-orange);
+    font-weight: 600;
+  }
+  .agent-block .field-value {
+    color: var(--charcoal);
+  }
+  .card h4 {
+    font-family: "Fredoka", "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--charcoal);
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+  }
+  .card p {
+    font-size: 14px;
+    color: var(--medium-gray);
+    margin: 0;
+    line-height: 1.6;
+  }
+  .card.featured {
+    background: var(--denim-blue-light);
+    border: 2px solid var(--denim-blue);
+    box-shadow: 0 4px 0 var(--denim-blue), 0 8px 20px rgba(166, 221, 240, 0.4);
+    position: relative;
+  }
+  .card.featured::before {
+    content: "✨";
+    position: absolute;
+    top: -16px;
+    right: -14px;
+    font-size: 36px;
+    transform: rotate(15deg);
+    z-index: 2;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  }
+  .card.featured:hover {
+    box-shadow: 0 6px 0 var(--denim-blue), 0 12px 28px rgba(166, 221, 240, 0.55);
+    transform: translateY(-3px);
+  }
+  .card.featured .icon {
+    background: var(--white);
+  }
+  .card.accent-blue {
+    border-color: var(--denim-blue);
+    background: var(--denim-blue-light);
+  }
+  .card.accent-blue:hover {
+    border-color: var(--denim-blue-deep);
+    box-shadow: 0 6px 18px rgba(111, 184, 213, 0.3);
+  }
+  .card.accent-blue .icon {
+    background: var(--white);
+    color: var(--denim-blue-deep);
+  }
+  .card.accent-yellow {
+    border-color: var(--boots-yellow);
+    background: var(--boots-yellow-pale);
+  }
+  .card.accent-yellow:hover {
+    border-color: #E5C200;
+    box-shadow: 0 6px 18px rgba(255, 217, 61, 0.3);
+  }
+  .card.accent-yellow .icon {
+    background: var(--white);
+  }
+  /* Polaroid-style card variant — scrapbook energy */
+  .card.polaroid {
+    background: var(--white);
+    border: 10px solid var(--white);
+    border-bottom-width: 28px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transform: rotate(-1.8deg);
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 18px 16px 8px;
+  }
+  .card.polaroid:nth-child(3n+1) { transform: rotate(-2deg); }
+  .card.polaroid:nth-child(3n+2) { transform: rotate(1.5deg); }
+  .card.polaroid:nth-child(3n+3) { transform: rotate(-0.8deg); }
+  .card.polaroid:nth-child(4n) { transform: rotate(2.2deg); }
+  .card.polaroid:hover {
+    transform: rotate(0deg) translateY(-6px) scale(1.03);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+  }
+  .card.polaroid::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+    width: 70px;
+    height: 18px;
+    background: repeating-linear-gradient(
+      -45deg,
+      var(--boots-yellow),
+      var(--boots-yellow) 4px,
+      rgba(255, 217, 61, 0.55) 4px,
+      rgba(255, 217, 61, 0.55) 8px
+    );
+    opacity: 0.9;
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+  .card.polaroid:nth-child(even)::before {
+    background: repeating-linear-gradient(
+      45deg,
+      var(--soft-pink),
+      var(--soft-pink) 4px,
+      rgba(248, 160, 194, 0.5) 4px,
+      rgba(248, 160, 194, 0.5) 8px
+    );
+    transform: translateX(-50%) rotate(3deg);
+  }
+  .card.polaroid h4 {
+    margin-top: 4px;
+    font-size: 16px;
+  }
+  .card.polaroid p {
+    font-family: "Caveat", "Inter", cursive;
+    font-size: 17px;
+    color: var(--medium-gray);
+    margin-top: 4px;
+  }
+  .polaroid-grid {
+    padding: 12px 0;
+    row-gap: 28px;
+    column-gap: 24px;
+  }
+  .steps {
+    margin: 24px 0;
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px dashed var(--soft-pink);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-number {
+    background: var(--boots-yellow);
+    color: var(--charcoal);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(223, 186, 83, 0.35);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  }
+  .step-content h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--charcoal);
+  }
+  .step-content p { font-size: 14px; color: var(--medium-gray); margin: 0; }
+  .step-content ul { font-size: 14px; color: var(--medium-gray); margin-left: 20px; margin-top: 4px; }
+  details {
+    background: var(--white);
+    border: 1px solid var(--soft-pink);
+    border-radius: 12px;
+    padding: 0;
+    margin: 10px 0;
+    overflow: hidden;
+    transition: all 0.2s;
+  }
+  details:hover {
+    border-color: var(--dott-yellow);
+  }
+  summary {
+    padding: 16px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--charcoal);
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    font-size: 24px;
+    color: var(--fox-orange);
+    font-weight: 600;
+    line-height: 1;
+  }
+  details[open] summary::after { content: "−"; }
+  details > div {
+    padding: 0 20px 18px;
+    border-top: 1px dashed var(--soft-pink);
+    margin-top: 0;
+  }
+  details > div > *:first-child { margin-top: 14px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    text-align: left;
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--light-gray);
+  }
+  th {
+    font-weight: 700;
+    color: var(--charcoal);
+    background: var(--warm-cream-deep);
+    border-bottom: 2px solid var(--dott-yellow);
+  }
+  td.beat { color: #15803D; font-weight: 700; }
+  td.miss { color: #B91C1C; font-weight: 700; }
+  td.target { color: #0E7490; font-weight: 700; }
+  ul.bullets {
+    margin: 16px 0 16px 24px;
+  }
+  ul.bullets li {
+    margin-bottom: 10px;
+    color: var(--charcoal);
+    line-height: 1.6;
+  }
+  /* Elevated numbered list — circular pink badges instead of plain numbers */
+  ol.bullets {
+    list-style: none;
+    counter-reset: kawaii-counter;
+    margin: 20px 0;
+    padding-left: 0;
+  }
+  ol.bullets li {
+    counter-increment: kawaii-counter;
+    position: relative;
+    padding-left: 44px;
+    margin-bottom: 14px;
+    color: var(--charcoal);
+    line-height: 1.6;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+  }
+  ol.bullets li::before {
+    content: counter(kawaii-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    background: var(--soft-pink-light);
+    color: var(--charcoal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    border: 1.5px solid var(--soft-pink);
+    font-family: "Inter", sans-serif;
+    line-height: 1;
+  }
+  ol.bullets li:nth-child(even)::before {
+    background: var(--denim-blue-light);
+    border-color: var(--denim-blue);
+  }
+  .cta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 2px dashed var(--soft-pink);
+  }
+  .signature {
+    margin-top: 32px;
+    padding: 24px 28px;
+    background: var(--soft-pink-light);
+    border: 2px solid var(--soft-pink);
+    border-left: 8px solid var(--fox-orange);
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 700;
+    box-shadow: 0 4px 0 var(--soft-pink);
+  }
+  .signature .brand-code {
+    color: var(--fox-orange);
+    letter-spacing: 2px;
+  }
+  .review-banner {
+    background: var(--soft-pink);
+    color: var(--charcoal);
+    padding: 14px 72px;
+    font-size: 14px;
+    font-weight: 600;
+    border-bottom: 3px solid var(--melody-pink);
+  }
+  .review-banner strong { font-weight: 800; }
+  .em-tag {
+    background: var(--soft-pink);
+    color: var(--charcoal);
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  /* The Promise — closing thesis card on Behind the Scenes (stamp-on-top) */
+  .promise-section {
+    background: linear-gradient(180deg, #FFF8FA 0%, #FFFCF6 100%);
+    border: 1.5px solid var(--soft-pink);
+    border-radius: 12px;
+    padding: 36px 44px 32px;
+    margin: 60px 0 0;
+    position: relative;
+    box-shadow: 0 10px 28px rgba(244, 184, 193, 0.16), 0 2px 6px rgba(0,0,0,0.03);
+  }
+  .promise-section::before {
+    content: "✦ THE PROMISE ✦";
+    position: absolute;
+    top: -20px;
+    left: 36px;
+    background: #FFE8F0;
+    color: var(--charcoal);
+    padding: 10px 20px;
+    font-family: "Fredoka", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    border-radius: 3px;
+    border: 2px dashed var(--soft-pink);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12), inset 0 0 0 4px rgba(255,255,255,0.7);
+    transform: rotate(-3deg);
+  }
+  .promise-section h2 {
+    text-align: center;
+    font-size: 38px;
+    margin: 18px 0 20px;
+    padding-left: 0;
+  }
+  .promise-section h2::before { display: none; }
+  .promise-section .tagline {
+    font-family: "Fredoka", sans-serif;
+    font-size: 22px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 0 18px;
+    color: var(--charcoal);
+    line-height: 1.35;
+  }
+  .promise-section p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  .promise-section .promise-signature {
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    border-top: 0 dashed var(--soft-pink);
+    text-align: right;
+    font-family: "Caveat", cursive;
+    font-size: 30px;
+    color: var(--fox-orange);
+    transform: rotate(-1deg);
+    transform-origin: right center;
+    transition: max-height 0.6s ease, margin 0.6s ease, padding 0.6s ease, opacity 0.7s ease, border-width 0.6s ease;
+  }
+  .promise-section .promise-signature.revealed {
+    max-height: 200px;
+    margin-top: 32px;
+    padding-top: 22px;
+    border-top-width: 1px;
+  }
+  .promise-section .promise-signature .lfg-mark {
+    display: block;
+    font-family: "Fredoka", sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--charcoal);
+    margin-top: 6px;
+    text-transform: uppercase;
+    transform: rotate(1deg);
+  }
+  /* The vicious cycle — kawaii bullets with cyclical glyph */
+  .cycle-list {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0 28px;
+  }
+  .cycle-list li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--charcoal);
+  }
+  .cycle-list li::before {
+    content: "↻";
+    position: absolute;
+    left: 0;
+    top: -1px;
+    font-size: 20px;
+    color: var(--soft-pink);
+    font-weight: 700;
+  }
+  /* The pattern — domino cascade showing how the 4 problems compound */
+  .domino-cascade {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 36px 0 12px;
+    padding: 8px 0 32px;
+  }
+  .domino {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.04);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 2px solid var(--charcoal);
+  }
+  .domino:nth-child(1) { transform: rotate(-3deg); }
+  .domino:nth-child(2) { transform: rotate(1deg) translateY(8px); }
+  .domino:nth-child(3) { transform: rotate(-2deg) translateY(16px); }
+  .domino:nth-child(4) { transform: rotate(4deg) translateY(28px); }
+  .domino:hover {
+    transform: rotate(0) translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+    z-index: 5;
+  }
+  .domino-face {
+    padding: 22px 18px 20px;
+    text-align: center;
+    border-bottom: 2px solid var(--charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+  }
+  .domino-face::before {
+    content: "✕";
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--charcoal);
+    font-family: "Fredoka", sans-serif;
+    line-height: 1;
+  }
+  /* Stamp-pattern faces — kawaii mixed icons in brand color outline */
+  .domino:nth-child(1) .domino-face {
+    background-color: #FFE8F0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='95' height='95' viewBox='0 0 95 95'><g opacity='0.6'><g fill='none' stroke='%23E59CA8' stroke-width='2'><path d='M 24 40 C 10 32 2 22 2 14 C 2 8 10 6 24 16 C 38 6 46 8 46 14 C 46 22 38 32 24 40 Z'/><path d='M 68 80 C 60 74 56 68 56 64 C 56 60 62 58 68 64 C 74 58 80 60 80 64 C 80 68 76 74 68 80 Z'/><path d='M 72 14 L 74 22 L 82 24 L 74 26 L 72 34 L 70 26 L 62 24 L 70 22 Z'/></g><g fill='%23E59CA8'><circle cx='12' cy='65' r='2'/><circle cx='52' cy='52' r='1.5'/><circle cx='88' cy='52' r='1.8'/><circle cx='40' cy='86' r='1.6'/></g></g></svg>");
+    background-size: 95px 95px;
+  }
+  .domino:nth-child(2) .domino-face {
+    background-color: var(--denim-blue-light);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='95' height='95' viewBox='0 0 95 95'><g opacity='0.55'><g fill='none' stroke='%235A9BB8' stroke-width='1.7'><path d='M 22 8 L 26 20 L 38 20 L 28 28 L 32 40 L 22 32 L 12 40 L 16 28 L 6 20 L 18 20 Z'/><path d='M 70 60 L 73 68 L 82 68 L 75 73 L 78 82 L 70 76 L 62 82 L 65 73 L 58 68 L 67 68 Z'/><path d='M 60 12 C 56 12 54 15 54 18 C 50 18 48 21 48 24 C 48 27 51 28 54 28 L 80 28 C 83 28 86 26 86 23 C 86 20 83 18 80 18 C 80 15 78 12 75 12 C 72 12 70 14 69 16 C 67 13 64 12 60 12 Z'/></g><g fill='%235A9BB8'><circle cx='12' cy='58' r='1.8'/><circle cx='44' cy='52' r='1.5'/><circle cx='88' cy='48' r='1.5'/><circle cx='42' cy='86' r='1.6'/></g></g></svg>");
+    background-size: 95px 95px;
+  }
+  .domino:nth-child(3) .domino-face {
+    background-color: #FFF4D0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='95' height='95' viewBox='0 0 95 95'><g opacity='0.55'><g fill='none' stroke='%23B89000' stroke-width='1.7'><circle cx='22' cy='10' r='5.5'/><circle cx='34' cy='20' r='5.5'/><circle cx='29' cy='34' r='5.5'/><circle cx='15' cy='34' r='5.5'/><circle cx='10' cy='20' r='5.5'/><circle cx='22' cy='22' r='3'/><circle cx='68' cy='66' r='7'/><line x1='68' y1='52' x2='68' y2='56'/><line x1='68' y1='76' x2='68' y2='80'/><line x1='54' y1='66' x2='58' y2='66'/><line x1='78' y1='66' x2='82' y2='66'/><line x1='58' y1='56' x2='61' y2='59'/><line x1='75' y1='59' x2='78' y2='56'/><line x1='58' y1='76' x2='61' y2='73'/><line x1='75' y1='73' x2='78' y2='76'/></g><g fill='%23B89000'><circle cx='62' cy='14' r='1.8'/><circle cx='12' cy='66' r='1.8'/><circle cx='84' cy='40' r='1.5'/><circle cx='44' cy='52' r='1.5'/></g></g></svg>");
+    background-size: 95px 95px;
+  }
+  .domino:nth-child(4) .domino-face {
+    background-color: #FFE5D2;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='95' height='95' viewBox='0 0 95 95'><g opacity='0.55'><g fill='none' stroke='%23D17239' stroke-width='1.6'><path d='M 22 8 L 25 22 L 40 25 L 25 28 L 22 42 L 19 28 L 4 25 L 19 22 Z'/><path d='M 68 60 L 70 70 L 80 72 L 70 74 L 68 84 L 66 74 L 56 72 L 66 70 Z'/><path d='M 66 18 C 60 14 56 18 56 22 C 56 26 60 30 66 34 C 72 30 76 26 76 22 C 76 18 72 14 66 18 Z'/></g><g fill='%23D17239'><circle cx='52' cy='48' r='1.8'/><circle cx='12' cy='62' r='1.8'/><circle cx='44' cy='10' r='1.6'/><circle cx='86' cy='44' r='1.6'/></g></g></svg>");
+    background-size: 95px 95px;
+  }
+  .domino-body {
+    padding: 20px 18px 24px;
+  }
+  .domino-title {
+    font-family: "Fredoka", sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--charcoal);
+    text-align: center;
+    letter-spacing: -0.2px;
+  }
+  .domino-text {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--medium-gray);
+    text-align: center;
+    margin: 0;
+  }
+  .cascade-consequence {
+    text-align: center;
+    margin: 12px 0 24px;
+  }
+  .cascade-arrow {
+    font-size: 32px;
+    color: var(--soft-pink);
+    display: block;
+    margin-bottom: 4px;
+    animation: arrow-pulse 2s ease-in-out infinite;
+    line-height: 1;
+  }
+  @keyframes arrow-pulse {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+  .cascade-punchline {
+    font-family: "Caveat", cursive;
+    font-size: 26px;
+    color: var(--fox-orange);
+    transform: rotate(-1deg);
+    display: inline-block;
+    margin: 0;
+    line-height: 1.2;
+  }
+  @media (max-width: 760px) {
+    .domino-cascade { grid-template-columns: 1fr; gap: 20px; padding-bottom: 8px; }
+    .domino:nth-child(n) { transform: rotate(0); }
+  }
+  /* Polaroid "How I show up" cards — text-as-photo, name-at-bottom */
+  .show-up-polaroids {
+    margin-top: 36px;
+    padding-top: 8px;
+  }
+  .show-up-polaroids .card {
+    background: #fff;
+    border-radius: 4px;
+    padding: 14px 14px 0;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.14), 0 2px 6px rgba(0,0,0,0.06);
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none;
+  }
+  .show-up-polaroids .card.accent-blue {
+    background: #fff;
+  }
+  .show-up-polaroids .card:nth-child(1) { transform: rotate(-1.8deg); }
+  .show-up-polaroids .card:nth-child(2) { transform: rotate(1.2deg); }
+  .show-up-polaroids .card:nth-child(3) { transform: rotate(-0.8deg); }
+  .show-up-polaroids .card:nth-child(4) { transform: rotate(1.6deg); }
+  .show-up-polaroids .card:hover {
+    transform: rotate(0) translateY(-6px);
+    box-shadow: 0 22px 48px rgba(0,0,0,0.18);
+    z-index: 5;
+  }
+  .show-up-polaroids .card::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-4deg);
+    width: 84px;
+    height: 22px;
+    background: repeating-linear-gradient(-45deg, var(--boots-yellow) 0, var(--boots-yellow) 6px, var(--boots-yellow-soft) 6px, var(--boots-yellow-soft) 12px);
+    opacity: 0.82;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    z-index: 1;
+  }
+  .show-up-polaroids .card:nth-child(2)::before {
+    background: repeating-linear-gradient(-45deg, var(--soft-pink) 0, var(--soft-pink) 6px, var(--soft-pink-light) 6px, var(--soft-pink-light) 12px);
+    transform: translateX(-50%) rotate(3deg);
+  }
+  .show-up-polaroids .card:nth-child(3)::before {
+    background: repeating-linear-gradient(-45deg, var(--denim-blue-deep) 0, var(--denim-blue-deep) 6px, var(--denim-blue) 6px, var(--denim-blue) 12px);
+    transform: translateX(-50%) rotate(-2deg);
+  }
+  .show-up-polaroids .card:nth-child(4)::before {
+    background: repeating-linear-gradient(-45deg, var(--fox-orange) 0, var(--fox-orange) 6px, #FFB07A 6px, #FFB07A 12px);
+    transform: translateX(-50%) rotate(4deg);
+  }
+  .show-up-polaroids .card-photo {
+    padding: 36px 24px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+  }
+  .show-up-polaroids .card-photo p {
+    font-family: "Fredoka", sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    text-align: center;
+    color: var(--charcoal);
+    margin: 0;
+    font-weight: 500;
+  }
+  .show-up-polaroids .card-label {
+    padding: 20px 12px 24px;
+    text-align: center;
+    font-family: "Fredoka", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--charcoal);
+    letter-spacing: -0.3px;
+    line-height: 1.15;
+  }
+  .show-up-polaroids .card:nth-child(1) .card-photo { background: #FFE8F0; }
+  .show-up-polaroids .card:nth-child(2) .card-photo { background: var(--denim-blue-light); }
+  .show-up-polaroids .card:nth-child(3) .card-photo { background: #FFF4D0; }
+  .show-up-polaroids .card:nth-child(4) .card-photo { background: #FFE5D2; }
+  /* VISA DENIED stamp cards — failure-mode treatment for The Vault */
+  .visa-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    max-width: 780px;
+    margin: 40px auto 32px;
+  }
+  .visa-card {
+    background: #FFFFFF;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'><g fill='none' stroke='%23D78699' stroke-width='1.5' opacity='0.32'><rect x='14' y='14' width='16' height='11' rx='1.5'/><line x1='19' y1='14' x2='19' y2='11'/><line x1='25' y1='14' x2='25' y2='11'/><path d='M 68 14 L 70 22 L 78 24 L 70 26 L 68 34 L 66 26 L 58 24 L 66 22 Z'/><path d='M 16 65 L 26 67 L 30 64 L 24 70 L 27 75 L 19 71 L 13 73 Z'/><path d='M 68 60 L 70 67 L 77 69 L 70 71 L 68 78 L 66 71 L 59 69 L 66 67 Z'/></g></svg>");
+    background-size: 90px 90px;
+    border: 1.5px dashed #D9B58F;
+    border-radius: 12px;
+    padding: 36px 26px 30px;
+    position: relative;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.14), 0 3px 8px rgba(0,0,0,0.06);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .visa-card:nth-child(1) { transform: rotate(-1.4deg); }
+  .visa-card:nth-child(2) { transform: rotate(1.6deg); }
+  .visa-card:hover { transform: rotate(0) translateY(-5px); box-shadow: 0 18px 40px rgba(0,0,0,0.12), 0 4px 10px rgba(0,0,0,0.05); }
+  .visa-card::after {
+    content: "VISA DENIED";
+    position: absolute;
+    top: 16px; right: -12px;
+    font-family: "Fredoka", sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 1.8px;
+    color: #C76B7F;
+    border: 2.5px solid #C76B7F;
+    padding: 6px 14px;
+    border-radius: 4px;
+    transform: rotate(-14deg);
+    opacity: 0.88;
+    background: rgba(255,250,244,0.55);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    pointer-events: none; z-index: 3; line-height: 1;
+  }
+  .visa-title {
+    font-family: "Fredoka", sans-serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--charcoal);
+    margin: 0 0 12px;
+    letter-spacing: -0.3px;
+    position: relative; z-index: 1;
+    max-width: calc(100% - 120px);
+  }
+  .visa-body { font-size: 14.5px; line-height: 1.6; color: var(--charcoal); margin: 0; position: relative; z-index: 1; }
+  @media (max-width: 760px) {
+    .visa-cards { grid-template-columns: 1fr; max-width: 100%; }
+    .visa-card:nth-child(n) { transform: rotate(0); }
+  }
+  /* Luggage tags — "The strategy" principles */
+  .luggage-tags {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+    margin: 56px 0 32px;
+    padding-top: 24px;
+  }
+  .luggage-tag {
+    background: #FFFFFF;
+    border: 1.5px solid #D9B58F;
+    border-radius: 10px;
+    padding: 28px 22px 22px;
+    position: relative;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.13), 0 2px 6px rgba(0,0,0,0.05);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .luggage-tag:nth-child(1) { transform: rotate(-1.5deg); }
+  .luggage-tag:nth-child(2) { transform: rotate(1.8deg); }
+  .luggage-tag:nth-child(3) { transform: rotate(-0.9deg); }
+  .luggage-tag:nth-child(4) { transform: rotate(1.4deg); }
+  .luggage-tag:hover { transform: rotate(0) translateY(-6px); box-shadow: 0 20px 44px rgba(0,0,0,0.14); z-index: 5; }
+  .luggage-tag::before {
+    content: "";
+    position: absolute;
+    top: -28px; left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 18px; height: 32px;
+    background: repeating-linear-gradient(0deg, var(--soft-pink) 0, var(--soft-pink) 4px, var(--soft-pink-light) 4px, var(--soft-pink-light) 8px);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    z-index: 1;
+  }
+  .luggage-tag::after {
+    content: "";
+    position: absolute;
+    top: 12px; left: 50%;
+    transform: translateX(-50%);
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: #FFFBF0;
+    border: 2px solid #C9B299;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.08);
+    z-index: 2;
+  }
+  .luggage-tag:nth-child(2)::before { background: repeating-linear-gradient(0deg, var(--denim-blue-deep) 0, var(--denim-blue-deep) 4px, var(--denim-blue-light) 4px, var(--denim-blue-light) 8px); }
+  .luggage-tag:nth-child(3)::before { background: repeating-linear-gradient(0deg, var(--boots-yellow) 0, var(--boots-yellow) 4px, var(--boots-yellow-soft) 4px, var(--boots-yellow-soft) 8px); }
+  .luggage-tag:nth-child(4)::before { background: repeating-linear-gradient(0deg, var(--fox-orange) 0, var(--fox-orange) 4px, #FFB07A 4px, #FFB07A 8px); }
+  .tag-title { font-family: "Fredoka", sans-serif; font-size: 19px; font-weight: 700; color: var(--charcoal); margin: 22px 0 10px; letter-spacing: -0.2px; text-align: center; }
+  .tag-body { font-size: 14px; line-height: 1.6; color: var(--charcoal); margin: 0; text-align: center; }
+  @media (max-width: 760px) { .luggage-tags { grid-template-columns: 1fr; gap: 44px; } .luggage-tag:nth-child(n) { transform: rotate(0); } }
+  /* Village map */
+  .village-map {
+    margin: 28px 0 20px;
+    padding: 14px;
+    background: linear-gradient(135deg, #FFF8E8 0%, #FFEFC2 100%);
+    border-radius: 16px;
+    border: 1.5px dashed #D9B58F;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+  }
+  .village-map svg { width: 100%; height: auto; display: block; }
+  .cohort-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px 14px;
+    margin: 20px 0 24px;
+  }
+  .cohort-item {
+    display: block;
+    padding: 14px 16px;
+    background: #FFFFFF;
+    border-left: 5px solid var(--soft-pink);
+    border-radius: 6px;
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--charcoal);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .cohort-item:nth-child(1) { border-left-color: var(--soft-pink); }
+  .cohort-item:nth-child(2) { border-left-color: var(--denim-blue-deep); }
+  .cohort-item:nth-child(3) { border-left-color: var(--boots-yellow); }
+  .cohort-item:nth-child(4) { border-left-color: var(--fox-orange); }
+  .cohort-item:nth-child(5) { border-left-color: #B498E0; }
+  .cohort-item:nth-child(6) { border-left-color: var(--charcoal); background: #E8EDF2; }
+  .cohort-item strong { display: block; color: var(--charcoal); font-weight: 700; margin-bottom: 4px; }
+  @media (max-width: 760px) { .cohort-list { grid-template-columns: 1fr; } }
+  .village-pullquote {
+    margin: 28px auto 24px;
+    max-width: 720px;
+    text-align: center;
+    padding: 24px 24px 20px;
+    background: #FFFFFF;
+    border-top: 2px dashed var(--soft-pink);
+    border-bottom: 2px dashed var(--soft-pink);
+  }
+  .village-pullquote p { font-family: "Caveat", cursive; font-size: 32px; color: var(--charcoal); line-height: 1.3; margin: 0; }
+  .village-pullquote .pullquote-attr { display: block; margin-top: 12px; padding: 0; background: transparent; border: none; font-family: "Fredoka", sans-serif; font-size: 12px; letter-spacing: 2px; color: var(--fox-orange); text-transform: uppercase; font-weight: 700; }
+  .village-moments {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin: 16px 0 24px;
+  }
+  /* Subway map — kawaii network diagram for the Field Marketing & Events System */
+  .system-map {
+    margin: 28px 0 24px;
+    padding: 20px;
+    background: linear-gradient(135deg, #F0F4F8 0%, #DEE9F2 100%);
+    border-radius: 16px;
+    border: 1.5px dashed #A4C2DA;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+  }
+  .system-map svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  /* Tribal knowledge anti-pattern sticky note */
+  .tribal-knowledge-callout {
+    margin: 28px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: rgba(255, 224, 102, 0.18);
+    border: 1.5px dashed #E5B800;
+    border-radius: 10px;
+    padding: 22px 24px;
+    position: relative;
+  }
+  .sticky-note {
+    flex-shrink: 0;
+    width: 180px;
+    background: #FFF4B8;
+    padding: 24px 18px 22px;
+    border-radius: 2px;
+    transform: rotate(-3deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06);
+    position: relative;
+    font-family: "Caveat", cursive;
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--charcoal);
+  }
+  .sticky-note::before {
+    /* Washi tape across top */
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
+    width: 70px;
+    height: 16px;
+    background: repeating-linear-gradient(-45deg, var(--soft-pink) 0, var(--soft-pink) 5px, var(--soft-pink-light) 5px, var(--soft-pink-light) 10px);
+    opacity: 0.78;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+  .sticky-note .sticky-corner {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 22px;
+    height: 22px;
+    background: linear-gradient(135deg, transparent 50%, rgba(0,0,0,0.06) 50%);
+    border-bottom-right-radius: 2px;
+  }
+  .sticky-note .sticky-emoji {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .tribal-knowledge-content {
+    flex: 1;
+  }
+  .tribal-knowledge-content h4 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0 0 8px;
+    color: var(--charcoal);
+    letter-spacing: -0.2px;
+  }
+  .tribal-knowledge-content p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin: 0 0 10px;
+    color: var(--charcoal);
+  }
+  .tribal-knowledge-content p:last-child { margin-bottom: 0; }
+  .slack-callout {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 12px;
+    color: var(--medium-gray);
+    background: #F7F9FA;
+    border: 1px solid #D8E3EB;
+    border-radius: 4px;
+    padding: 4px 10px;
+    margin-top: 4px;
+  }
+  @media (max-width: 760px) {
+    .tribal-knowledge-callout { flex-direction: column; align-items: center; }
+    .sticky-note { width: 200px; }
+  }
+  /* ===== "System Verified" rubber-stamp cards ===== */
+  .unlock-stamps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 24px 0 28px;
+  }
+  .unlock-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E5DCC5;
+    border-radius: 10px;
+    padding: 110px 22px 22px;
+    position: relative;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+    background-image: linear-gradient(180deg, rgba(255,253,247,0.6) 0%, rgba(255,255,255,1) 100%);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .unlock-card:hover {
+    transform: translateY(-2px) rotate(0.5deg);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.14);
+  }
+  .unlock-stamps.row-3 { grid-template-columns: repeat(3, 1fr); }
+  .unlock-stamps.row-2 { grid-template-columns: repeat(2, 1fr); margin-top: 0; }
+  .verified-stamp {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    border: 2.5px solid var(--stamp-color, #1F1F1F);
+    color: var(--stamp-color, #1F1F1F);
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    padding: 6px 10px 5px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 1.5px var(--stamp-color, #1F1F1F);
+    background: rgba(255,255,255,0.6);
+    text-align: center;
+    line-height: 1.25;
+    opacity: 0.88;
+  }
+  .verified-stamp .stamp-line-2 {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 1.4px;
+    margin-top: 1px;
+    opacity: 0.85;
+  }
+  .unlock-card.s-blue   { --stamp-color: #2D6FB0; }
+  .unlock-card.s-orange { --stamp-color: #D96B2C; }
+  .unlock-card.s-amber  { --stamp-color: #B8860B; }
+  .unlock-card.s-pink   { --stamp-color: #C94F7A; }
+  .unlock-card.s-green  { --stamp-color: #3B7A4F; }
+  .unlock-card.s-blue   .verified-stamp { transform: rotate(-7deg); }
+  .unlock-card.s-orange .verified-stamp { transform: rotate(5deg); }
+  .unlock-card.s-amber  .verified-stamp { transform: rotate(-4deg); }
+  .unlock-card.s-pink   .verified-stamp { transform: rotate(6deg); }
+  .unlock-card.s-green  .verified-stamp { transform: rotate(-5deg); }
+  .unlock-card h4 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin: 0 0 10px;
+    letter-spacing: -0.2px;
+    line-height: 1.3;
+  }
+  .unlock-card p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    margin: 0;
+  }
+  .stamp-id {
+    position: absolute;
+    top: 86px;
+    right: 24px;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 8px;
+    letter-spacing: 1.2px;
+    color: var(--medium-gray);
+    opacity: 0.6;
+    transform: rotate(-3deg);
+  }
+  @media (max-width: 760px) {
+    .unlock-stamps,
+    .unlock-stamps.row-3,
+    .unlock-stamps.row-2 { grid-template-columns: 1fr; }
+  }
+  /* ===== System manual page with margin annotations (for "What I've learned") ===== */
+  .manual-page {
+    background: #F7FAFD;
+    /* Lined-paper rules (very light blue ruled lines) */
+    background-image: repeating-linear-gradient(0deg, transparent 0px, transparent 26px, #E0EAF4 26px, #E0EAF4 27px);
+    border: 1.5px solid #CCDAE8;
+    border-radius: 8px;
+    padding: 40px 40px 50px 96px;
+    margin: 28px 0;
+    position: relative;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+  }
+  .manual-page::before {
+    content: "";
+    position: absolute;
+    left: 80px;
+    top: 0;
+    bottom: 0;
+    width: 1.5px;
+    background: rgba(200,60,60,0.32);
+  }
+  .hole-punch {
+    position: absolute;
+    left: 22px;
+    width: 18px;
+    height: 18px;
+    background: #E8EDF4;
+    border-radius: 50%;
+    box-shadow: inset 0 2px 3px rgba(0,0,0,0.14);
+  }
+  .hole-punch.h1 { top: 50px; }
+  .hole-punch.h2 { top: 50%; transform: translateY(-50%); }
+  .hole-punch.h3 { bottom: 50px; }
+  .manual-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1.5px solid #CCDAE8;
+    padding-bottom: 12px;
+    margin-bottom: 26px;
+  }
+  .manual-header-title {
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    color: var(--charcoal);
+    text-transform: uppercase;
+  }
+  .manual-header-page {
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 10.5px;
+    color: var(--medium-gray);
+    letter-spacing: 1.5px;
+  }
+  .manual-entry {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 28px;
+    margin: 0 0 36px;
+    position: relative;
+  }
+  .manual-entry:last-of-type { margin-bottom: 8px; }
+  .rule-content { position: relative; }
+  .rule-num {
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 10px;
+    letter-spacing: 2.2px;
+    font-weight: 700;
+    color: var(--fox-orange);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .rule-content h4 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 17.5px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: var(--charcoal);
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+  }
+  .rule-content p {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin: 0;
+  }
+  .rule-content .highlight {
+    background: linear-gradient(180deg, transparent 55%, rgba(255,220,80,0.55) 55%);
+    padding: 0 2px;
+  }
+  .margin-note {
+    font-family: "Caveat", cursive;
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--charcoal);
+    padding: 8px 0 0 18px;
+    position: relative;
+    align-self: start;
+  }
+  .margin-note::before {
+    content: "←";
+    position: absolute;
+    left: -2px;
+    top: 4px;
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    color: var(--fox-orange);
+    font-size: 22px;
+  }
+  .margin-note.bullet::before { content: "✶"; color: var(--soft-pink); font-size: 18px; top: 8px; }
+  .margin-note.arrow-right::before { content: "→"; color: var(--denim-blue); }
+  .manual-entry.note-left {
+    grid-template-columns: 220px 1fr;
+  }
+  .manual-entry.note-left .margin-note {
+    padding: 8px 18px 0 0;
+    text-align: right;
+    order: 1;
+  }
+  .manual-entry.note-left .margin-note::before {
+    content: "→";
+    left: auto;
+    right: -2px;
+  }
+  .manual-entry.note-left .rule-content { order: 2; }
+  .red-ink {
+    font-family: "Caveat", cursive;
+    color: #C13E3E;
+    font-weight: 700;
+    transform: rotate(-3deg);
+    display: inline-block;
+  }
+  .coffee-stain {
+    position: absolute;
+    bottom: 18px;
+    right: 28px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: inset 0 0 0 3px rgba(139,90,55,0.18);
+    opacity: 0.55;
+    transform: rotate(15deg);
+    pointer-events: none;
+  }
+  .coffee-stain::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: inset 0 0 0 1.5px rgba(139,90,55,0.12);
+  }
+  /* ===== "Where it ports" subway-extending closer ===== */
+  .ports-closer {
+    margin: 32px 0 12px;
+  }
+  .ports-map {
+    background: linear-gradient(90deg, #F0F4F8 0%, #DEE9F2 60%, rgba(222,233,242,0) 100%);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 0 0 18px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+  }
+  .ports-map svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .ports-destinations {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 18px;
+  }
+  .ports-destinations .ports-label {
+    font-family: "Caveat", cursive;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-right: 6px;
+  }
+  .port-pill {
+    display: inline-flex;
+    align-items: center;
+    font-family: "Fredoka", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--charcoal);
+    background: #FFFFFF;
+    border: 1.5px solid var(--soft-pink);
+    border-radius: 18px;
+    padding: 5px 14px;
+    letter-spacing: 0.2px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+  }
+  .port-pill:nth-child(2) { border-color: var(--denim-blue); }
+  .port-pill:nth-child(3) { border-color: var(--boots-yellow); }
+  .port-pill:nth-child(4) { border-color: var(--fox-orange); }
+  .port-pill:nth-child(5) { border-color: #3B7A4F; }
+  .port-pill:nth-child(7) { border-color: var(--denim-blue); }
+  .port-pill:nth-child(8) { border-color: var(--boots-yellow); }
+  .ports-more {
+    font-family: "Caveat", cursive;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--medium-gray);
+    margin-left: 4px;
+    font-style: italic;
+  }
+  .closer-tagline {
+    font-family: "Caveat", cursive;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--charcoal);
+    text-align: center;
+    margin: 24px 0 0;
+    padding: 18px 24px;
+    background: rgba(255, 232, 240, 0.45);
+    border-radius: 12px;
+    border: 1.5px dashed var(--soft-pink);
+  }
+  /* ===== H2 Calendar — kawaii wall planner aesthetic ===== */
+  .planner-frame {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin: 28px 0 32px;
+    padding-top: 16px;
+  }
+  .anchor-sheet {
+    background: #FFFFFF;
+    border: 1.5px solid #E5DCC5;
+    border-radius: 4px;
+    padding: 32px 22px 22px;
+    position: relative;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .anchor-sheet:nth-child(1) { transform: rotate(-1deg); }
+  .anchor-sheet:nth-child(2) { transform: rotate(0.5deg); }
+  .anchor-sheet:nth-child(3) { transform: rotate(-0.5deg); }
+  .anchor-sheet:hover { transform: rotate(0) translateY(-3px); box-shadow: 0 16px 30px rgba(0,0,0,0.14); }
+  .anchor-sheet::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    width: 90px;
+    height: 18px;
+    background: repeating-linear-gradient(-45deg, var(--soft-pink) 0, var(--soft-pink) 6px, var(--soft-pink-light) 6px, var(--soft-pink-light) 12px);
+    opacity: 0.82;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.14);
+  }
+  .anchor-sheet:nth-child(2)::before {
+    background: repeating-linear-gradient(-45deg, var(--denim-blue) 0, var(--denim-blue) 6px, #C8E5F2 6px, #C8E5F2 12px);
+  }
+  .anchor-sheet:nth-child(3)::before {
+    background: repeating-linear-gradient(-45deg, var(--boots-yellow) 0, var(--boots-yellow) 6px, #FFE898 6px, #FFE898 12px);
+  }
+  .anchor-sheet .anchor-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .anchor-sheet h4 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin: 0 0 10px;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+    background-image: linear-gradient(180deg, transparent 88%, rgba(248,160,194,0.5) 88%);
+    padding: 0 2px 2px;
+    display: inline;
+  }
+  .anchor-sheet p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin: 12px 0 0;
+  }
+  /* Tier system: receipt-paper cards with zigzag bottoms */
+  .tier-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+    gap: 16px;
+    margin: 24px 0 36px;
+    padding-bottom: 8px;
+  }
+  .tier-card {
+    background: #FFFFFF;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(220,170,180,0.10) 2px, rgba(220,170,180,0.10) 3px),
+      linear-gradient(180deg, rgba(255,232,240,0.55) 0%, #FFFEFE 10%, #FFFEFE 90%, rgba(255,232,240,0.55) 100%);
+    padding: 18px 22px 18px;
+    position: relative;
+    filter:
+      drop-shadow(0 1px 2px rgba(0,0,0,0.10))
+      drop-shadow(0 6px 12px rgba(0,0,0,0.14))
+      drop-shadow(0 16px 26px rgba(0,0,0,0.10));
+    transition: transform 0.25s ease, filter 0.25s ease;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    color: var(--charcoal);
+    clip-path: polygon(
+      0 6px, 5% 0, 10% 6px, 15% 0, 20% 6px, 25% 0, 30% 6px, 35% 0, 40% 6px, 45% 0,
+      50% 6px, 55% 0, 60% 6px, 65% 0, 70% 6px, 75% 0, 80% 6px, 85% 0, 90% 6px, 95% 0, 100% 6px,
+      100% calc(100% - 10px),
+      95% 100%, 90% calc(100% - 10px), 85% 100%, 80% calc(100% - 10px), 75% 100%,
+      70% calc(100% - 10px), 65% 100%, 60% calc(100% - 10px), 55% 100%, 50% calc(100% - 10px),
+      45% 100%, 40% calc(100% - 10px), 35% 100%, 30% calc(100% - 10px), 25% 100%,
+      20% calc(100% - 10px), 15% 100%, 10% calc(100% - 10px), 5% 100%, 0 calc(100% - 10px)
+    );
+  }
+  .tier-card:nth-child(1) { transform: rotate(-1deg); }
+  .tier-card:nth-child(2) { transform: rotate(0.5deg); }
+  .tier-card:nth-child(3) { transform: rotate(-0.5deg); }
+  .tier-card:hover {
+    transform: rotate(0) translateY(-5px);
+    filter:
+      drop-shadow(0 2px 3px rgba(0,0,0,0.12))
+      drop-shadow(0 10px 18px rgba(0,0,0,0.18))
+      drop-shadow(0 22px 36px rgba(0,0,0,0.12));
+  }
+  .tier-card.tier-1 { --tier-color: var(--fox-orange); }
+  .tier-card.tier-2 { --tier-color: var(--denim-blue); }
+  .tier-card.tier-3 { --tier-color: var(--soft-pink); }
+  .tier-card.tier-4 { --tier-color: var(--boots-yellow); }
+  .tier-card:nth-child(4) { transform: rotate(0.8deg); }
+  .receipt-header {
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    color: var(--tier-color);
+    text-align: center;
+    margin: 0 0 4px;
+    text-transform: uppercase;
+  }
+  .receipt-divider {
+    border-top: 1.5px dashed rgba(0,0,0,0.28);
+    margin: 8px 0;
+  }
+  .tier-card h4 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 6px 0;
+    color: var(--charcoal);
+    line-height: 1.1;
+  }
+  .receipt-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin: 8px 0;
+  }
+  .receipt-line-label {
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 10px;
+    letter-spacing: 1.4px;
+    font-weight: 700;
+    color: var(--medium-gray);
+    flex-shrink: 0;
+  }
+  .receipt-line-value {
+    text-align: right;
+    flex: 1;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 11.5px;
+    line-height: 1.55;
+    color: var(--charcoal);
+  }
+  .receipt-price {
+    font-size: 18px !important;
+    font-weight: 700;
+    color: var(--tier-color);
+    letter-spacing: 1.5px;
+  }
+  .receipt-footer {
+    font-family: "Caveat", cursive;
+    font-size: 17px;
+    text-align: center;
+    color: var(--medium-gray);
+    margin-top: 6px;
+    font-weight: 600;
+  }
+  @media (max-width: 760px) {
+    .planner-frame, .tier-cards { grid-template-columns: 1fr; }
+  }
+  /* ===== H2 Calendar — planner-page table aesthetic ===== */
+  .planner-page-cal {
+    background: #FFFCED;
+    background-image: repeating-linear-gradient(0deg, transparent 0px, transparent 32px, rgba(180,200,220,0.4) 32px, rgba(180,200,220,0.4) 33px);
+    border: 1.5px solid #E8DCC0;
+    border-radius: 8px;
+    padding: 44px 28px 30px;
+    margin: 28px 0;
+    position: relative;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.13), 0 4px 8px rgba(0,0,0,0.05);
+  }
+  .planner-page-cal::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 130px;
+    height: 22px;
+    background: repeating-linear-gradient(-45deg, var(--soft-pink) 0, var(--soft-pink) 7px, var(--soft-pink-light) 7px, var(--soft-pink-light) 14px);
+    opacity: 0.85;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.14);
+    z-index: 2;
+  }
+  .planner-page-cal .page-label {
+    position: absolute;
+    top: 14px;
+    right: 24px;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--medium-gray);
+    text-transform: uppercase;
+    opacity: 0.65;
+  }
+  .planner-page-cal .cal-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+  }
+  .planner-page-cal .cal-table thead th {
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--medium-gray);
+    font-weight: 700;
+    text-align: left;
+    padding: 0 12px 12px;
+    border-bottom: 2px dashed rgba(180,200,220,0.7);
+    background: transparent;
+  }
+  .planner-page-cal .cal-table tbody tr {
+    border-bottom: 1px dashed rgba(180,200,220,0.5);
+    transition: background 0.2s ease;
+  }
+  .planner-page-cal .cal-table tbody tr:last-child { border-bottom: none; }
+  .planner-page-cal .cal-table tbody tr:hover { background: rgba(255,255,255,0.5); }
+  .planner-page-cal .cal-table tbody td {
+    padding: 16px 12px;
+    vertical-align: top;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--charcoal);
+    background: transparent;
+  }
+  .planner-page-cal .cal-date {
+    display: inline-block;
+    font-family: "Fredoka", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    background: #FFFFFF;
+    color: var(--charcoal);
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1.5px solid var(--soft-pink);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    white-space: nowrap;
+  }
+  .planner-page-cal .cal-event-name {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    color: var(--charcoal);
+    font-size: 14px;
+    line-height: 1.35;
+  }
+  .planner-page-cal .cal-event-name.flagship {
+    background: linear-gradient(180deg, transparent 88%, rgba(255,200,80,0.5) 88%);
+    padding: 0 3px 1px;
+  }
+  .planner-page-cal .cal-type {
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 11px;
+    color: var(--medium-gray);
+    line-height: 1.5;
+  }
+  .planner-page-cal .cal-tier {
+    display: inline-block;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    border: 1.5px solid currentColor;
+    color: var(--tier-chip, var(--charcoal));
+    background: rgba(255,255,255,0.6);
+    white-space: nowrap;
+  }
+  .cal-tier.t-1 { --tier-chip: var(--fox-orange); }
+  .cal-tier.t-2 { --tier-chip: var(--denim-blue); }
+  .cal-tier.t-3 { --tier-chip: var(--soft-pink); }
+  .cal-tier.t-4 { --tier-chip: var(--boots-yellow); }
+  .planner-page-cal .cal-outcome {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--charcoal);
+  }
+  .planner-page-cal .cal-table tbody tr.flagship-row {
+    background: rgba(255,220,150,0.18);
+  }
+  @media (max-width: 760px) {
+    .planner-page-cal { padding: 36px 16px 24px; }
+    .planner-page-cal .cal-table thead { display: none; }
+    .planner-page-cal .cal-table tbody tr { display: block; padding: 14px 0; }
+    .planner-page-cal .cal-table tbody td { display: block; padding: 4px 0; }
+  }
+  /* ===== Tier 1 anchor events — save-the-date cards ===== */
+  .save-the-dates {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0 28px;
+  }
+  .save-the-dates details.card-accordion {
+    background: #FFFFFF;
+    border: 1.5px solid var(--anchor-tier-color, #E5DCC5);
+    border-left: 5px solid var(--anchor-tier-color, var(--soft-pink));
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10), 0 2px 4px rgba(0,0,0,0.05);
+    overflow: visible;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .save-the-dates details.card-accordion:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.13), 0 3px 6px rgba(0,0,0,0.07);
+  }
+  .save-the-dates details.card-accordion::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 28px;
+    width: 64px;
+    height: 14px;
+    background: repeating-linear-gradient(-45deg, var(--anchor-tier-color, var(--soft-pink)) 0, var(--anchor-tier-color, var(--soft-pink)) 5px, rgba(255,255,255,0.7) 5px, rgba(255,255,255,0.7) 10px);
+    opacity: 0.72;
+    border-radius: 2px;
+    transform: rotate(-3deg);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+  }
+  .save-the-dates details.card-accordion.anchor-t1 { --anchor-tier-color: var(--fox-orange); }
+  .save-the-dates details.card-accordion > summary {
+    display: grid;
+    grid-template-columns: 84px 1fr auto auto;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 22px 22px 22px;
+    cursor: pointer;
+  }
+  .anchor-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 2px solid var(--anchor-tier-color);
+    border-radius: 8px;
+    padding: 8px 10px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.10);
+    min-height: 64px;
+  }
+  .anchor-date .anchor-month {
+    font-family: "Fredoka", sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--anchor-tier-color);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .anchor-date .anchor-day {
+    font-family: "Fredoka", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--charcoal);
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .anchor-date .anchor-loc {
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 9px;
+    letter-spacing: 0.8px;
+    color: var(--medium-gray);
+    margin-top: 4px;
+  }
+  .anchor-meta h4 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin: 0 0 6px;
+    letter-spacing: -0.2px;
+    line-height: 1.3;
+  }
+  .anchor-meta .anchor-summary {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--medium-gray);
+    margin: 0;
+  }
+  .anchor-tier-chip {
+    display: inline-block;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    border: 1.5px solid var(--anchor-tier-color);
+    color: var(--anchor-tier-color);
+    background: rgba(255,255,255,0.6);
+    white-space: nowrap;
+  }
+  .save-the-dates details.card-accordion > summary::after {
+    content: "+";
+    font-family: "Fredoka", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--anchor-tier-color);
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+  .save-the-dates details.card-accordion[open] > summary::after {
+    content: "−";
+  }
+  .save-the-dates details.card-accordion > summary > .card-accordion-icon,
+  .save-the-dates details.card-accordion > summary > .card-accordion-header {
+    display: none;
+  }
+  .save-the-dates details.card-accordion > .card-accordion-body {
+    padding: 0 22px 22px 110px;
+    border-top: 1px dashed rgba(0,0,0,0.15);
+    padding-top: 18px;
+    margin-top: 4px;
+  }
+  @media (max-width: 760px) {
+    .save-the-dates details.card-accordion > summary {
+      grid-template-columns: 70px 1fr;
+      gap: 12px;
+    }
+    .save-the-dates details.card-accordion > summary > .anchor-tier-chip,
+    .save-the-dates details.card-accordion > summary::after {
+      grid-column: 2;
+    }
+    .save-the-dates details.card-accordion > .card-accordion-body {
+      padding: 18px 16px 18px 16px;
+    }
+  }
+  /* ===== Ongoing programs — kawaii sticker cards ===== */
+  .ongoing-stickers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin: 24px 0 28px;
+  }
+  .sticker-card {
+    background: #FFFFFF;
+    border: 1.5px dashed var(--sticker-color, var(--soft-pink));
+    border-radius: 14px;
+    padding: 24px 20px 22px;
+    position: relative;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .sticker-card:nth-child(1) { --sticker-color: var(--soft-pink); transform: rotate(-1deg); }
+  .sticker-card:nth-child(2) { --sticker-color: var(--denim-blue); transform: rotate(0.6deg); }
+  .sticker-card:nth-child(3) { --sticker-color: var(--fox-orange); transform: rotate(-0.4deg); }
+  .sticker-card:hover { transform: rotate(0) translateY(-3px); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
+  .sticker-card .sticker-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    font-size: 22px;
+    background: var(--sticker-color);
+    border-radius: 50%;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.10);
+    margin-bottom: 12px;
+  }
+  .sticker-card h4 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin: 0 0 8px;
+    letter-spacing: -0.2px;
+    line-height: 1.3;
+  }
+  .sticker-card p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin: 0;
+  }
+  /* ===== Time-sensitive urgency sticky note ===== */
+  .urgency-note {
+    background: #FFE5E5;
+    border: 2px dashed #D9534F;
+    border-radius: 8px;
+    padding: 22px 26px 22px 80px;
+    margin: 28px 0;
+    position: relative;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+    transform: rotate(-0.8deg);
+  }
+  .urgency-note::before {
+    content: "⏰";
+    position: absolute;
+    top: 18px;
+    left: 22px;
+    font-size: 38px;
+    transform: rotate(-12deg);
+    line-height: 1;
+  }
+  .urgency-note::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 32px;
+    width: 72px;
+    height: 16px;
+    background: repeating-linear-gradient(-45deg, #D9534F 0, #D9534F 5px, #F5C6C5 5px, #F5C6C5 10px);
+    opacity: 0.85;
+    border-radius: 2px;
+    transform: rotate(6deg);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.14);
+  }
+  .urgency-note .urgency-label {
+    display: inline-block;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #B23E3A;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .urgency-note p {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin: 0;
+  }
+  /* ===== Supporting plays — 2 bookmark-style cards ===== */
+  .supporting-bookmarks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin: 24px 0 28px;
+  }
+  .bookmark-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E5DCC5;
+    border-top: 6px solid var(--bookmark-color, var(--soft-pink));
+    border-radius: 0 0 8px 8px;
+    padding: 24px 22px 22px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .bookmark-card:nth-child(1) { --bookmark-color: var(--fox-orange); }
+  .bookmark-card:nth-child(2) { --bookmark-color: var(--denim-blue); }
+  .bookmark-card:hover { transform: translateY(-3px); box-shadow: 0 14px 28px rgba(0,0,0,0.14); }
+  .bookmark-card .bookmark-tab {
+    position: absolute;
+    top: -6px;
+    left: 22px;
+    width: 80px;
+    height: 22px;
+    background: var(--bookmark-color);
+    border-radius: 0 0 6px 6px;
+    color: #FFFFFF;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 9.5px;
+    letter-spacing: 1.6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .bookmark-card .bookmark-icon {
+    display: block;
+    font-size: 24px;
+    margin: 8px 0 10px;
+  }
+  .bookmark-card h4 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin: 0 0 10px;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+  }
+  .bookmark-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    margin: 0;
+  }
+  /* ===== Assumptions — planner footnote / fine print ===== */
+  .planner-footnote {
+    background: #FCFAF2;
+    border: 1.5px dashed #C9C2A8;
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 28px 0;
+    position: relative;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.07);
+  }
+  .planner-footnote::before {
+    content: "📎";
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    font-size: 24px;
+    transform: rotate(-18deg);
+    line-height: 1;
+  }
+  .planner-footnote .footnote-label {
+    display: inline-block;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--medium-gray);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .planner-footnote p {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--charcoal);
+    margin: 0 0 12px;
+  }
+  .planner-footnote p:last-child { margin-bottom: 0; }
+  .planner-footnote strong { color: var(--charcoal); }
+  .calendar-closer {
+    font-family: "Caveat", cursive;
+    font-size: 20px;
+    line-height: 1.4;
+    color: var(--charcoal);
+    text-align: center;
+    margin: 28px auto 8px;
+    padding: 14px 22px;
+    max-width: 640px;
+    background: rgba(255, 232, 240, 0.45);
+    border-radius: 12px;
+    border: 1.5px dashed var(--soft-pink);
+  }
+  @media (max-width: 760px) {
+    .ongoing-stickers, .supporting-bookmarks { grid-template-columns: 1fr; }
+    .urgency-note { padding: 22px 20px 22px 70px; }
+  }
+  /* ===== Event Brief — manila folder aesthetic ===== */
+  .manila-folder {
+    margin: 28px 0 32px;
+    position: relative;
+  }
+  .folder-tab {
+    display: inline-block;
+    background: #DCC79A;
+    border: 1.5px solid #A88E55;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 26px 14px;
+    margin-left: 32px;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #5C4A1F;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+  }
+  .folder-body {
+    background: #F2E5C2;
+    border: 1.5px solid #A88E55;
+    border-radius: 0 12px 12px 12px;
+    padding: 14px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.14), 0 4px 8px rgba(0,0,0,0.06);
+    margin-top: -1.5px;
+    position: relative;
+  }
+  .folder-inside {
+    background: #FFFCF2;
+    border: 1.5px dashed #C9B985;
+    border-radius: 6px;
+    padding: 28px 30px 30px;
+    position: relative;
+  }
+  .folder-inside::before {
+    content: "📎";
+    position: absolute;
+    top: -14px;
+    right: 26px;
+    font-size: 28px;
+    transform: rotate(20deg);
+    line-height: 1;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.15));
+  }
+  .kickoff-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 2px solid #1F1F1F;
+    padding-bottom: 10px;
+    margin-bottom: 22px;
+  }
+  .kickoff-header .kickoff-title {
+    font-family: "Fredoka", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--charcoal);
+    letter-spacing: -0.3px;
+  }
+  .kickoff-header .kickoff-status {
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    color: var(--boots-yellow);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1.5px solid var(--boots-yellow);
+    border-radius: 3px;
+    background: rgba(255, 250, 230, 0.6);
+    white-space: nowrap;
+  }
+  .kickoff-sheet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 28px;
+  }
+  .kickoff-field {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    border-bottom: 1.5px dashed rgba(0,0,0,0.18);
+    padding: 8px 4px;
+  }
+  .kickoff-field .field-icon {
+    font-size: 18px;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .kickoff-field .field-label {
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 9.5px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: var(--medium-gray);
+    text-transform: uppercase;
+    flex-shrink: 0;
+    min-width: 88px;
+  }
+  .kickoff-field .field-value {
+    font-family: "Fredoka", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.4;
+    flex: 1;
+  }
+  @media (max-width: 760px) {
+    .folder-inside { padding: 22px 18px 24px; }
+    .kickoff-sheet { grid-template-columns: 1fr; }
+    .kickoff-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+  /* ===== Brief sections as bookmark-tab accordions ===== */
+  details.card-accordion.brief-card {
+    background: #FFFFFF;
+    border: 1.5px solid #E5DCC5;
+    border-top: 6px solid var(--brief-color, var(--soft-pink));
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+    margin: 30px 0 18px;
+    position: relative;
+    overflow: visible;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  details.card-accordion.brief-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.13);
+  }
+  /* Tab label sticking up off the top border */
+  details.card-accordion.brief-card::before {
+    content: attr(data-tab);
+    position: absolute;
+    top: -28px;
+    left: 22px;
+    background: var(--brief-color);
+    color: #FFFFFF;
+    border-radius: 6px 6px 0 0;
+    padding: 6px 14px 8px;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.08);
+  }
+  details.card-accordion.brief-strategic { --brief-color: var(--fox-orange); }
+  details.card-accordion.brief-audience { --brief-color: var(--denim-blue); }
+  details.card-accordion.brief-format { --brief-color: #3B7A4F; }
+  details.card-accordion.brief-forecast { --brief-color: var(--soft-pink); }
+  details.card-accordion.brief-risk { --brief-color: #D9534F; }
+  details.card-accordion.brief-decision { --brief-color: var(--boots-yellow); }
+  /* Override default chevron in brief cards */
+  details.card-accordion.brief-card > summary::after {
+    color: var(--brief-color);
+  }
+  @media (max-width: 760px) {
+    .manual-page { padding: 36px 24px 40px 60px; }
+    .hole-punch { left: 12px; width: 14px; height: 14px; }
+    .manual-page::before { left: 48px; }
+    .manual-entry,
+    .manual-entry.note-left {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .margin-note,
+    .manual-entry.note-left .margin-note {
+      padding: 8px 0 0 18px;
+      text-align: left;
+      order: 2;
+    }
+    .manual-entry.note-left .rule-content { order: 1; }
+    .margin-note::before,
+    .manual-entry.note-left .margin-note::before {
+      content: "✦";
+      left: -2px;
+      right: auto;
+      color: var(--fox-orange);
+    }
+  }
+  .moment {
+    background: #FFFFFF;
+    border: 1.5px solid #D9B58F;
+    border-radius: 8px;
+    padding: 14px 12px;
+    text-align: center;
+    font-family: "Fredoka", sans-serif;
+    font-size: 14px; font-weight: 500;
+    color: var(--charcoal);
+    line-height: 1.4;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: all 0.25s ease;
+  }
+  .moment:nth-child(1) { transform: rotate(-1.2deg); border-color: var(--soft-pink); }
+  .moment:nth-child(2) { transform: rotate(0.8deg); border-color: var(--denim-blue-deep); }
+  .moment:nth-child(3) { transform: rotate(-0.6deg); border-color: var(--boots-yellow); }
+  .moment:nth-child(4) { transform: rotate(1.4deg); border-color: var(--fox-orange); }
+  .moment:nth-child(5) { transform: rotate(-1deg); border-color: #B498E0; }
+  .moment:hover { transform: rotate(0) translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,0.08); }
+  .moment .moment-emoji { display: block; font-size: 26px; margin-bottom: 6px; }
+  .moments-closer { grid-column: 2 / 5; display: flex; align-items: center; gap: 18px; padding: 16px 22px; background: var(--soft-pink-whisper); border: 1.5px dashed var(--soft-pink); border-radius: 10px; }
+  .moments-arrow { width: 72px; height: 54px; flex-shrink: 0; }
+  .moments-closer-text { font-family: "Caveat", cursive; font-size: 22px; line-height: 1.35; color: var(--charcoal); margin: 0; font-weight: 600; }
+  @media (max-width: 760px) { .village-moments { grid-template-columns: repeat(2, 1fr); } .moments-closer { grid-column: 1 / 3; flex-direction: column; gap: 12px; } .moments-arrow { transform: rotate(90deg); } }
+  /* Packing list */
+  .packing-list {
+    background: #FFFFFF;
+    background-image: repeating-linear-gradient(transparent, transparent 31px, #E8E5F0 32px);
+    border: 1.5px solid #D9B58F;
+    border-radius: 8px;
+    padding: 36px 32px 30px;
+    margin: 28px 0 24px;
+    position: relative;
+    box-shadow: 0 14px 32px rgba(0,0,0,0.12), 0 3px 8px rgba(0,0,0,0.04);
+    transform: rotate(-0.4deg);
+  }
+  .packing-list::before { content: "✦ PACKING LIST ✦"; display: block; font-family: "Fredoka", sans-serif; font-size: 13px; letter-spacing: 2.5px; color: var(--fox-orange); font-weight: 700; margin-bottom: 22px; text-align: center; padding-bottom: 14px; border-bottom: 2px dashed var(--soft-pink); }
+  .packing-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px dashed #E0D5C2; }
+  .packing-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  .packing-check { flex-shrink: 0; width: 26px; height: 26px; border-radius: 5px; background: var(--soft-pink); color: white; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; margin-top: 2px; transform: rotate(-3deg); box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
+  .packing-item:nth-child(3) .packing-check { background: var(--denim-blue-deep); transform: rotate(2deg); }
+  .packing-item:nth-child(4) .packing-check { background: var(--boots-yellow); color: var(--charcoal); transform: rotate(-2deg); }
+  .packing-item:nth-child(5) .packing-check { background: var(--fox-orange); transform: rotate(3deg); }
+  .packing-item-content { flex: 1; }
+  .packing-item-content h4 { font-family: "Fredoka", sans-serif; font-size: 17px; font-weight: 700; margin: 0 0 5px; color: var(--charcoal); letter-spacing: -0.2px; }
+  .packing-item-content p { font-size: 14px; line-height: 1.55; margin: 0; color: var(--charcoal); }
+  /* Postcards */
+  .postcards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; margin: 28px 0 24px; }
+  .postcard {
+    background: #FFFCF6;
+    background-image: repeating-linear-gradient(transparent, transparent 27px, #EBE3D2 28px);
+    border: 1.5px solid #D9B58F;
+    border-radius: 6px;
+    padding: 22px 24px 24px;
+    position: relative;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.14), 0 3px 8px rgba(0,0,0,0.05);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .postcard:nth-child(1) { transform: rotate(-1.6deg); }
+  .postcard:nth-child(2) { transform: rotate(1.2deg); }
+  .postcard:nth-child(3) { transform: rotate(-0.9deg); }
+  .postcard:nth-child(4) { transform: rotate(1.4deg); }
+  .postcard:hover { transform: rotate(0) translateY(-6px); box-shadow: 0 22px 42px rgba(0,0,0,0.18); z-index: 5; }
+  .postcard-stamp { position: absolute; top: 16px; right: 16px; width: 52px; height: 52px; background: var(--soft-pink); border: 2.5px dashed white; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 22px; transform: rotate(8deg); box-shadow: 0 2px 6px rgba(0,0,0,0.18), inset 0 0 0 1px rgba(255,255,255,0.4); }
+  .postcard:nth-child(2) .postcard-stamp { background: var(--denim-blue-deep); transform: rotate(-6deg); }
+  .postcard:nth-child(3) .postcard-stamp { background: var(--boots-yellow); transform: rotate(10deg); }
+  .postcard:nth-child(4) .postcard-stamp { background: var(--fox-orange); transform: rotate(-8deg); }
+  .postcard-city { font-family: "Caveat", cursive; font-size: 17px; color: var(--fox-orange); font-weight: 600; margin: 0 64px 4px 0; text-transform: uppercase; letter-spacing: 1.5px; }
+  .postcard-title { font-family: "Fredoka", sans-serif; font-size: 19px; font-weight: 700; color: var(--charcoal); margin: 0 64px 14px 0; letter-spacing: -0.2px; line-height: 1.2; }
+  .postcard-body { font-family: "Caveat", cursive; font-size: 20px; line-height: 1.4; color: var(--charcoal); margin: 0; font-weight: 500; }
+  @media (max-width: 760px) { .postcards { grid-template-columns: 1fr; gap: 24px; } .postcard:nth-child(n) { transform: rotate(0); } }
+  /* Final passport stamp */
+  .passport-final { margin: 32px auto 16px; text-align: center; padding: 32px 0 16px; }
+  .passport-final-stamp { display: inline-block; padding: 20px 36px; background: rgba(255, 250, 244, 0.6); border: 3px solid #4A8A5E; border-radius: 6px; font-family: "Fredoka", sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 2.5px; color: #4A8A5E; text-transform: uppercase; transform: rotate(-3deg); box-shadow: 0 6px 16px rgba(0,0,0,0.10); opacity: 0.92; }
+  .passport-final-caption { margin-top: 22px; font-family: "Caveat", cursive; font-size: 22px; color: var(--charcoal); font-weight: 600; }
+  .passport-ports { margin-top: 26px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px; }
+  .passport-port { font-family: "Fredoka", sans-serif; font-size: 12px; letter-spacing: 0.6px; color: #4A8A5E; background: rgba(74, 138, 94, 0.08); border: 1.5px solid rgba(74, 138, 94, 0.4); border-radius: 100px; padding: 6px 14px; font-weight: 600; }
+  .passport-port-dot { color: #4A8A5E; font-size: 16px; font-weight: 700; opacity: 0.7; }
+  /* Promise typewriter — interactive reveal (coded-aesthetic button) */
+  .promise-trigger-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 14px 0 6px;
+  }
+  .promise-trigger {
+    background: var(--charcoal);
+    color: var(--soft-pink-light);
+    border: 1.5px solid var(--soft-pink);
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 4px 14px rgba(248, 160, 194, 0.28);
+  }
+  .promise-trigger:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(248, 160, 194, 0.42);
+    background: #2a2a2a;
+  }
+  .promise-trigger-icon { font-size: 14px; }
+  .promise-trigger-arrow { transition: transform 0.3s ease; font-size: 13px; opacity: 0.85; }
+  .promise-trigger:hover .promise-trigger-arrow { transform: translateX(4px); }
+  .promise-trigger-hint {
+    margin-top: 9px;
+    font-size: 10px;
+    color: var(--medium-gray);
+    font-family: "SF Mono", "Monaco", "Menlo", monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .promise-typewriter {
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--charcoal);
+    min-height: 0;
+    white-space: pre-wrap;
+    position: relative;
+    margin: 0;
+  }
+  .promise-typewriter:not(:empty) { margin: 16px 0 0; }
+  .promise-typewriter.typing::after {
+    content: "▮";
+    display: inline-block;
+    color: var(--fox-orange);
+    animation: cursor-blink 0.8s infinite step-end;
+    margin-left: 2px;
+    font-weight: 400;
+  }
+  @keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .promise-section .promise-signature { opacity: 0; }
+  .promise-section .promise-signature.revealed { opacity: 1; }
+  /* Manifesto-style moat list — bold declarative differentiators */
+  .moat-list {
+    margin: 32px 0 40px;
+  }
+  .moat-item {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 28px;
+    padding: 26px 0;
+    border-bottom: 1px dashed var(--soft-pink);
+    align-items: center;
+  }
+  .moat-item:last-child { border-bottom: none; }
+  .moat-number {
+    font-family: "Fredoka", sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    color: var(--soft-pink);
+  }
+  .moat-item:nth-child(1) .moat-number { color: var(--soft-pink); }
+  .moat-item:nth-child(2) .moat-number { color: var(--denim-blue-deep); }
+  .moat-item:nth-child(3) .moat-number { color: var(--boots-yellow); }
+  .moat-item:nth-child(4) .moat-number { color: var(--fox-orange); }
+  .moat-item:nth-child(5) .moat-number { color: #B498E0; }
+  .moat-title {
+    font-family: "Fredoka", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+    letter-spacing: -0.2px;
+  }
+  .moat-declaration {
+    font-size: 17px;
+    color: var(--charcoal);
+    line-height: 1.5;
+    font-weight: 500;
+  }
+  /* Postage stamp styling for moats — different visual rhythm */
+  .stamp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 28px 0;
+    padding: 8px;
+  }
+  .stamp {
+    position: relative;
+    padding: 22px 20px 24px;
+    border: 2px dashed var(--soft-pink);
+    background: #FFE8F0;
+    border-radius: 4px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08), inset 0 0 0 4px rgba(255,255,255,0.7);
+    transition: all 0.3s ease;
+  }
+  .stamp:nth-child(5n+1) {
+    transform: rotate(-2deg);
+    background: #FFE8F0;
+    border-color: var(--soft-pink);
+  }
+  .stamp:nth-child(5n+2) {
+    transform: rotate(2deg);
+    background: #DDEFF8;
+    border-color: var(--denim-blue);
+  }
+  .stamp:nth-child(5n+3) {
+    transform: rotate(-1deg);
+    background: #FFF4C2;
+    border-color: var(--boots-yellow);
+  }
+  .stamp:nth-child(5n+4) {
+    transform: rotate(1.5deg);
+    background: #EDE3FB;
+    border-color: #B498E0;
+  }
+  .stamp:nth-child(5n+5) {
+    transform: rotate(-1.5deg);
+    background: #D9F5E0;
+    border-color: #7FC894;
+  }
+  .stamp:hover {
+    transform: rotate(0deg) translateY(-5px) scale(1.04);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.16), inset 0 0 0 4px rgba(255,255,255,0.85);
+    z-index: 5;
+  }
+  .stamp::before {
+    content: "✦";
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 14px;
+    color: var(--charcoal);
+    opacity: 0.4;
+  }
+  .stamp .stamp-tag {
+    display: inline-block;
+    font-family: "Fredoka", sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--charcoal);
+    background: rgba(255,255,255,0.6);
+    padding: 3px 8px;
+    border-radius: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .stamp h4 {
+    font-family: "Fredoka", "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--charcoal);
+    line-height: 1.25;
+  }
+  .stamp p {
+    font-size: 13px;
+    color: var(--charcoal);
+    line-height: 1.55;
+    margin: 0;
+  }
+  .stamp .icon {
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  /* Love letter — paper card styling for Why Mintlify */
+  .love-letter {
+    background: #FFFDF8;
+    border: 1px solid #F0E5C9;
+    padding: 56px 64px 48px;
+    max-width: 720px;
+    margin: 12px auto 0;
+    box-shadow: 0 14px 40px rgba(244, 184, 193, 0.18), 0 4px 14px rgba(0,0,0,0.04);
+    position: relative;
+    border-radius: 3px;
+    background-image:
+      radial-gradient(rgba(244, 184, 193, 0.06) 1px, transparent 1.5px),
+      radial-gradient(rgba(0, 0, 0, 0.018) 0.6px, transparent 1px);
+    background-size: 28px 28px, 14px 14px;
+  }
+  .love-letter::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 140px;
+    height: 22px;
+    background: repeating-linear-gradient(
+      -45deg,
+      var(--soft-pink),
+      var(--soft-pink) 5px,
+      rgba(248, 160, 194, 0.55) 5px,
+      rgba(248, 160, 194, 0.55) 10px
+    );
+    border-radius: 1px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  }
+  .love-letter::after {
+    content: "💌";
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 26px;
+    transform: rotate(8deg);
+    opacity: 0.85;
+  }
+  .love-letter h2 {
+    font-family: "Caveat", cursive;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin: 36px 0 12px;
+    padding-left: 0;
+    letter-spacing: 0;
+  }
+  .love-letter h2:first-child { margin-top: 0; }
+  .love-letter h2::before { display: none; }
+  .love-letter p {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--charcoal);
+  }
+  .love-letter .tagline {
+    font-family: "Caveat", cursive;
+    font-size: 28px;
+    background: transparent;
+    border: none;
+    padding: 8px 0 8px 24px;
+    margin: 20px 0;
+    border-left: 3px solid var(--soft-pink);
+    line-height: 1.4;
+    color: var(--charcoal);
+    font-weight: 600;
+  }
+  .love-letter ul.bullets li::marker { color: var(--soft-pink); }
+  .love-letter .steps { margin: 20px 0; }
+  .love-letter .signature-block {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px dashed var(--soft-pink);
+    text-align: right;
+    font-family: "Caveat", cursive;
+    font-size: 30px;
+    color: var(--charcoal);
+    line-height: 1.4;
+  }
+  .love-letter .signature-block .lfg-stamp {
+    display: block;
+    font-family: "Fredoka", sans-serif;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    color: var(--fox-orange);
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+  /* Cursor sparkle trail */
+  .cursor-sparkle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    font-size: 18px;
+    animation: sparkle-fade 1s ease-out forwards;
+    user-select: none;
+  }
+  @keyframes sparkle-fade {
+    0% { opacity: 1; transform: scale(0.4) rotate(0deg); }
+    50% { opacity: 0.9; transform: scale(1.1) rotate(180deg); }
+    100% { opacity: 0; transform: scale(0.3) rotate(360deg) translateY(20px); }
+  }
+  /* ============================================== */
+  /* LFG CODED — speed read callout (Phase 1) */
+  /* ============================================== */
+  .lfg-coded {
+    border: 2px solid var(--boots-yellow);
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--boots-yellow-pale) 0%, #FFFEF7 100%);
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+    box-shadow: 0 3px 0 var(--boots-yellow);
+    position: relative;
+    overflow: hidden;
+  }
+  .lfg-coded::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -30%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.5) 50%, transparent 60%);
+    transform: rotate(8deg) translateX(-100%);
+    animation: lfg-shimmer 7s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+  @keyframes lfg-shimmer {
+    0%, 100% { transform: translateX(-100%) rotate(8deg); opacity: 0; }
+    25% { opacity: 0.9; }
+    50% { transform: translateX(450%) rotate(8deg); opacity: 0.9; }
+    75% { opacity: 0; }
+  }
+  .lfg-coded-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--boots-yellow);
+    position: relative;
+    z-index: 2;
+  }
+  .lfg-coded-badge {
+    background: #1a1a1a;
+    color: var(--boots-yellow);
+    padding: 7px 14px;
+    border-radius: 6px;
+    font-family: "Fredoka", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .lfg-coded-subtitle {
+    font-style: italic;
+    color: var(--medium-gray);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .lfg-coded ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    z-index: 2;
+  }
+  .lfg-coded li {
+    margin-bottom: 14px;
+    position: relative;
+    padding-left: 28px;
+    line-height: 1.55;
+  }
+  .lfg-coded li:last-child { margin-bottom: 0; }
+  .lfg-coded li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 900;
+    font-size: 20px;
+  }
+  .lfg-coded li:nth-child(4n+1)::before { color: var(--soft-pink); }
+  .lfg-coded li:nth-child(4n+2)::before { color: var(--denim-blue-deep); }
+  .lfg-coded li:nth-child(4n+3)::before { color: var(--fox-orange); }
+  .lfg-coded li:nth-child(4n+4)::before { color: var(--boots-yellow); }
+
+  /* ============================================== */
+  /* Card accordion — click-to-expand (Phase 1) */
+  /* ============================================== */
+  details.card-accordion {
+    border: 1px solid var(--soft-pink-light);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    background: #fff;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    overflow: hidden;
+  }
+  details.card-accordion:hover {
+    border-color: var(--soft-pink);
+    box-shadow: 0 4px 14px rgba(248, 160, 194, 0.2);
+    transform: translateY(-1px);
+  }
+  details.card-accordion[open] {
+    border-color: var(--boots-yellow);
+    box-shadow: 0 6px 18px rgba(255, 217, 61, 0.24);
+  }
+  details.card-accordion > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 60px 20px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    user-select: none;
+    position: relative;
+  }
+  details.card-accordion > summary::-webkit-details-marker { display: none; }
+  details.card-accordion > summary::after {
+    content: "+";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--soft-pink);
+    transition: all 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    font-family: "Fredoka", sans-serif;
+    width: 30px;
+    height: 30px;
+    background: var(--soft-pink-whisper);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  details.card-accordion[open] > summary::after {
+    content: "−";
+    transform: translateY(-50%) rotate(180deg);
+    background: var(--boots-yellow-soft);
+    color: var(--charcoal);
+  }
+  .card-accordion-icon {
+    font-size: 26px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .card-accordion-header {
+    flex: 1;
+  }
+  .card-accordion-header h4 {
+    font-family: "Fredoka", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    color: var(--charcoal);
+    line-height: 1.3;
+  }
+  .card-accordion-summary {
+    font-size: 14px;
+    color: var(--medium-gray);
+    margin: 0;
+    line-height: 1.45;
+  }
+  .card-accordion-body {
+    padding: 4px 22px 22px 64px;
+    animation: accordion-slide-down 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card-accordion-body p:first-child { margin-top: 0; }
+  .card-accordion-body p:last-child { margin-bottom: 0; }
+  @keyframes accordion-slide-down {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============================================== */
+  /* Focus Mode toggle (Phase 2) */
+  /* ============================================== */
+  .focus-mode-toggle {
+    position: fixed;
+    top: 80px;
+    right: 24px;
+    z-index: 1000;
+    background: #fff;
+    border: 2px solid var(--soft-pink);
+    border-radius: 100px;
+    padding: 10px 18px;
+    font-family: "Fredoka", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--charcoal);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(248, 160, 194, 0.3);
+    transition: all 0.25s ease;
+    user-select: none;
+  }
+  .focus-mode-toggle:hover {
+    background: var(--soft-pink-whisper);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(248, 160, 194, 0.4);
+  }
+  .focus-mode-toggle .focus-icon {
+    font-size: 15px;
+    transition: opacity 0.25s ease;
+  }
+  body.focus-mode .focus-mode-toggle {
+    background: #1a1a1a;
+    color: var(--soft-pink-light);
+    border-color: var(--soft-pink);
+    box-shadow: 0 4px 14px rgba(248, 160, 194, 0.45);
+  }
+  body.focus-mode .focus-mode-toggle:hover {
+    background: #2a2a2a;
+    box-shadow: 0 6px 18px rgba(248, 160, 194, 0.55);
+  }
+
+  /* Focus Mode: whitelist approach — show only essentials, hide everything else */
+  body.focus-mode .page > *:not(.page-hero):not(.lfg-coded):not(h2):not(.love-letter):not(.dott-surface):not(.focus-revealed) {
+    display: none !important;
+  }
+  /* Focus Mode click-to-expand: revealed siblings animate in */
+  body.focus-mode .page > .focus-revealed,
+  body.focus-mode .love-letter > .focus-revealed {
+    animation: focus-reveal 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes focus-reveal {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* In focus mode, nested card-accordions are auto-opened — hide their +/- so the H2 is the only control */
+  body.focus-mode .focus-revealed details.card-accordion > summary::after,
+  body.focus-mode details.card-accordion.focus-auto-opened > summary::after {
+    display: none !important;
+  }
+  body.focus-mode .focus-revealed details.card-accordion > summary,
+  body.focus-mode details.card-accordion.focus-auto-opened > summary {
+    cursor: default;
+    padding-right: 22px;
+  }
+  body.focus-mode .focus-revealed details.card-accordion,
+  body.focus-mode details.card-accordion.focus-auto-opened {
+    border-color: var(--soft-pink-light);
+    box-shadow: none;
+  }
+  body.focus-mode .page > h2,
+  body.focus-mode .love-letter > h2 {
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    position: relative;
+  }
+  body.focus-mode .page > h2:hover,
+  body.focus-mode .love-letter > h2:hover {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+  body.focus-mode .page > h2::after {
+    content: "+";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--soft-pink);
+    width: 24px;
+    height: 24px;
+    background: var(--soft-pink-whisper);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-family: "Fredoka", sans-serif;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    opacity: 0.7;
+  }
+  body.focus-mode .page > h2.focus-expanded::after {
+    content: "−";
+    background: var(--boots-yellow-soft);
+    color: var(--charcoal);
+    transform: translateY(-50%) rotate(180deg);
+    opacity: 1;
+  }
+  body.focus-mode .love-letter > h2::after {
+    content: "+";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--soft-pink);
+    width: 24px;
+    height: 24px;
+    background: var(--soft-pink-whisper);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-family: "Fredoka", sans-serif;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    opacity: 0.7;
+  }
+  body.focus-mode .love-letter > h2.focus-expanded::after {
+    content: "−";
+    background: var(--boots-yellow-soft);
+    color: var(--charcoal);
+    transform: translateY(-50%) rotate(180deg);
+    opacity: 1;
+  }
+  body.focus-mode .page > h2,
+  body.focus-mode .love-letter > h2 {
+    opacity: 0.85;
+    font-size: 22px;
+    padding-left: 28px;
+    margin: 28px 0 4px;
+  }
+  body.focus-mode .page > h2::before {
+    width: 18px;
+    height: 18px;
+    top: 6px;
+  }
+  body.focus-mode .love-letter > h2 {
+    padding-left: 32px;
+    position: relative;
+  }
+  body.focus-mode .love-letter > h2::before {
+    display: block;
+    content: "💌";
+    background: none;
+    clip-path: none;
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+  body.focus-mode .love-letter > *:not(h2):not(.focus-revealed) {
+    display: none !important;
+  }
+  body.focus-mode .love-letter {
+    background: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    transform: none;
+  }
+  body.focus-mode .love-letter::before,
+  body.focus-mode .love-letter::after {
+    display: none;
+  }
+  body.focus-mode .page > .lfg-coded {
+    display: block !important;
+    margin-top: 28px;
+  }
+  /* Focus Mode — Dott surface collapses like the other pages.
+     Content lives inside .dott-surface, so the reveal logic runs one level deeper here. */
+  body.focus-mode .dott-surface > *:not(.dott-hero):not(h2):not(.focus-revealed) {
+    display: none !important;
+  }
+  body.focus-mode .dott-surface > .focus-revealed {
+    animation: focus-reveal 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  body.focus-mode .dott-surface > h2 {
+    cursor: pointer;
+    position: relative;
+    opacity: 0.92;
+    padding-right: 40px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  body.focus-mode .dott-surface > h2:hover {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+  body.focus-mode .dott-surface > h2::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1814;
+    width: 24px;
+    height: 24px;
+    background: #FACC15;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-family: 'Fredoka', sans-serif;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    opacity: 0.85;
+  }
+  body.focus-mode .dott-surface > h2.focus-expanded::after {
+    content: "−";
+    transform: translateY(-50%) rotate(180deg);
+    opacity: 1;
+  }
+
+  /* ============================================== */
+  /* Hand-drawn Boots dividers (Phase 3) */
+  /* ============================================== */
+  .boots-divider {
+    text-align: center;
+    margin: 40px 0;
+    position: relative;
+    height: 32px;
+    opacity: 0.7;
+  }
+  .boots-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: repeating-linear-gradient(90deg, var(--soft-pink) 0, var(--soft-pink) 6px, transparent 6px, transparent 12px);
+  }
+  .boots-divider span {
+    background: var(--cream);
+    padding: 0 16px;
+    position: relative;
+    font-size: 22px;
+    display: inline-block;
+    animation: boots-bounce 3.5s ease-in-out infinite;
+  }
+  @keyframes boots-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  @media (max-width: 1024px) {
+    .layout { grid-template-columns: 240px 1fr; }
+    main { padding: 40px 40px 60px; }
+    .card-grid.cols-3, .card-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+    .focus-mode-toggle { top: auto; bottom: 24px; right: 24px; }
+  }
+  @media (max-width: 640px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { position: relative; height: auto; }
+    .card-grid.cols-2, .card-grid.cols-3, .card-grid.cols-4 { grid-template-columns: 1fr; }
+  }
+
+  /* ===== Download PDF button (Event Brief) ===== */
+  .brief-actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .brief-actions-bottom {
+    margin-top: 32px;
+    padding-top: 28px;
+    border-top: 1px dashed var(--soft-pink);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .brief-take-it {
+    margin: 0;
+    color: var(--medium-gray);
+    font-size: 14px;
+    font-style: italic;
+  }
+  .brief-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px 10px 14px;
+    background: var(--fox-orange);
+    color: #FFFFFF;
+    border: 2px solid var(--ink);
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 var(--ink);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+  }
+  .brief-download-btn:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 var(--ink);
+    background: #FFA164;
+  }
+  .brief-download-btn:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0 var(--ink);
+  }
+  .brief-download-icon {
+    font-size: 16px;
+    line-height: 1;
+  }
+  .brief-download-label {
+    letter-spacing: 0.2px;
+  }
+  @media print {
+    .brief-actions { display: none !important; }
+  }
+
+  /* ===== DOTT SECTION — current v18h brand (dark surface), bridged to LFGAmy ===== */
+  .dott-surface {
+    background-color: #1a1814;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22'%3E%3Crect x='9' y='9' width='3' height='3' rx='0.8' transform='rotate(45 10.5 10.5)' fill='%232f2a20'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    border: 1px solid rgba(245,240,232,0.12);
+    border-radius: 20px;
+    padding: 56px 48px;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    color: #f5f0e8;
+    box-shadow: 0 20px 54px rgba(26,24,20,0.30);
+  }
+  @media (max-width: 760px){ .dott-surface { padding: 36px 22px; } }
+  .dott-hero { text-align: center; max-width: 720px; margin: 0 auto; }
+  .dott-mascot { width: 128px; height: auto; display: block; margin: 0 auto 18px; }
+  .dott-eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #F0689D; margin-bottom: 12px; }
+  .dott-wordmark { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 60px; letter-spacing: -0.04em; color: #FFFAF2; display: inline-flex; align-items: baseline; gap: 7px; line-height: 1; margin: 0; }
+  .dott-dot { width: 13px; height: 13px; border-radius: 4px; background: #FACC15; border: 2.5px solid #FFFAF2; align-self: baseline; display: inline-block; }
+  .dott-tagline { font-size: 20px; font-weight: 700; color: #FFFAF2; margin: 18px 0 6px; }
+  .dott-sub { font-size: 15px; color: #c4beb4; line-height: 1.6; max-width: 600px; margin: 0 auto; }
+
+  .dott-why { max-width: 680px; margin: 0 auto 38px; }
+  .dott-surface > h2 { color: #FFFAF2; max-width: 680px; margin: 36px auto 14px; }
+  .dott-why p { font-size: 15.5px; color: #c4beb4; line-height: 1.7; }
+  .dott-why em { color: #F0689D; font-style: italic; font-weight: 600; }
+
+  .dott-leadin { text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px; font-weight: 600; color: #e9e3d9; max-width: 620px; margin: 30px auto 0; }
+  .dott-phases { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 16px 0 0; }
+  @media (max-width: 760px){ .dott-phases { grid-template-columns: 1fr 1fr; } }
+  .dott-phase { background: #FFFAF2; border: 2px solid #1F1F1F; border-radius: 14px; padding: 18px 16px; }
+  .dott-phase .ph-dot { width: 14px; height: 14px; border-radius: 4px; border: 2px solid #1F1F1F; display: inline-block; margin-bottom: 10px; }
+  .dott-phase h4 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; font-weight: 800; color: #1a1814; margin: 0 0 5px; }
+  .dott-phase p { font-size: 12.5px; color: #6a665f; line-height: 1.5; margin: 0; }
+  .dott-phase.plan .ph-dot { background: #5B5FFF; }
+  .dott-phase.forecast .ph-dot { background: #D946EF; }
+  .dott-phase.prove .ph-dot { background: #F97316; }
+  .dott-phase.score .ph-dot { background: #FACC15; }
+  .dott-mantra { text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 18px; color: #FFFAF2; margin: 18px 0 0; letter-spacing: -0.01em; }
+  .dott-mantra span { display: block; font-weight: 500; font-size: 13px; color: #c4beb4; letter-spacing: 0; margin-top: 4px; }
+
+  .dott-bridge { max-width: 680px; margin: 30px auto 0; background: transparent; border: none; padding: 0; text-align: center; }
+  .dott-bridge p { margin: 0; text-align: center; }
+  .dott-bridge .caveat { font-family: 'Caveat', cursive; color: #F0689D; font-size: 23px; display: inline-block; transform: rotate(-1.5deg); }
+
+  .dott-cta-wrap { text-align: center; margin-top: 26px; }
+  .dott-cta { display: inline-block; background: #FACC15; color: #1a1814; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 15px; padding: 14px 26px; border-radius: 12px; text-decoration: none; transition: transform 0.12s ease, background 0.15s ease; }
+  .dott-cta:hover { background: #ffd83a; transform: translateY(-1px); }
+
+
+  /* ===== MY OPERATING SYSTEM — toolkit tiles ===== */
+  .os-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 18px; margin-top: 8px; }
+  .os-tile { background: var(--white); border: 1px solid var(--light-gray); border-radius: 18px; padding: 22px 22px 18px; transition: transform 0.15s ease, box-shadow 0.15s ease; display: flex; flex-direction: column; }
+  .os-tile:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.07); }
+  .os-icon { width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 14px; border: 2px solid var(--charcoal); }
+  .os-tile h4 { font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 600; color: var(--charcoal); margin: 0 0 6px; }
+  .os-tile p { font-size: 13.5px; color: var(--medium-gray); line-height: 1.55; margin: 0 0 14px; }
+  .os-tag { display: inline-block; align-self: flex-start; margin-top: auto; font-size: 11px; font-weight: 600; color: var(--medium-gray); background: var(--light-gray); padding: 4px 11px; border-radius: 999px; }
+
+</style>
+</head>
+<body>
+
+<button class="focus-mode-toggle" id="focusModeToggle" type="button" aria-label="Toggle focus mode" data-icon-on="🎯" data-icon-off="⚡">
+  <span class="focus-icon">⚡</span>
+  <span class="focus-label">Focus mode</span>
+</button>
+
+<div class="review-banner">
+  ✨ <strong>LFGAmy</strong> — field marketing and events. Built with love.
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <!-- Boots image will load here when boots.png is added to images/ folder -->
+      <img class="boots-img" src="images/LFGAmy%20Boots.png" alt="Amy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" >
+      <div class="boots-placeholder" style="display:none">🦊</div>
+      <h1>Amy Mayernik</h1>
+      <p>Developer marketer who builds</p>
+      <span class="badge">LFGAmy 💖 143</span>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">💕 Get to know me</div>
+      <ul>
+        <li><a class="active" data-page="introduction">Hi, I'm Amy</a></li>
+        <li><a data-page="about">Behind the Scenes</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">⭐ My work</div>
+      <ul>
+        <li><a data-page="vault">The Vault</a></li>
+        <li><a data-page="system">What I'm building for you</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">🛠 The Builder</div>
+      <ul>
+        <li><a data-page="portfolios">What I'm building for me</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">🟨 What's next</div>
+      <ul>
+        <li><a data-page="dott">Dott — Event Intelligence</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">💌 Let's connect</div>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/amymayernik" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://x.com/LFGAmy" target="_blank" rel="noopener">X</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-footer">
+      Built with love
+      <div class="brand-code">143 · 323 · 367</div>
+      <div class="ip-notice">
+        <span class="ip-line-1">© 2026 Amy Mayernik · LFG Events</span>
+        <span class="ip-line-2">Frameworks shown are demonstrated, not licensed. Substance lives in <span class="dott-mark">Dott™</span>. Trademarks pending.</span>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- INTRODUCTION -->
+    <section id="introduction" class="page active">
+      <div class="page-hero">
+        <h1 class="page-title">Hi, I'm Amy. 👋</h1>
+        <p class="page-description">Developer marketing for AI, developer infrastructure, and enterprise. The systems I build to reach developers, grow community, and prove it worked. Out in the open, so you can build yours.</p>
+      </div>
+
+      <div class="lfg-coded">
+        <div class="lfg-coded-header">
+          <span class="lfg-coded-badge">⚡ LFG CODED</span>
+        </div>
+        <ul>
+          <li><strong>The brand:</strong> A developer marketer who builds — reach developers, grow the community, and ship the systems underneath.</li>
+          <li><strong>The work:</strong> Case studies and open playbooks — how I build for developer audiences, and the tooling that runs it, shared so you can build yours.</li>
+          <li><strong>The signal:</strong> hospitality-first, builder-native, proof over vibes, open about the why. The work IS the proof.</li>
+        </ul>
+      </div>
+
+      <div class="agent-block">
+        <div class="field"><span class="field-name">name:</span> <span class="field-value">amy-mayernik</span></div>
+        <div class="field"><span class="field-name">type:</span> <span class="field-value">developer-marketer-who-builds</span></div>
+        <div class="field"><span class="field-name">description:</span> <span class="field-value">Developer marketer who builds. Makes technical products credible to the developers who use them and gets them adopted, and ships the systems underneath: production AI agents, a live MCP server, and version-controlled skills. Combines developer-community fluency, brand authority, first-principles experiential design, and a documentation-first operating model.</span></div>
+        <div class="field"><span class="field-name">status:</span> <span class="field-value">available — open to full-time and fractional/contract roles</span></div>
+        <div class="field"><span class="field-name">currently:</span> <span class="field-value">Founder of Dott (Event Portfolio Intelligence) · most recently Head of Field Marketing & Events at Eigen Labs · builds her own brand, AI skills, agents, and MCP tooling.</span></div>
+        <div class="field"><span class="field-name">role_fit:</span> <span class="field-value">[developer-marketing, developer-relations, technical-product-marketing]</span></div>
+        <div class="field"><span class="field-name">core_capabilities:</span> <span class="field-value">[developer-marketing, developer-relations, developer-community, technical-content, product-adoption, developer-events-and-hackathons, event-portfolio-measurement, ai-agent-development, mcp-servers, gtm-coordination, documentation-first-operating-model]</span></div>
+        <div class="field"><span class="field-name">certifications:</span> <span class="field-value">[agent-engineering-profound, marketing-engineering-profound, anthropic-academy-agent-skills, anthropic-academy-subagents, anthropic-academy-ai-fluency, anthropic-academy-ai-capabilities-and-limitations]</span></div>
+        <div class="field"><span class="field-name">stage_fit:</span> <span class="field-value">[series-a, series-b, series-c, pre-ipo]</span></div>
+        <div class="field"><span class="field-name">verticals:</span> <span class="field-value">[developer-infrastructure, ai, b2b-saas, fintech, enterprise-tech]</span></div>
+        <div class="field"><span class="field-name">contact:</span> <span class="field-value">collab@lfgamy.com</span></div>
+        <div class="field" style="margin-top: 12px; color: var(--medium-gray); font-style: italic;"># If you're a human reading this: yes, I made this block on purpose. AI agents increasingly read how people show up online — I wanted to be legible to them, not just adjacent to that future.</div>
+      </div>
+
+      <h2>The work I'm building right now.</h2>
+      <p>Building <strong>Dott</strong>, the Event Portfolio Intelligence System — most recently Head of Field Marketing &amp; Events at <strong>Eigen Labs</strong>. I'm <strong>Profound-certified</strong> in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications in AI agents and skills.</p>
+      <p><strong>And I'm available.</strong> Open to full-time and fractional/contract roles across developer marketing, developer relations, and technical product marketing. <a href="mailto:collab@lfgamy.com">collab@lfgamy.com</a></p>
+
+      <hr>
+
+      <h2>How I work</h2>
+      <p>Five things I build into every function — each one makes the next stronger.</p>
+
+      <div class="moat-list">
+        <div class="moat-item">
+          <div class="moat-number">01</div>
+          <div>
+            <div class="moat-title">Builder community fluency</div>
+            <div class="moat-declaration">A peer in the room with builders — not a translator to them.</div>
+          </div>
+        </div>
+        <div class="moat-item">
+          <div class="moat-number">02</div>
+          <div>
+            <div class="moat-title">Brand authority instinct</div>
+            <div class="moat-declaration">Brand systems, not just events. Every activation compounds the brand.</div>
+          </div>
+        </div>
+        <div class="moat-item">
+          <div class="moat-number">03</div>
+          <div>
+            <div class="moat-title">First-principles experiential design</div>
+            <div class="moat-declaration">Original formats — never borrowed, always grounded in real tools and standards.</div>
+          </div>
+        </div>
+        <div class="moat-item">
+          <div class="moat-number">04</div>
+          <div>
+            <div class="moat-title">Global execution</div>
+            <div class="moat-declaration">NA · LATAM · EMEA · APAC · Australia.</div>
+          </div>
+        </div>
+        <div class="moat-item">
+          <div class="moat-number">05</div>
+          <div>
+            <div class="moat-title">Documentation-first operating model</div>
+            <div class="moat-declaration">Knowledge lives in the system, not in my head.</div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>Brands I've shipped work for</h2>
+      <p>A non-exhaustive list. Developer infrastructure, AI, enterprise SaaS, fintech, and consumer tech.</p>
+
+      <div class="card-grid cols-4 polaroid-grid">
+        <div class="card polaroid"><h4>Eigen Labs</h4><p>EigenCloud</p></div>
+        <div class="card polaroid"><h4>zkSync</h4><p>Matter Labs · Global Field Marketing</p></div>
+        <div class="card polaroid"><h4>Coinbase</h4><p>Cloud · Developer Ecosystem</p></div>
+        <div class="card polaroid"><h4>Meta</h4><p>Oculus VR Tour + Community Boost Tour</p></div>
+        <div class="card polaroid"><h4>Oracle</h4><p>Java Dev Campaign</p></div>
+        <div class="card polaroid"><h4>PayPal</h4><p>PYUSD developer activations</p></div>
+        <div class="card polaroid"><h4>Robinhood</h4><p>Global events</p></div>
+        <div class="card polaroid"><h4>Switch</h4><p>B2B infrastructure</p></div>
+        <div class="card polaroid"><h4>Nintendo, PepsiCo, North Face, Monster, White Claw, Firestone Walker</h4><p>Earlier brand work</p></div>
+      </div>
+
+      <div class="note">
+        <strong>Thanks for spending time here. ✨</strong> If something here is useful to you — or you're building something I can help with — reach out anytime. <a href="mailto:collab@lfgamy.com">collab@lfgamy.com</a>.
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page">
+      <div class="page-hero">
+        <h1 class="page-title">Behind the Scenes</h1>
+        <p class="page-description">How I think, how I work, and what it takes to do it well — the philosophy under the polaroids. For developers, events are the real-world trust layer.</p>
+      </div>
+
+      <div class="lfg-coded">
+        <div class="lfg-coded-header">
+          <span class="lfg-coded-badge">⚡ LFG CODED</span>
+        </div>
+        <ul>
+          <li><strong>The starting question:</strong> what if every event started with alignment?</li>
+          <li><strong>The pattern I keep seeing:</strong> no framework, no measurement, no infrastructure, no proof. The job is to install all four — with the team, never alone.</li>
+          <li><strong>How the work gets done:</strong> hospitality-first, team-aligned, pipeline-accountable, open about the why. Built end-to-end.</li>
+        </ul>
+      </div>
+
+      <h2>The question that shapes how I work</h2>
+
+      <p class="tagline">What if every event started with alignment?</p>
+
+      <p>It's the question that shapes the work — every event, from the very first conversation.</p>
+
+      <p>Most teams jump straight to execution — booth specs, vendor decks, swag orders, social copy. The work starts the other way around: sit with the team and align on <strong>why this event matters, who it's for, and what success looks like.</strong> Build the foundation together so execution feels confident, not chaotic.</p>
+
+      <p>That alignment is where most events quietly lose their power — not in the run-of-show, not in the venue, but in the moment everyone agrees to do an event without agreeing on what makes it worth doing.</p>
+
+      <p>That's the work. Not running events. <strong>Building the shared understanding that makes events feel purposeful — and the systems that let us learn what worked so we get better every time.</strong></p>
+
+      <hr>
+
+      <h2>The pattern</h2>
+      <p>I've helped build field marketing and events functions from the ground up at developer infrastructure companies, enterprise B2B SaaS, fintech, and consumer tech. Different stages, different industries, same cascade every time — each missing piece tips the next one over.</p>
+
+      <div class="domino-cascade">
+        <div class="domino">
+          <div class="domino-face"></div>
+          <div class="domino-body">
+            <h4 class="domino-title">No framework</h4>
+            <p class="domino-text">Events get picked because "we always go to this conference," not because they're tied to pipeline. Spend defaults to last year's number.</p>
+          </div>
+        </div>
+        <div class="domino">
+          <div class="domino-face"></div>
+          <div class="domino-body">
+            <h4 class="domino-title">No measurement</h4>
+            <p class="domino-text">Post-event reporting is a deck of photos and attendance counts. Leadership can't tell which events made money and which didn't.</p>
+          </div>
+        </div>
+        <div class="domino">
+          <div class="domino-face"></div>
+          <div class="domino-body">
+            <h4 class="domino-title">No infrastructure</h4>
+            <p class="domino-text">Briefs live in someone's head. Playbooks live in Slack threads. Vendor relationships die when the person leaves. Nothing compounds.</p>
+          </div>
+        </div>
+        <div class="domino">
+          <div class="domino-face"></div>
+          <div class="domino-body">
+            <h4 class="domino-title">No proof</h4>
+            <p class="domino-text">When budgets get scrutinized — and they always do — events are first on the chopping block. No proof means no defense. Just feelings.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cascade-consequence">
+        <span class="cascade-arrow">↓</span>
+        <p class="cascade-punchline">…and the function quietly evaporates.</p>
+      </div>
+
+      <p><strong>The job: fix all four. Every time.</strong> Build the framework, install the measurement, ship the infrastructure, deliver the proof.</p>
+
+      <p>A team can pull off an activation in three days, or a flagship in four weeks, and have it look successful from the outside. That's not the same as healthy on the inside. Without alignment, the team falls into a <strong>vicious cycle</strong>:</p>
+
+      <ul class="cycle-list">
+        <li>Constantly running to catch up.</li>
+        <li>Constantly replicating what other teams are doing.</li>
+        <li>Constantly hunting through tools to find the wins.</li>
+      </ul>
+
+      <p>Teams that start with alignment break the cycle: they set their own pace instead of chasing it, build their own formats instead of copying, and always know where the wins are. Quality over quantity. Integrity over the rush to impress.</p>
+
+      <p>The deeper win is internal: a team that knows <em>why</em> an event is on the calendar, what it should return, and whether it delivered. That's the difference between running events and running them like they matter.</p>
+
+      <hr>
+
+      <h2>How I show up</h2>
+      <div class="card-grid cols-2 show-up-polaroids">
+        <div class="card">
+          <div class="card-photo"><p>Every program is designed around making attendees, partners, and teammates feel welcome, seen, and taken care of. The service instinct shapes every decision from venue to follow-up.</p></div>
+          <div class="card-label">Hospitality-first</div>
+        </div>
+        <div class="card accent-blue">
+          <div class="card-photo"><p>Co-authored with marketing, BD, sales, DevRel, partnerships, and comms. We all win when we're aligned and rowing in the same direction. Same team, same mission.</p></div>
+          <div class="card-label">Team sport</div>
+        </div>
+        <div class="card accent-blue">
+          <div class="card-photo"><p>High-growth is messy by definition. The job is to absorb the chaos and convert it into systems the team can rely on. Chaos → clarity.</p></div>
+          <div class="card-label">Chaos into clarity</div>
+        </div>
+        <div class="card">
+          <div class="card-photo"><p>Forecast what the team will need and ship it before the fire drill. Anticipation is the work — the foundation gets built before the moment requires it.</p></div>
+          <div class="card-label">Proactive, not reactive</div>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>Events are the real-world trust layer</h2>
+
+      <div class="promise-section">
+
+        <div class="promise-trigger-wrap" id="promiseTriggerWrap">
+          <button class="promise-trigger" id="promiseTrigger" type="button">
+            <span class="promise-trigger-icon">👀</span>
+            <span>read the full promise</span>
+            <span class="promise-trigger-arrow">→</span>
+          </button>
+        </div>
+
+        <div class="promise-typewriter" id="promiseTypewriter" aria-live="polite"></div>
+
+        <div class="promise-signature" id="promiseSignature">
+          — LFGAmy 💖<br>
+          <span class="lfg-mark">BUILT WITH LOVE · 143</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- THE VAULT -->
+    <section id="vault" class="page">
+      <div class="page-hero">
+        <h1 class="page-title">The Vault — Hacker House Series</h1>
+        <p class="page-description">Eigen Labs' flagship developer experience. Hand-curated, immersive, recurring.</p>
+      </div>
+
+      <div class="lfg-coded">
+        <div class="lfg-coded-header">
+          <span class="lfg-coded-badge">⚡ LFG CODED</span>
+        </div>
+        <ul>
+          <li><strong>What it was:</strong> Eigen Labs' 2025 hand-curated hacker village series. 5 cohort houses + 1 co-working hub across Denver, Berlin, Buenos Aires.</li>
+          <li><strong>The bet:</strong> curation &gt; broadcast. Immersion &gt; transaction. The village is the product.</li>
+          <li><strong>What I learned:</strong> curate before you program. Container shapes conversation. Compound beats conclude. Work outlives the event.</li>
+        </ul>
+      </div>
+
+      <div class="note">
+        <strong>Company:</strong> Eigen Labs (AI + developer infrastructure / EigenCloud)<br>
+        <strong>My role:</strong> Head of Field Marketing & Events<br>
+        <strong>Format:</strong> Recurring multi-day, hand-curated builder experience<br>
+        <strong>Cities:</strong> Denver, Berlin, Buenos Aires<br>
+        <strong>Status:</strong> 2025 series, successfully wrapped. The 2026 builder program at Eigen Labs runs as <strong>Agentic by Eigen</strong> — a meetup-format successor, distinct from the Vault's multi-day hacker house model.
+      </div>
+
+      <h2>The problem</h2>
+      <p>Developer ecosystem events at infrastructure companies usually break down into one of two failure modes:</p>
+
+      <div class="visa-cards">
+        <div class="visa-card">
+          <h4 class="visa-title">Booth + swag</h4>
+          <p class="visa-body">Pay sponsorship, ship branded t-shirts, scan badges, follow up with templated emails. Generates "leads" that never convert because the conversation was never real.</p>
+        </div>
+        <div class="visa-card">
+          <h4 class="visa-title">Hack as spectacle</h4>
+          <p class="visa-body">Big prize money, surface-level engagement. Builders show up to win prizes and leave. No genuine technical exchange. No retention.</p>
+        </div>
+      </div>
+
+      <p>Both produce metrics that look fine on a deck and produce nothing measurable downstream. The Vault was designed to do the opposite: <strong>build a multi-day, hand-curated builder experience where the most serious developers in the ecosystem actually want to be — and where the technical conversation is the product itself.</strong></p>
+
+      <h2>The strategy</h2>
+      <p>Four principles shaped every Vault.</p>
+
+      <div class="luggage-tags">
+        <div class="luggage-tag">
+          <h4 class="tag-title">Curate, don't broadcast</h4>
+          <p class="tag-body">Builders are invited, not registered. Every participant vetted for technical depth and project seriousness. The bar is high enough that getting in is part of the value proposition.</p>
+        </div>
+        <div class="luggage-tag">
+          <h4 class="tag-title">Immerse, don't transact</h4>
+          <p class="tag-body">Multi-day format. Shared housing or workspace. Meals together. The container is designed so real conversations happen in off-program time — kitchen, hallway, late night.</p>
+        </div>
+        <div class="luggage-tag">
+          <h4 class="tag-title">Real work, real artifacts</h4>
+          <p class="tag-body">Hands-on engineering content with Eigen Labs technical leadership in the room — building alongside, not pitching. Each Vault ships projects, open-source contributions, and technical writeups that outlive the event.</p>
+        </div>
+        <div class="luggage-tag">
+          <h4 class="tag-title">Compound across editions</h4>
+          <p class="tag-body">Each new Vault includes alumni from prior ones. The series compounds. Builders bring builders.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>Inside the Vault — a hacker village</h2>
+
+      <p>The Vault wasn't a hacker house. It was a <strong>hacker village</strong> — five cohort houses plus a central co-working hub, all within walking distance, all eating dinner together on rotation. Each house was hand-curated for a specific builder community. Together they formed one connected ecosystem.</p>
+
+      <div class="village-map">
+        <svg viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <pattern id="village-dots-lfg" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+              <circle cx="11" cy="11" r="1.2" fill="#E5C4A8" opacity="0.35"/>
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="900" height="540" fill="url(#village-dots-lfg)"/>
+          <g stroke="#D8C2A0" stroke-width="2.5" fill="none" stroke-dasharray="6 7" opacity="0.65">
+            <path d="M 450 130 Q 445 200 450 250"/>
+            <path d="M 680 220 Q 580 240 510 270"/>
+            <path d="M 680 410 Q 580 360 510 295"/>
+            <path d="M 220 410 Q 320 360 410 290"/>
+            <path d="M 220 220 Q 320 240 400 265"/>
+          </g>
+          <g>
+            <g transform="translate(80,90)"><ellipse cx="0" cy="0" rx="14" ry="16" fill="#A8D5BA" stroke="#5E8A6E" stroke-width="1.5"/><rect x="-3" y="14" width="6" height="10" fill="#8B6F47"/></g>
+            <g transform="translate(810,100)"><ellipse cx="0" cy="0" rx="14" ry="16" fill="#A8D5BA" stroke="#5E8A6E" stroke-width="1.5"/><rect x="-3" y="14" width="6" height="10" fill="#8B6F47"/></g>
+            <g transform="translate(60,470)"><ellipse cx="0" cy="0" rx="14" ry="16" fill="#A8D5BA" stroke="#5E8A6E" stroke-width="1.5"/><rect x="-3" y="14" width="6" height="10" fill="#8B6F47"/></g>
+            <g transform="translate(840,460)"><ellipse cx="0" cy="0" rx="14" ry="16" fill="#A8D5BA" stroke="#5E8A6E" stroke-width="1.5"/><rect x="-3" y="14" width="6" height="10" fill="#8B6F47"/></g>
+          </g>
+          <g fill="none" stroke="#FFD93D" stroke-width="2" opacity="0.85">
+            <path d="M 140 250 L 142 258 L 150 260 L 142 262 L 140 270 L 138 262 L 130 260 L 138 258 Z"/>
+            <path d="M 760 290 L 762 298 L 770 300 L 762 302 L 760 310 L 758 302 L 750 300 L 758 298 Z"/>
+            <path d="M 450 470 L 452 478 L 460 480 L 452 482 L 450 490 L 448 482 L 440 480 L 448 478 Z"/>
+          </g>
+          <g transform="translate(450,80)"><path d="M -28 0 L 0 -28 L 28 0 Z" fill="#F4B8C1" stroke="#1F1F1F" stroke-width="1.8"/><rect x="-28" y="0" width="56" height="42" fill="#FFE8F0" stroke="#1F1F1F" stroke-width="1.8"/><rect x="-9" y="18" width="18" height="24" fill="#8B6F47" stroke="#1F1F1F" stroke-width="1.5"/><rect x="-20" y="6" width="9" height="9" fill="#FFFCF6" stroke="#1F1F1F" stroke-width="1.2"/><rect x="11" y="6" width="9" height="9" fill="#FFFCF6" stroke="#1F1F1F" stroke-width="1.2"/><text x="0" y="60" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="13" font-weight="700" fill="#1F1F1F">Founders' House</text></g>
+          <g transform="translate(680,180)"><path d="M -28 0 L 0 -28 L 28 0 Z" fill="#6CB5D1" stroke="#1F1F1F" stroke-width="1.8"/><rect x="-28" y="0" width="56" height="42" fill="#DDEFF8" stroke="#1F1F1F" stroke-width="1.8"/><rect x="-9" y="18" width="18" height="24" fill="#8B6F47" stroke="#1F1F1F" stroke-width="1.5"/><rect x="-20" y="6" width="9" height="9" fill="#FFFCF6" stroke="#1F1F1F" stroke-width="1.2"/><rect x="11" y="6" width="9" height="9" fill="#FFFCF6" stroke="#1F1F1F" stroke-width="1.2"/><text x="0" y="60" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="13" font-weight="700" fill="#1F1F1F">Female Builders</text></g>
+          <g transform="translate(680,410)"><path d="M -28 0 L 0 -28 L 28 0 Z" fill="#FF8C42" stroke="#1F1F1F" stroke-width="1.8"/><rect x="-28" y="0" width="56" height="42" fill="#FFE5D2" stroke="#1F1F1F" stroke-width="1.8"/><rect x="-9" y="18" width="18" height="24" fill="#8B6F47" stroke="#1F1F1F" stroke-width="1.5"/><rect x="-20" y="6" width="9" height="9" fill="#FFFCF6" stroke="#1F1F1F" stroke-width="1.2"/><rect x="11" y="6" width="9" height="9" fill="#FFFCF6" stroke="#1F1F1F" stroke-width="1.2"/><text x="0" y="60" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="13" font-weight="700" fill="#1F1F1F">Creator House</text></g>
+          <g transform="translate(220,410)"><path d="M -28 0 L 0 -28 L 28 0 Z" fill="#FFD93D" stroke="#1F1F1F" stroke-width="1.8"/><rect x="-28" y="0" width="56" height="42" fill="#FFF4D0" stroke="#1F1F1F" stroke-width="1.8"/><rect x="-9" y="18" width="18" height="24" fill="#8B6F47" stroke="#1F1F1F" stroke-width="1.5"/><rect x="-20" y="6" width="9" height="9" fill="#FFFCF6" stroke="#1F1F1F" stroke-width="1.2"/><rect x="11" y="6" width="9" height="9" fill="#FFFCF6" stroke="#1F1F1F" stroke-width="1.2"/><text x="0" y="60" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="13" font-weight="700" fill="#1F1F1F">Students' House</text></g>
+          <g transform="translate(220,180)"><path d="M -28 0 L 0 -28 L 28 0 Z" fill="#B498E0" stroke="#1F1F1F" stroke-width="1.8"/><rect x="-28" y="0" width="56" height="42" fill="#EDE3F8" stroke="#1F1F1F" stroke-width="1.8"/><rect x="-9" y="18" width="18" height="24" fill="#8B6F47" stroke="#1F1F1F" stroke-width="1.5"/><rect x="-20" y="6" width="9" height="9" fill="#FFFCF6" stroke="#1F1F1F" stroke-width="1.2"/><rect x="11" y="6" width="9" height="9" fill="#FFFCF6" stroke="#1F1F1F" stroke-width="1.2"/><text x="0" y="60" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="13" font-weight="700" fill="#1F1F1F">Startup House</text></g>
+          <g transform="translate(450,275)"><circle cx="0" cy="14" r="68" fill="#FFF0E0" stroke="#D8C2A0" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.7"/><path d="M -50 -20 L 0 -52 L 50 -20 Z" fill="#FFCD42" stroke="#1F1F1F" stroke-width="1.8"/><rect x="-50" y="-20" width="100" height="58" fill="#FFFAEC" stroke="#1F1F1F" stroke-width="1.8"/><rect x="22" y="-46" width="10" height="22" fill="#FFCD42" stroke="#1F1F1F" stroke-width="1.5"/><g fill="none" stroke="#C9B299" stroke-width="2" opacity="0.7"><path d="M 27 -52 Q 32 -58 27 -64 Q 22 -68 27 -74"/></g><rect x="-14" y="14" width="28" height="24" fill="#8B6F47" stroke="#1F1F1F" stroke-width="1.5"/><rect x="-40" y="-8" width="20" height="14" fill="#FFFCF6" stroke="#1F1F1F" stroke-width="1.2"/><rect x="20" y="-8" width="20" height="14" fill="#FFFCF6" stroke="#1F1F1F" stroke-width="1.2"/><line x1="-30" y1="-8" x2="-30" y2="6" stroke="#1F1F1F" stroke-width="0.8"/><line x1="-40" y1="-1" x2="-20" y2="-1" stroke="#1F1F1F" stroke-width="0.8"/><line x1="30" y1="-8" x2="30" y2="6" stroke="#1F1F1F" stroke-width="0.8"/><line x1="20" y1="-1" x2="40" y2="-1" stroke="#1F1F1F" stroke-width="0.8"/><text x="0" y="60" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="15" font-weight="700" fill="#1F1F1F">Co-working Hub</text><text x="0" y="80" text-anchor="middle" font-family="Caveat, cursive" font-size="20" font-weight="600" fill="#1F1F1F">~ where everyone gathers ~</text></g>
+          <g transform="translate(340,330)"><ellipse cx="0" cy="0" rx="13" ry="10" fill="#FF8C42" stroke="#1F1F1F" stroke-width="1.4"/><polygon points="-9,-7 -11,-13 -4,-10" fill="#FF8C42" stroke="#1F1F1F" stroke-width="1.4"/><polygon points="9,-7 11,-13 4,-10" fill="#FF8C42" stroke="#1F1F1F" stroke-width="1.4"/><circle cx="-4" cy="-1" r="1.6" fill="#1F1F1F"/><circle cx="4" cy="-1" r="1.6" fill="#1F1F1F"/><ellipse cx="0" cy="4" rx="2" ry="1.5" fill="#1F1F1F"/><rect x="-6" y="8" width="5" height="4" fill="#FFD93D" stroke="#1F1F1F" stroke-width="1"/><rect x="1" y="8" width="5" height="4" fill="#FFD93D" stroke="#1F1F1F" stroke-width="1"/></g>
+        </svg>
+      </div>
+
+      <p>Five cohort houses, hand-picked. One central hub where everyone converged daily — and where Eigen's DevRel, security engineers, product leaders, and the leadership team were building alongside each cohort the whole time.</p>
+
+      <div class="cohort-list">
+        <div class="cohort-item"><strong>Founders' House</strong> — early-stage founders building on EigenCloud, picked for product depth and willingness to share roadblocks openly.</div>
+        <div class="cohort-item"><strong>Female Builders' House</strong> — female engineers and tech leads working on AI/infra, a high-context room for technical exchange.</div>
+        <div class="cohort-item"><strong>Students' House</strong> — top CS and applied research students, vetted for shipped projects (not GPAs), exposed to the EigenCloud ecosystem early.</div>
+        <div class="cohort-item"><strong>Startup House</strong> — early-stage startup teams building production integrations with Eigen.</div>
+        <div class="cohort-item"><strong>Creator House</strong> — content creators and storytellers embedded for 10 days to document the village across each location.</div>
+        <div class="cohort-item"><strong>Co-working Hub</strong> — the shared daily workspace where every cohort converged to build alongside Eigen's DevRel, security engineers, product leaders, and the leadership team.</div>
+      </div>
+
+      <div class="village-pullquote">
+        <p>"We build together. We live together. The friendships outlast the village."</p>
+        <span class="pullquote-attr">— THE VAULT OPERATING PRINCIPLE</span>
+      </div>
+
+      <p>The activities became the connective tissue between cohorts:</p>
+
+      <div class="village-moments">
+        <div class="moment"><span class="moment-emoji">🎨</span>Painting the Berlin Wall together</div>
+        <div class="moment"><span class="moment-emoji">⚽</span>Soccer tournament in Berlin</div>
+        <div class="moment"><span class="moment-emoji">🏎️</span>Go-cart night in Denver</div>
+        <div class="moment"><span class="moment-emoji">🍽️</span>Hosted dinners across houses</div>
+        <div class="moment"><span class="moment-emoji">📹</span>10 days of content captured at every Vault</div>
+        <div class="moments-closer">
+          <svg class="moments-arrow" viewBox="0 0 72 54" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <path d="M 8 10 C 22 6 38 38 58 32" stroke="#FF8C42" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 4"/>
+            <path d="M 58 32 L 50 28 M 58 32 L 52 38" stroke="#FF8C42" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <p class="moments-closer-text">None of these were on a deck. They were the moments that made the village real — the moments that turned a hacker house series into a community that compounds.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>What I led</h2>
+
+      <div class="packing-list">
+        <div class="packing-item"><div class="packing-check">✓</div><div class="packing-item-content"><h4>Concept and program design</h4><p>Defined the Vault format, audience criteria, multi-day arc, and the role of Eigen Labs technical leadership in the room.</p></div></div>
+        <div class="packing-item"><div class="packing-check">✓</div><div class="packing-item-content"><h4>Builder sourcing and curation</h4><p>Built the hacker outreach pipeline, application review process, and selection criteria. Curated each cohort.</p></div></div>
+        <div class="packing-item"><div class="packing-check">✓</div><div class="packing-item-content"><h4>Operations end-to-end</h4><p>Venues, logistics, vendors, shipping, AV, meals, housing, on-site staffing across three cities. Plus partner integration — bringing co-marketing partners in without diluting the technical bar.</p></div></div>
+        <div class="packing-item"><div class="packing-check">✓</div><div class="packing-item-content"><h4>Cross-functional alignment + measurement</h4><p>Aligned Marketing, DevRel, BD, and Partnerships on each Vault's goals, content, and outcomes. Defined success metrics beyond attendance: project ship rate, post-event technical contribution, builder retention.</p></div></div>
+      </div>
+
+      <hr>
+
+      <h2>What I learned</h2>
+      <p>Four lessons from the road — Denver, Berlin, Buenos Aires.</p>
+
+      <div class="postcards">
+        <div class="postcard"><div class="postcard-stamp">💖</div><p class="postcard-city">From Denver</p><h4 class="postcard-title">Curation is the product</h4><p class="postcard-body">Who you invite matters more than what you program. If the room is right, the program runs itself. Every program I run now starts by defining the room first, the agenda second.</p></div>
+        <div class="postcard"><div class="postcard-stamp">✨</div><p class="postcard-city">From Berlin</p><h4 class="postcard-title">The container shapes the conversation</h4><p class="postcard-body">Multi-day immersive formats create depth that single-day events never can. A 90-minute happy hour produces small talk. A 3-day shared house produces collaborations.</p></div>
+        <div class="postcard"><div class="postcard-stamp">⭐</div><p class="postcard-city">From Buenos Aires</p><h4 class="postcard-title">Recurring beats one-off</h4><p class="postcard-body">Each new Vault got stronger because alumni networked into the next one. One-off events leak value because relationships scatter. Compound &gt; conclude.</p></div>
+        <div class="postcard"><div class="postcard-stamp">🏆</div><p class="postcard-city">From every Vault</p><h4 class="postcard-title">The work outlives the event</h4><p class="postcard-body">The Vault produced shipped code, technical writeups, and open-source contributions across every edition. The event is the forcing function. The artifacts are the long-term asset.</p></div>
+      </div>
+
+      <hr>
+
+      <h2>Where it ports</h2>
+
+      <div class="passport-final">
+        <div class="passport-final-stamp">✦ Entry Granted · Any Technical Audience ✦</div>
+        <p class="passport-final-caption">The format ports anywhere depth matters more than reach.</p>
+        <div class="passport-ports">
+          <span class="passport-port">Developer infrastructure</span>
+          <span class="passport-port-dot">·</span>
+          <span class="passport-port">AI platforms</span>
+          <span class="passport-port-dot">·</span>
+          <span class="passport-port">Enterprise SaaS</span>
+          <span class="passport-port-dot">·</span>
+          <span class="passport-port">Fintech</span>
+          <span class="passport-port-dot">·</span>
+          <span class="passport-port">Any technical audience</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIELD MARKETING SYSTEM -->
+    <section id="system" class="page">
+      <div class="page-hero">
+        <h1 class="page-title">What I'm building for you</h1>
+        <p class="page-description">The operating function under the events: what good looks like and how it compounds.</p>
+      </div>
+
+      <div class="lfg-coded">
+        <div class="lfg-coded-header">
+          <span class="lfg-coded-badge">⚡ LFG CODED</span>
+        </div>
+        <ul>
+          <li><strong>The premise:</strong> most field marketing and events functions don't fail from bad strategy. They fail from bad organization.</li>
+          <li><strong>The system:</strong> a single home base + purpose-built databases per event type + Slack channels mapped to databases + intake forms + AI agents for the connective tissue + templated artifacts.</li>
+          <li><strong>What makes it last:</strong> documentation-first. If I left tomorrow, the team would inherit a working function, not a guessing game.</li>
+        </ul>
+      </div>
+
+      <div class="note">
+        <strong>What this is:</strong> A walkthrough of the operating function I've built and refined across multiple field marketing and events roles — the home base, the databases, the Slack integration, the agents, the documentation. The part of the function nobody sees from the outside, and the part that decides whether the function survives turnover, scales, and earns more budget the next year.
+      </div>
+
+      <h2>The premise — organization is what makes it last</h2>
+      <p>Most field marketing and events functions don't fail because the strategy is wrong. They fail because the function isn't organized.</p>
+      <p>Field marketing and events has more moving parts than almost any other GTM motion: multiple event types running in parallel, cross-functional stakeholders, vendors and venues, non-recoverable deadlines, inbound community requests, budgets that have to be defended quarterly, partner relationships that compound only if someone tracks them.</p>
+
+      <div class="tribal-knowledge-callout">
+        <div class="sticky-note">
+          <span class="sticky-emoji">📝</span>
+          "vendor relationship lives in someone's head — get from Sarah before she leaves??"
+          <div class="sticky-corner"></div>
+        </div>
+        <div class="tribal-knowledge-content">
+          <h4>The default failure mode: tribal knowledge</h4>
+          <p>Operators carry critical context in their heads and call it good. It works until it doesn't. Then turnover hits, a deadline slips, a recap never happens, a vendor relationship resets, and a year of activity quietly evaporates because nothing was captured.</p>
+          <p>The fix isn't a better project manager. It's an operating function: organized, documented, and automated where the connective tissue would otherwise break.</p>
+          <div class="slack-callout">💬 #field-marketing · [47 unread] · last seen 3 weeks ago</div>
+        </div>
+      </div>
+
+      <h2>The system in practice</h2>
+      <p>A working example of the function organized this way — refined across roles. Six interconnected components, one home base.</p>
+
+      <div class="system-map">
+        <svg viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <pattern id="system-map-dots" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+              <circle cx="11" cy="11" r="1.2" fill="#A4C2DA" opacity="0.4"/>
+            </pattern>
+            <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+              <feOffset dx="0" dy="2" result="offsetblur"/>
+              <feComponentTransfer><feFuncA type="linear" slope="0.25"/></feComponentTransfer>
+              <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect x="0" y="0" width="900" height="540" fill="url(#system-map-dots)"/>
+
+          <!-- Ticket-stub legend (top-left, out of station territory) -->
+          <g transform="translate(30, 28)" filter="url(#soft-shadow)">
+            <!-- Ticket card with notched edge -->
+            <path d="M 0 0 L 226 0 L 226 8 A 6 6 0 0 1 226 20 L 226 28 L 226 40 A 6 6 0 0 1 226 52 L 226 60 A 6 6 0 0 1 226 72 L 226 78 L 0 78 L 0 72 A 6 6 0 0 0 0 60 L 0 52 A 6 6 0 0 0 0 40 L 0 28 A 6 6 0 0 0 0 20 L 0 8 Z"
+                  fill="#FFFFFF" stroke="#1F1F1F" stroke-width="1.5"/>
+            <!-- Perforation line down the right -->
+            <line x1="200" y1="6" x2="200" y2="72" stroke="#1F1F1F" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+            <!-- Title -->
+            <text x="14" y="20" font-family="Fredoka, sans-serif" font-size="10" font-weight="700" fill="#1F1F1F" letter-spacing="1.5">SYSTEM LINES</text>
+            <!-- 3 line keys -->
+            <g transform="translate(14, 32)">
+              <line x1="0" y1="0" x2="18" y2="0" stroke="#F4B8C1" stroke-width="6" stroke-linecap="round"/>
+              <text x="26" y="4" font-family="Fredoka, sans-serif" font-size="10.5" font-weight="600" fill="#1F1F1F">Intake flow</text>
+            </g>
+            <g transform="translate(14, 47)">
+              <line x1="0" y1="0" x2="18" y2="0" stroke="#6CB5D1" stroke-width="6" stroke-linecap="round"/>
+              <text x="26" y="4" font-family="Fredoka, sans-serif" font-size="10.5" font-weight="600" fill="#1F1F1F">Artifact flow</text>
+            </g>
+            <g transform="translate(14, 62)">
+              <line x1="0" y1="0" x2="18" y2="0" stroke="#FF8C42" stroke-width="6" stroke-linecap="round"/>
+              <text x="26" y="4" font-family="Fredoka, sans-serif" font-size="10.5" font-weight="600" fill="#1F1F1F">Automation flow</text>
+            </g>
+          </g>
+
+          <!-- Lines (subway routes) — extended across canvas -->
+          <g stroke-linecap="round" stroke-linejoin="round" fill="none">
+            <!-- Pink line: Forms ↔ Notion ↔ Slack (intake flow, horizontal) -->
+            <path d="M 110 270 L 790 270" stroke="#F4B8C1" stroke-width="11"/>
+            <!-- Blue line: Templates ↔ Notion ↔ Databases (artifact flow, diagonal) -->
+            <path d="M 110 410 L 450 270 L 790 130" stroke="#6CB5D1" stroke-width="11"/>
+            <!-- Orange line: Notion ↔ Agents (automation, vertical) -->
+            <path d="M 450 270 L 450 440" stroke="#FF8C42" stroke-width="11"/>
+          </g>
+
+          <!-- Subway-car emojis traveling along each line (kawaii density) -->
+          <g font-size="22">
+            <text x="278" y="278" text-anchor="middle">🚃</text>
+            <text x="615" y="195" text-anchor="middle" transform="rotate(-22 615 195)">🚋</text>
+            <text x="450" y="400" text-anchor="middle" font-size="16" transform="rotate(90 450 400)">🚝</text>
+          </g>
+
+          <!-- Sparkles scattered in the corners (more density) -->
+          <g fill="none" stroke="#FFD93D" stroke-width="2" opacity="0.9">
+            <path d="M 360 60 L 362 68 L 370 70 L 362 72 L 360 80 L 358 72 L 350 70 L 358 68 Z"/>
+            <path d="M 845 50 L 847 58 L 855 60 L 847 62 L 845 70 L 843 62 L 835 60 L 843 58 Z"/>
+            <path d="M 60 495 L 62 503 L 70 505 L 62 507 L 60 515 L 58 507 L 50 505 L 58 503 Z"/>
+            <path d="M 840 440 L 842 448 L 850 450 L 842 452 L 840 460 L 838 452 L 830 450 L 838 448 Z"/>
+          </g>
+          <!-- Pink dot constellation for extra kawaii density -->
+          <g fill="#F4B8C1" opacity="0.55">
+            <circle cx="80" cy="200" r="3"/>
+            <circle cx="92" cy="186" r="2"/>
+            <circle cx="828" cy="350" r="3"/>
+            <circle cx="844" cy="360" r="2"/>
+          </g>
+
+          <!-- ===== Stations ===== -->
+
+          <!-- Intake Forms (W) — clipboard icon -->
+          <g transform="translate(110, 270)">
+            <circle cx="0" cy="0" r="22" fill="white" stroke="#F4B8C1" stroke-width="3.5" filter="url(#soft-shadow)"/>
+            <!-- clipboard icon centered -->
+            <rect x="-8" y="-10" width="16" height="18" rx="2" fill="#FFFFFF" stroke="#1F1F1F" stroke-width="1.4"/>
+            <rect x="-4" y="-13" width="8" height="5" rx="1" fill="#F4B8C1" stroke="#1F1F1F" stroke-width="1.2"/>
+            <line x1="-5" y1="-3" x2="5" y2="-3" stroke="#1F1F1F" stroke-width="1" opacity="0.6"/>
+            <line x1="-5" y1="1" x2="5" y2="1" stroke="#1F1F1F" stroke-width="1" opacity="0.6"/>
+            <line x1="-5" y1="5" x2="3" y2="5" stroke="#1F1F1F" stroke-width="1" opacity="0.6"/>
+            <text x="0" y="-36" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="14" font-weight="700" fill="#1F1F1F">Intake Forms</text>
+            <text x="0" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#5A6A7A">no more lost DMs</text>
+          </g>
+
+          <!-- Slack Channels (E) — hashtag icon -->
+          <g transform="translate(790, 270)">
+            <circle cx="0" cy="0" r="22" fill="white" stroke="#F4B8C1" stroke-width="3.5" filter="url(#soft-shadow)"/>
+            <text x="0" y="6" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="20" font-weight="700" fill="#1F1F1F">#</text>
+            <text x="0" y="-36" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="14" font-weight="700" fill="#1F1F1F">Slack Channels</text>
+            <text x="0" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#5A6A7A">real-time visibility</text>
+          </g>
+
+          <!-- Templates (SW) — document icon -->
+          <g transform="translate(110, 410)">
+            <circle cx="0" cy="0" r="22" fill="white" stroke="#6CB5D1" stroke-width="3.5" filter="url(#soft-shadow)"/>
+            <path d="M -8 -10 L 4 -10 L 10 -4 L 10 10 L -8 10 Z" fill="#FFFFFF" stroke="#1F1F1F" stroke-width="1.4"/>
+            <path d="M 4 -10 L 4 -4 L 10 -4" fill="none" stroke="#1F1F1F" stroke-width="1.4"/>
+            <line x1="-5" y1="-2" x2="6" y2="-2" stroke="#1F1F1F" stroke-width="1" opacity="0.6"/>
+            <line x1="-5" y1="2" x2="6" y2="2" stroke="#1F1F1F" stroke-width="1" opacity="0.6"/>
+            <line x1="-5" y1="6" x2="4" y2="6" stroke="#1F1F1F" stroke-width="1" opacity="0.6"/>
+            <text x="0" y="-36" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="14" font-weight="700" fill="#1F1F1F">Templates</text>
+            <text x="0" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#5A6A7A">artifacts that compound</text>
+          </g>
+
+          <!-- Event Databases (NE) — stacked disks icon -->
+          <g transform="translate(790, 130)">
+            <circle cx="0" cy="0" r="22" fill="white" stroke="#6CB5D1" stroke-width="3.5" filter="url(#soft-shadow)"/>
+            <ellipse cx="0" cy="-7" rx="10" ry="3.5" fill="#FFFFFF" stroke="#1F1F1F" stroke-width="1.3"/>
+            <path d="M -10 -7 L -10 0 A 10 3.5 0 0 0 10 0 L 10 -7" fill="#FFFFFF" stroke="#1F1F1F" stroke-width="1.3"/>
+            <path d="M -10 0 L -10 7 A 10 3.5 0 0 0 10 7 L 10 0" fill="#FFFFFF" stroke="#1F1F1F" stroke-width="1.3"/>
+            <text x="0" y="-36" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="14" font-weight="700" fill="#1F1F1F">Event Databases</text>
+            <text x="0" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#5A6A7A">purpose-built per type</text>
+          </g>
+
+          <!-- AI Agents (S) — robot icon, labels to the right to clear bottom -->
+          <g transform="translate(450, 440)">
+            <circle cx="0" cy="0" r="22" fill="white" stroke="#FF8C42" stroke-width="3.5" filter="url(#soft-shadow)"/>
+            <rect x="-8" y="-7" width="16" height="13" rx="3" fill="#FFFFFF" stroke="#1F1F1F" stroke-width="1.4"/>
+            <circle cx="-3.5" cy="-1.5" r="1.7" fill="#1F1F1F"/>
+            <circle cx="3.5" cy="-1.5" r="1.7" fill="#1F1F1F"/>
+            <line x1="-3" y1="3" x2="3" y2="3" stroke="#1F1F1F" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="0" y1="-12" x2="0" y2="-9" stroke="#1F1F1F" stroke-width="1.4"/>
+            <circle cx="0" cy="-13" r="1.5" fill="#FF8C42" stroke="#1F1F1F" stroke-width="1"/>
+            <text x="38" y="-2" text-anchor="start" font-family="Fredoka, sans-serif" font-size="14" font-weight="700" fill="#1F1F1F">AI Agents</text>
+            <text x="38" y="14" text-anchor="start" font-family="Inter, sans-serif" font-size="11" fill="#5A6A7A">the connective tissue</text>
+          </g>
+
+          <!-- ===== Notion HOME BASE (center, multi-line junction station) ===== -->
+          <g transform="translate(450, 270)" filter="url(#soft-shadow)">
+            <circle cx="0" cy="0" r="42" fill="white" stroke="#1F1F1F" stroke-width="2.5"/>
+            <path d="M 0 -39 A 39 39 0 0 1 33.77 19.5" stroke="#F4B8C1" stroke-width="8" fill="none"/>
+            <path d="M 33.77 19.5 A 39 39 0 0 1 -33.77 19.5" stroke="#6CB5D1" stroke-width="8" fill="none"/>
+            <path d="M -33.77 19.5 A 39 39 0 0 1 0 -39" stroke="#FF8C42" stroke-width="8" fill="none"/>
+            <circle cx="0" cy="0" r="24" fill="#FFF8E8"/>
+            <text x="0" y="8" text-anchor="middle" font-size="28">🏠</text>
+            <text x="0" y="68" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="17" font-weight="700" fill="#1F1F1F">Home Base</text>
+            <text x="0" y="90" text-anchor="middle" font-family="Caveat, cursive" font-size="20" font-weight="600" fill="#1F1F1F">~ the central hub ~</text>
+          </g>
+
+          <!-- Handwritten Caveat callout pointing at Notion -->
+          <g transform="translate(310, 165)">
+            <text x="0" y="0" font-family="Caveat, cursive" font-size="20" font-weight="600" fill="#1F1F1F">everything routes here</text>
+            <path d="M 92 12 Q 130 35 138 80" fill="none" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/>
+            <polygon points="138,80 134,72 144,74" fill="#1F1F1F"/>
+          </g>
+
+          <!-- Boots cameo — top-right empty quadrant, with kawaii caption -->
+          <g transform="translate(600, 65)">
+            <ellipse cx="0" cy="0" rx="14" ry="11" fill="#FF8C42" stroke="#1F1F1F" stroke-width="1.5"/>
+            <polygon points="-10,-7 -12,-14 -4,-11" fill="#FF8C42" stroke="#1F1F1F" stroke-width="1.5"/>
+            <polygon points="10,-7 12,-14 4,-11" fill="#FF8C42" stroke="#1F1F1F" stroke-width="1.5"/>
+            <circle cx="-4" cy="-1" r="1.6" fill="#1F1F1F"/>
+            <circle cx="4" cy="-1" r="1.6" fill="#1F1F1F"/>
+            <ellipse cx="0" cy="3.5" rx="2" ry="1.5" fill="#1F1F1F"/>
+            <rect x="-6" y="9" width="5" height="4" fill="#FFD93D" stroke="#1F1F1F" stroke-width="1"/>
+            <rect x="1" y="9" width="5" height="4" fill="#FFD93D" stroke="#1F1F1F" stroke-width="1"/>
+            <text x="22" y="4" font-family="Caveat, cursive" font-size="18" font-weight="600" fill="#1F1F1F">~ riding the line ~</text>
+          </g>
+        </svg>
+      </div>
+
+      <p><em>Tap any component to see how it works.</em></p>
+
+      <details class="card-accordion" open>
+        <summary>
+          <div class="card-accordion-icon">🏠</div>
+          <div class="card-accordion-header">
+            <h4>A single home base</h4>
+            <p class="card-accordion-summary">One source of truth for every event, brief, forecast, run-of-show, recap, speaking op, and partner</p>
+          </div>
+        </summary>
+        <div class="card-accordion-body">
+          <p>Every event, every brief, every forecast, every run-of-show, every recap, every speaking opportunity, every partner — all in one place, all interlinked, all discoverable. The function lives in the open. Nothing critical lives in my head alone.</p>
+        </div>
+      </details>
+
+      <details class="card-accordion">
+        <summary>
+          <div class="card-accordion-icon">🗂️</div>
+          <div class="card-accordion-header">
+            <h4>Purpose-built databases per event type</h4>
+            <p class="card-accordion-summary">Different shapes for different work, all wired into the same home base</p>
+          </div>
+        </summary>
+        <div class="card-accordion-body">
+          <p>Hosted events, community events, speaking opportunities, partner activations — each with its own intake form, its own status pipeline, its own template-driven artifacts. Different shapes for different work, all wired into the same home base.</p>
+        </div>
+      </details>
+
+      <details class="card-accordion">
+        <summary>
+          <div class="card-accordion-icon">🔗</div>
+          <div class="card-accordion-header">
+            <h4>Slack channels mapped to databases</h4>
+            <p class="card-accordion-summary">Cross-functional team sees activity in real time without opening the home base</p>
+          </div>
+        </summary>
+        <div class="card-accordion-body">
+          <p>Each event database has a dedicated Slack channel. New submissions, status changes, and deadline notifications flow into Slack so the cross-functional team sees activity in real time without ever opening the home base.</p>
+        </div>
+      </details>
+
+      <details class="card-accordion">
+        <summary>
+          <div class="card-accordion-icon">📝</div>
+          <div class="card-accordion-header">
+            <h4>Structured intake forms</h4>
+            <p class="card-accordion-summary">Inbound requests land in the right place with the right context — no more lost DMs</p>
+          </div>
+        </summary>
+        <div class="card-accordion-body">
+          <p>Inbound community event submissions, speaking opportunities, and partnership asks come in through forms that drop directly into the right database with the right context. No more "did anyone see that DM?" — every request lands in a place it can be triaged.</p>
+        </div>
+      </details>
+
+      <details class="card-accordion">
+        <summary>
+          <div class="card-accordion-icon">🤖</div>
+          <div class="card-accordion-header">
+            <h4>Agents that handle the connective tissue</h4>
+            <p class="card-accordion-summary">AI handles the seams (deadlines, recaps, routing) so operators focus on judgment</p>
+          </div>
+        </summary>
+        <div class="card-accordion-body">
+          <p>A roster of AI agents owns the work that usually breaks down — matching speakers to relevant CFP opportunities, flagging deadlines before they slip, drafting recaps from raw event data, surfacing budget exceptions, routing inbound requests to the right database. The operators stay focused on the moments that matter. The system handles the rest.</p>
+        </div>
+      </details>
+
+      <details class="card-accordion">
+        <summary>
+          <div class="card-accordion-icon">📚</div>
+          <div class="card-accordion-header">
+            <h4>Templated artifacts, everywhere</h4>
+            <p class="card-accordion-summary">Briefs, forecasts, recaps live as templates so the next event starts smarter than the last</p>
+          </div>
+        </summary>
+        <div class="card-accordion-body">
+          <p>Briefs, forecasts, run-of-shows, recaps, partner specs — all live as templates inside the home base. The next event starts smarter than the last one because the artifacts compound.</p>
+        </div>
+      </details>
+
+      <h2>What this unlocks</h2>
+      <p>A few things compound when the function is organized this way — and quietly collapse when it isn't.</p>
+
+      <div class="unlock-stamps row-3">
+        <div class="unlock-card s-blue">
+          <div class="verified-stamp">✓ Verified<span class="stamp-line-2">Turnover-Proof</span></div>
+          <div class="stamp-id">№ 01 · ISO-FM</div>
+          <h4>The function survives turnover</h4>
+          <p>If I left tomorrow, the team would inherit a working function — not a guessing game. Most field marketing and events functions are one departure away from chaos. This one isn't.</p>
+        </div>
+        <div class="unlock-card s-orange">
+          <div class="verified-stamp">✓ Verified<span class="stamp-line-2">On Schedule</span></div>
+          <div class="stamp-id">№ 02 · ISO-FM</div>
+          <h4>Deadlines stop slipping</h4>
+          <p>Agents surface what's due before it's missed. CFP deadlines, sponsorship cutoffs, hotel deposits, swag windows — the work doesn't depend on any one person remembering. The system remembers. The humans focus on the decisions.</p>
+        </div>
+        <div class="unlock-card s-amber">
+          <div class="verified-stamp">✓ Verified<span class="stamp-line-2">Recap Logged</span></div>
+          <div class="stamp-id">№ 03 · ISO-FM</div>
+          <h4>Recaps actually happen</h4>
+          <p>When the system prompts for the recap and the template's already structured around the brief, the recap gets written. The recap is what turns events into an evidence-based function — and it only happens when the system makes it cheaper to do than to skip.</p>
+        </div>
+      </div>
+
+      <div class="unlock-stamps row-2">
+        <div class="unlock-card s-pink">
+          <div class="verified-stamp">✓ Verified<span class="stamp-line-2">Team Aligned</span></div>
+          <div class="stamp-id">№ 04 · ISO-FM</div>
+          <h4>Cross-functional trust compounds</h4>
+          <p>Marketing, BD, Sales, DevRel, Partnerships, and leadership can see what's happening without a status meeting. Slack threads tied to databases mean every stakeholder gets visibility without overhead. That visibility is the unlock for bigger budget next year.</p>
+        </div>
+        <div class="unlock-card s-green">
+          <div class="verified-stamp">✓ Verified<span class="stamp-line-2">Clean Handoff</span></div>
+          <div class="stamp-id">№ 05 · ISO-FM</div>
+          <h4>The next operator inherits the system, not the chaos</h4>
+          <p>When a new hire joins, they open the home base and see how the last person handled the same situation. They copy the template. They ship smarter than I did the first time. Onboarding compresses from months to weeks.</p>
+        </div>
+      </div>
+
+      <h2>Lessons from the work</h2>
+
+      <div class="manual-page">
+        <div class="hole-punch h1"></div>
+        <div class="hole-punch h2"></div>
+        <div class="hole-punch h3"></div>
+
+        <div class="manual-header">
+          <span class="manual-header-title">⚙ Operations Manual · Vol. 1 · Lessons</span>
+          <span class="manual-header-page">PAGE 04 / 12</span>
+        </div>
+
+        <div class="manual-entry">
+          <div class="rule-content">
+            <span class="rule-num">Rule 01</span>
+            <h4>Documentation-first is the only sustainable mode</h4>
+            <p>Tribal knowledge feels efficient until it isn't. <span class="highlight">Writing things down once costs an hour. Re-deriving context every time someone new joins costs weeks.</span> Documentation isn't overhead — it's how the function scales without breaking.</p>
+          </div>
+          <div class="margin-note">writing once = an hour. re-deriving forever = weeks. always the same math!</div>
+        </div>
+
+        <div class="manual-entry note-left">
+          <div class="margin-note">agents = great at the seams. terrible at the calls. don't get this backwards!</div>
+          <div class="rule-content">
+            <span class="rule-num">Rule 02</span>
+            <h4>Automate the connective tissue, not the judgment</h4>
+            <p>Agents are great at "did this deadline pass," "draft a recap from this data," "route this inbound request." They're <span class="red-ink">terrible</span> at "is this event the right fit for our brand" or "should we sponsor this conference." Keep human judgment at the strategic decisions. Automate the seams between them.</p>
+          </div>
+        </div>
+
+        <div class="manual-entry">
+          <div class="rule-content">
+            <span class="rule-num">Rule 03</span>
+            <h4>Forms beat DMs, every time</h4>
+            <p>Every inbound request that comes in through Slack DMs is a request that's going to get lost. Forms drop submissions into the right database with the right metadata, the right owner, and the right status. <span class="highlight">Slack DMs evaporate. Forms compound.</span></p>
+          </div>
+          <div class="margin-note bullet">the # of asks that have died in DMs... every single time.</div>
+        </div>
+
+        <div class="manual-entry note-left">
+          <div class="margin-note">if it feels like a tax, it IS a tax. burn it!</div>
+          <div class="rule-content">
+            <span class="rule-num">Rule 04</span>
+            <h4>The system has to make existing work faster, not add new work</h4>
+            <p>Operators are already on empty. If the system feels like overhead, it gets ignored. If it feels like leverage, it gets adopted. Every template, every channel, every agent has to clear the bar of <em>"does this make the work faster than the alternative?"</em> If it doesn't, it's not a system — it's a tax.</p>
+          </div>
+        </div>
+
+        <div class="coffee-stain"></div>
+      </div>
+
+      <h2>Where it ports</h2>
+      <p>This operating model is portable to any field marketing and events function, at any company, in any stack. The tools wrapping it are flexible — Notion, Linear, Asana, Airtable, Coda, ClickUp, Monday, anything else with relational data and shareable views are all viable home bases; Slack, Teams, or anything else can carry the connective tissue. What compounds isn't the platform. It's the architecture: a single source of truth, structured intake, dedicated channels per event type, automated reminders for the connective tissue, templated artifacts that get smarter every quarter, and clear ownership so nothing falls through the seams.</p>
+
+      <div class="ports-closer">
+        <div class="ports-map">
+          <svg viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <text x="350" y="22" text-anchor="middle" font-family="Caveat, cursive" font-size="20" font-weight="600" fill="#1F1F1F">same architecture, your stack →</text>
+
+            <line x1="80" y1="78" x2="480" y2="78" stroke="#F4B8C1" stroke-width="9" stroke-linecap="round"/>
+            <line x1="480" y1="78" x2="690" y2="78" stroke="#F4B8C1" stroke-width="9" stroke-linecap="round" stroke-dasharray="3 12" opacity="0.7"/>
+
+            <g transform="translate(80, 78)">
+              <circle cx="0" cy="0" r="26" fill="white" stroke="#1F1F1F" stroke-width="2"/>
+              <path d="M 0 -24 A 24 24 0 0 1 20.78 12" stroke="#F4B8C1" stroke-width="5" fill="none"/>
+              <path d="M 20.78 12 A 24 24 0 0 1 -20.78 12" stroke="#6CB5D1" stroke-width="5" fill="none"/>
+              <path d="M -20.78 12 A 24 24 0 0 1 0 -24" stroke="#FF8C42" stroke-width="5" fill="none"/>
+              <circle cx="0" cy="0" r="15" fill="#FFF8E8"/>
+              <text x="0" y="6" text-anchor="middle" font-size="18">🏠</text>
+              <text x="0" y="46" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="12" font-weight="700" fill="#1F1F1F">Home Base</text>
+            </g>
+
+            <g transform="translate(220, 78)">
+              <circle cx="0" cy="0" r="10" fill="white" stroke="#F4B8C1" stroke-width="2.5"/>
+              <circle cx="0" cy="0" r="4" fill="#F4B8C1"/>
+            </g>
+            <g transform="translate(350, 78)">
+              <circle cx="0" cy="0" r="10" fill="white" stroke="#F4B8C1" stroke-width="2.5"/>
+              <circle cx="0" cy="0" r="4" fill="#F4B8C1"/>
+            </g>
+            <g transform="translate(480, 78)">
+              <circle cx="0" cy="0" r="10" fill="white" stroke="#F4B8C1" stroke-width="2.5"/>
+              <circle cx="0" cy="0" r="4" fill="#F4B8C1"/>
+            </g>
+
+            <g transform="translate(640, 78)">
+              <circle cx="0" cy="0" r="14" fill="none" stroke="#1F1F1F" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.55"/>
+              <text x="0" y="5" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="14" font-weight="700" fill="#1F1F1F">?</text>
+              <text x="0" y="38" text-anchor="middle" font-family="Caveat, cursive" font-size="17" font-weight="600" fill="#1F1F1F">~ yours ~</text>
+            </g>
+
+            <g fill="none" stroke="#FFD93D" stroke-width="1.8" opacity="0.85">
+              <path d="M 580 40 L 582 46 L 588 48 L 582 50 L 580 56 L 578 50 L 572 48 L 578 46 Z"/>
+              <path d="M 600 110 L 602 116 L 608 118 L 602 120 L 600 126 L 598 120 L 592 118 L 598 116 Z"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="ports-destinations">
+          <span class="ports-label">deploys on:</span>
+          <span class="port-pill">Notion</span>
+          <span class="port-pill">Linear</span>
+          <span class="port-pill">Asana</span>
+          <span class="port-pill">Airtable</span>
+          <span class="port-pill">Coda</span>
+          <span class="port-pill">ClickUp</span>
+          <span class="port-pill">Monday</span>
+          <span class="ports-more">…and any other you bring</span>
+        </div>
+
+        <p class="closer-tagline">The events get noticed. The operating function is what makes them compound.</p>
+      </div>
+    </section>
+
+    <!-- WHAT I'M BUILDING FOR ME -->
+    <section id="portfolios" class="page">
+      <div class="page-hero">
+        <h1 class="page-title">What I'm building for me</h1>
+        <p class="page-description">I don't wait for the right tools to exist — I build them. The tools I run on, built for how I work and where the work is going.</p>
+      </div>
+      <h2>Field kit</h2>
+      <div class="os-grid">
+        <div class="os-tile">
+          <div class="os-icon" style="background: var(--soft-pink);">🎨</div>
+          <h4>Brand system</h4>
+          <p>A full LFGAmy identity in Figma — mascot, palette, type, templates — designed and run by me.</p>
+          <span class="os-tag">Figma</span>
+        </div>
+        <div class="os-tile">
+          <div class="os-icon" style="background: var(--denim-blue);">💬</div>
+          <h4>LinkedIn system</h4>
+          <p>Voice, cadence, and a content engine built to compound — showing up as a system, not a scramble.</p>
+          <span class="os-tag">Content engine</span>
+        </div>
+        <div class="os-tile">
+          <div class="os-icon" style="background: var(--boots-yellow);">⚡</div>
+          <h4>Custom AI skills</h4>
+          <p>Skills I built to automate my own workflow — drafting, planning, formatting, finance docs.</p>
+          <span class="os-tag">Claude Skills</span>
+        </div>
+        <div class="os-tile">
+          <div class="os-icon" style="background: var(--fox-orange);">🤖</div>
+          <h4>AI agents</h4>
+          <p>Agents I designed for event operations — intake, ops, recaps, and follow-up that runs itself.</p>
+          <span class="os-tag">Agents</span>
+        </div>
+        <div class="os-tile">
+          <div class="os-icon" style="background: #B498E0;">🔌</div>
+          <h4>MCP servers</h4>
+          <p>My work, made legible to AI agents — built for the agent era, not bolted on after.</p>
+          <span class="os-tag">MCP</span>
+        </div>
+        <div class="os-tile">
+          <div class="os-icon" style="background: #7FA8D9;">🎓</div>
+          <h4>AI fluency</h4>
+          <p>Putting in the reps for the agent era — Anthropic's agent skills, subagents, and AI fluency courses, applied to the systems I actually build.</p>
+          <span class="os-tag">Anthropic</span>
+        </div>
+        <div class="os-tile">
+          <div class="os-icon" style="background: #A8D5BA;">🌐</div>
+          <h4>Portfolio &amp; decks</h4>
+          <p>The sites I build and run — this portfolio, bespoke pages, and a gated deck viewer with per-recipient access, branded end to end instead of rented.</p>
+          <span class="os-tag">Web &amp; decks</span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- DOTT -->
+    <section id="dott" class="page">
+      <div class="dott-surface">
+        <div class="dott-hero">
+          <img class="dott-mascot" src="images/dott-character.svg" alt="Dott — the character I designed for the system">
+          <h1 class="dott-wordmark">Dott<span class="dott-dot"></span></h1>
+          <p class="dott-tagline">Event Portfolio Intelligence.</p>
+          <p class="dott-sub">One system to plan, forecast, prove, and score every event — so you can make smarter decisions that drive better outcomes across your whole event portfolio.</p>
+        </div>
+
+        <h2>Why I'm building it</h2>
+        <div class="dott-why">
+          <p>I built this so I could show up fully. I've run events at every scale — 20-person dinners to multi-thousand-person conferences, 20+ years of it. I love the work; I thrive in chaos. What I wanted was clarity on top of it — <em>structure that holds the moving pieces, so I can hold the people.</em> So I built it. Dott doesn't replace event teams; it gives them the structure to stay sharp — so operators can do the work they love and show up as themselves.</p>
+        </div>
+
+        <p class="dott-leadin">Dott runs every event through four phases.</p>
+
+        <div class="dott-phases">
+          <div class="dott-phase plan"><span class="ph-dot"></span><h4>Plan</h4><p>Scope the event and set the targets before a dollar is committed.</p></div>
+          <div class="dott-phase forecast"><span class="ph-dot"></span><h4>Forecast</h4><p>Project the return up front, so the budget is a decision — not a guess.</p></div>
+          <div class="dott-phase prove"><span class="ph-dot"></span><h4>Prove</h4><p>Capture what actually happened: the numbers and the narrative.</p></div>
+          <div class="dott-phase score"><span class="ph-dot"></span><h4>Score</h4><p>Every event gets a score, so you know what to repeat and what to retire.</p></div>
+        </div>
+        <p class="dott-mantra">Plan. Forecast. Prove. Score.<span>Every event gets a score, one number the whole team understands.</span></p>
+
+        <div class="dott-bridge">
+          <p><span class="caveat">built by an operator, for operators ♥</span></p>
+        </div>
+
+        <div class="dott-cta-wrap">
+          <a class="dott-cta" href="https://usedott.com" target="_blank" rel="noopener">See Dott → usedott.com</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Page navigation
+  const links = document.querySelectorAll('.nav-group li a[data-page]');
+  const pages = document.querySelectorAll('.page');
+
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = link.dataset.page;
+      if (!target) return;
+
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      pages.forEach(p => p.classList.remove('active'));
+      const targetPage = document.getElementById(target);
+      if (targetPage) {
+        targetPage.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Focus Mode toggle
+  const focusBtn = document.getElementById('focusModeToggle');
+  const focusLabel = focusBtn?.querySelector('.focus-label');
+  const focusIcon = focusBtn?.querySelector('.focus-icon');
+  const FOCUS_ICON_ON = focusBtn?.dataset.iconOn || '📚';
+  const FOCUS_ICON_OFF = focusBtn?.dataset.iconOff || '⚡';
+
+  function autoOpenNestedAccordions(rootEl) {
+    const accordions = rootEl.matches && rootEl.matches('details.card-accordion')
+      ? [rootEl, ...rootEl.querySelectorAll('details.card-accordion')]
+      : [...rootEl.querySelectorAll('details.card-accordion')];
+    accordions.forEach(d => {
+      if (!d.open) {
+        d.open = true;
+        d.classList.add('focus-auto-opened');
+      }
+    });
+  }
+
+  function restoreNestedAccordions(rootEl) {
+    const accordions = rootEl.matches && rootEl.matches('details.card-accordion')
+      ? [rootEl, ...rootEl.querySelectorAll('details.card-accordion')]
+      : [...rootEl.querySelectorAll('details.card-accordion')];
+    accordions.forEach(d => {
+      if (d.classList.contains('focus-auto-opened')) {
+        d.open = false;
+        d.classList.remove('focus-auto-opened');
+      }
+    });
+  }
+
+  function closeAllFocusSections() {
+    document.querySelectorAll('h2.focus-expanded').forEach(h2 => {
+      h2.classList.remove('focus-expanded');
+      let next = h2.nextElementSibling;
+      while (next && next.tagName !== 'H2') {
+        next.classList.remove('focus-revealed');
+        restoreNestedAccordions(next);
+        next = next.nextElementSibling;
+      }
+    });
+  }
+
+  function setFocusMode(on) {
+    if (on) {
+      document.body.classList.add('focus-mode');
+      if (focusLabel) focusLabel.textContent = 'Full view';
+      if (focusIcon) focusIcon.textContent = FOCUS_ICON_ON;
+    } else {
+      document.body.classList.remove('focus-mode');
+      if (focusLabel) focusLabel.textContent = 'Focus mode';
+      if (focusIcon) focusIcon.textContent = FOCUS_ICON_OFF;
+      closeAllFocusSections();
+    }
+    try { localStorage.setItem('lfg-focus-mode', on ? '1' : '0'); } catch (e) {}
+  }
+
+  if (focusBtn) {
+    focusBtn.addEventListener('click', () => {
+      setFocusMode(!document.body.classList.contains('focus-mode'));
+    });
+
+    // Set the initial icon (in case no localStorage match)
+    if (focusIcon) focusIcon.textContent = FOCUS_ICON_OFF;
+
+    // Restore saved preference
+    try {
+      if (localStorage.getItem('lfg-focus-mode') === '1') setFocusMode(true);
+    } catch (e) {}
+  }
+
+  // Focus Mode click-to-expand: clicking an H2 reveals its section's content
+  function handleFocusH2Click(e) {
+    if (!document.body.classList.contains('focus-mode')) return;
+    const h2 = e.currentTarget;
+    const wasOpen = h2.classList.contains('focus-expanded');
+
+    closeAllFocusSections();
+
+    if (!wasOpen) {
+      h2.classList.add('focus-expanded');
+      let next = h2.nextElementSibling;
+      while (next && next.tagName !== 'H2') {
+        next.classList.add('focus-revealed');
+        // Accordions stay collapsed in Focus Mode — reader chooses what to expand
+        next = next.nextElementSibling;
+      }
+      setTimeout(() => h2.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+    }
+  }
+
+  document.querySelectorAll('.page > h2, .love-letter > h2, .dott-surface > h2').forEach(h2 => {
+    h2.addEventListener('click', handleFocusH2Click);
+  });
+
+  // Card-as-link: cards with [data-card-link] trigger the sidebar nav link
+  document.querySelectorAll('[data-card-link]').forEach(card => {
+    card.addEventListener('click', () => {
+      const target = card.getAttribute('data-card-link');
+      const navLink = document.querySelector(`.nav-group a[data-page="${target}"]`);
+      if (navLink) navLink.click();
+    });
+  });
+
+  // Reset accordion when navigating between pages
+  document.querySelectorAll('.nav-group li a[data-page]').forEach(link => {
+    link.addEventListener('click', () => setTimeout(closeAllFocusSections, 50));
+  });
+
+  // Promise typewriter — Behind the Scenes interactive reveal
+  const promiseTrigger = document.getElementById('promiseTrigger');
+  const promiseTriggerWrap = document.getElementById('promiseTriggerWrap');
+  const promiseTypewriter = document.getElementById('promiseTypewriter');
+  const promiseSignature = document.getElementById('promiseSignature');
+
+  const promiseParagraphs = [
+    "If you build an event and no one shows up, you don't have an event. And if you build one where all you're thinking about is what you'll gain — not what you'll give — you've wasted time and money. Either way, it comes back to the same thing: the people are the event. You need the people to fill the room. You need the people to provide the data. You need the people for the conversion.",
+    "So the promise is simple. Stop thinking about what you need, and start thinking about what you can give. Trust is built when the service runs both ways — and it lives in the details and the care you put into the experience."
+  ];
+
+  let typingInProgress = false;
+
+  async function typeThePromise() {
+    if (typingInProgress) return;
+    if (!promiseTypewriter) return;
+    typingInProgress = true;
+
+    if (promiseTriggerWrap) promiseTriggerWrap.style.display = 'none';
+    if (promiseSignature) promiseSignature.classList.remove('revealed');
+    promiseTypewriter.textContent = '';
+    promiseTypewriter.classList.add('typing');
+
+    const typeSpeed = 16;
+    const paragraphPause = 380;
+
+    for (let p = 0; p < promiseParagraphs.length; p++) {
+      const paragraph = promiseParagraphs[p];
+      for (let i = 0; i < paragraph.length; i++) {
+        promiseTypewriter.textContent += paragraph[i];
+        await new Promise(resolve => setTimeout(resolve, typeSpeed));
+      }
+      if (p < promiseParagraphs.length - 1) {
+        promiseTypewriter.textContent += '\n\n';
+        await new Promise(resolve => setTimeout(resolve, paragraphPause));
+      }
+    }
+
+    promiseTypewriter.classList.remove('typing');
+
+    setTimeout(() => {
+      if (promiseSignature) promiseSignature.classList.add('revealed');
+    }, 300);
+
+    typingInProgress = false;
+  }
+
+  if (promiseTrigger) {
+    promiseTrigger.addEventListener('click', typeThePromise);
+  }
+
+
+  // Cursor sparkle trail
+  const sparkleEmojis = ['✨', '💖', '⭐', '💕', '🌟', '💙', '🩵'];
+  let lastSparkleX = 0;
+  let lastSparkleY = 0;
+  let lastSparkleTime = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    const now = Date.now();
+    const dx = e.clientX - lastSparkleX;
+    const dy = e.clientY - lastSparkleY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    // Throttle: only sparkle if cursor moved 30+ pixels AND 80ms passed
+    if (distance < 30 || now - lastSparkleTime < 80) return;
+
+    lastSparkleX = e.clientX;
+    lastSparkleY = e.clientY;
+    lastSparkleTime = now;
+
+    const sparkle = document.createElement('div');
+    sparkle.className = 'cursor-sparkle';
+    sparkle.textContent = sparkleEmojis[Math.floor(Math.random() * sparkleEmojis.length)];
+    sparkle.style.left = (e.clientX + (Math.random() * 16 - 8)) + 'px';
+    sparkle.style.top = (e.clientY + (Math.random() * 16 - 8)) + 'px';
+    sparkle.style.fontSize = (14 + Math.random() * 8) + 'px';
+    document.body.appendChild(sparkle);
+
+    // Clean up after animation completes
+    setTimeout(() => sparkle.remove(), 1000);
+  });
+
+  // ===== Download PDF (opens clean brief in Mintlify branding, auto-prints) =====
+  function downloadBriefPdf() {
+    window.open('brief-mintlify.html?print=1', '_blank', 'noopener,noreferrer');
+  }
+</script>
+
+</body>
+</html>
