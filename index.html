@@ -3648,6 +3648,11 @@
 .bp-strip .row{display:flex;flex-wrap:wrap;gap:8px 10px}
 .bp-tag{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;background:#fff;border:1.5px solid var(--charcoal);border-radius:8px;padding:5px 10px;color:var(--charcoal)}
 .bp-strip p{margin:10px 0 0;font-size:13.5px;color:#33484f}
+.bp-eval{margin-top:12px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;background:#fff;border:1.5px solid var(--charcoal);border-radius:10px;padding:12px 14px}
+.bp-eval-num{font-family:'Fredoka','Trebuchet MS',sans-serif;font-weight:600;font-size:21px;color:var(--charcoal);line-height:1.05;white-space:nowrap}
+.bp-eval-num small{display:block;margin-top:3px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;font-weight:400;color:#5b6b70;letter-spacing:.01em;white-space:normal}
+.bp-eval-txt{font-size:12.5px;color:#33484f;flex:1 1 200px;min-width:0;line-height:1.5}
+.bp-eval-txt b{color:var(--charcoal)}
 .bp-judg{margin-top:22px;border-left:4px solid var(--boots-yellow);background:var(--boots-yellow-pale);padding:14px 18px;border-radius:0 12px 12px 0}
 .bp-judg b{font-weight:700}
 .bp-certs{margin-top:22px;border:2px solid var(--charcoal);border-radius:16px;background:var(--soft-pink-whisper);box-shadow:3px 3px 0 rgba(26,26,26,.12);padding:18px 20px 14px}
@@ -3760,6 +3765,10 @@
         <span class="bp-tag">latency + cost per outcome</span>
       </div>
       <p>Anyone can get an agent to work once. The job is keeping it right as prompts, models, and tools change. So the output gets graded against a golden set, judged by a model and a human, and re-run on every change to catch regressions before they ship.</p>
+      <div class="bp-eval">
+        <div class="bp-eval-num">0 fabrications<small>16 questions · 8 written to bait a false yes</small></div>
+        <div class="bp-eval-txt">Last run against this server, Sep 2026. It grounded every answer in real work, called a mismatched role <b>not a fit right now</b> and said what it would take, and named the real gaps on one that did fit. Re-run any of them in the terminal above.</div>
+      </div>
     </div>
 
     <div class="bp-certs">
@@ -3823,7 +3832,7 @@
     var s=(raw||"").trim(); if(!s) return; echo(s);
     var parts=s.split(/\s+/); var cmd=parts[0].toLowerCase(); var rest=s.slice(parts[0].length).trim();
     if(cmd==="clear"){screen.innerHTML="";return;}
-    if(cmd==="help"){out("commands: <span class='k'>capability</span> &lt;name&gt; · <span class='k'>role-fit</span> &lt;paste a JD&gt; · <span class='k'>tools</span> · <span class='k'>case-study</span> &lt;the-vault|field-marketing-system&gt; · <span class='k'>search</span> &lt;query&gt; · <span class='k'>clear</span>");return;}
+    if(cmd==="help"){out("commands: <span class='k'>ask</span> &lt;question&gt; · <span class='k'>role-fit</span> &lt;paste a JD&gt; · <span class='k'>capability</span> &lt;name&gt; · <span class='k'>tools</span> · <span class='k'>case-study</span> &lt;the-vault|field-marketing-system&gt; · <span class='k'>search</span> &lt;query&gt; · <span class='k'>clear</span>");return;}
     if(cmd==="tools"){
       try{var r=await rpc("tools/list",{});var names=(r.result&&r.result.tools||[]).map(function(t){return t.name;});out("<b>this server exposes:</b>\n"+names.map(function(n){return "· tool: "+n;}).join("\n")+"\n· resources: skill://amy-mayernik, case-study://\n· prompts: yes\nspec: MCP over Streamable HTTP, JSON-RPC 2.0.");}
       catch(e){curlFallback("tools/list",{});}
@@ -3832,12 +3841,13 @@
     if(cmd==="capability"){ if(!rest){out("usage: capability &lt;name&gt;  (try: events, mcp servers, ai agents, marketing engineering)");return;} sys("→ tools/call get_capability …"); return callTool("get_capability",{capability:rest}); }
     if(cmd==="case-study"){ if(!rest){out("usage: case-study &lt;the-vault|field-marketing-system&gt;");return;} sys("→ tools/call get_case_study …"); return callTool("get_case_study",{case_study:rest}); }
     if(cmd==="search"){ if(!rest){out("usage: search &lt;query&gt;");return;} sys("→ tools/call search_artifacts …"); return callTool("search_artifacts",{query:rest}); }
-    if(cmd==="role-fit"){ if(rest.length<50){out("paste a real job description after the command (50+ chars). honest heuristic match, it tells you where I clearly fit and where I'd ramp.");return;} sys("→ tools/call check_role_fit …"); return callTool("check_role_fit",{jd_text:rest}); }
+    if(cmd==="role-fit"){ if(rest.length<50){out("paste a real job description after the command (50+ chars). reasoned live on my server, it tells you where I clearly fit and where I'd ramp. honest, not a pitch.");return;} sys("→ tools/call check_role_fit …"); return callTool("check_role_fit",{jd_text:rest}); }
+    if(cmd==="ask"){ if(!rest){out("usage: ask &lt;a question about my work&gt;  (try: can she build MCP servers? has she run developer events in EMEA?)");return;} sys("→ tools/call ask …"); return callTool("ask",{question:rest}); }
     out("command not found: <b>"+esc(cmd)+"</b>. type <b>help</b>.");
   }
-  ["role-fit","capability events","tools","case-study the-vault","search agents"].forEach(function(c){
-    var b=document.createElement("button");b.className="bp-chip"+(c==="role-fit"?" primary":"");b.type="button";b.textContent=(c==="role-fit"?"role-fit (paste a JD)":c);
-    b.addEventListener("click",function(){ if(c==="role-fit"){input.value="role-fit ";input.focus();run("role-fit");return;} run(c);input.focus();});chipsEl.appendChild(b);
+  ["role-fit","ask","capability events","tools","case-study the-vault","search agents"].forEach(function(c){
+    var b=document.createElement("button");b.className="bp-chip"+((c==="role-fit"||c==="ask")?" primary":"");b.type="button";b.textContent=(c==="role-fit"?"role-fit (paste a JD)":c==="ask"?"ask (anything)":c);
+    b.addEventListener("click",function(){ if(c==="role-fit"){input.value="role-fit ";input.focus();run("role-fit");return;} if(c==="ask"){input.value="ask ";input.focus();return;} run(c);input.focus();});chipsEl.appendChild(b);
   });
   input.addEventListener("keydown",function(e){if(e.key==="Enter"){run(input.value);input.value="";}});
   document.getElementById("bprow").addEventListener("click",function(){input.focus();});
