@@ -1,6 +1,6 @@
 # Amy Mayernik — LFGAmy Portfolio
 
-> Developer marketer who builds. Makes technical products credible to the developers who use them and gets them adopted: translating what engineering ships, building the community and content around it, and proving it worked. Ships the systems too: production AI agents and a live MCP server (the one serving this) that reasons about role fit on demand. Founder of Dott, an Event Portfolio Intelligence System that scores whether events actually worked, not just whether they felt good. Has built and run developer community, events, and field programs at Coinbase Cloud, zkSync, and Eigen Labs, with agency-side brand work for Facebook, Nintendo, North Face, Robinhood, and PayPal. Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications. Open to developer marketing, developer relations, and technical product marketing roles.
+> Developer marketer who builds. Makes technical products credible to the developers who use them and gets them adopted: translating what engineering ships, building the community and content around it, and proving it worked. Ships the systems too: production AI agents and a live MCP server (the one serving this) that reasons about role fit on demand. Founder of Dott, an Event Portfolio Intelligence System that scores every event against the reason it was run. Has built and run developer community, events, and field programs at Coinbase Cloud, zkSync, and Eigen Labs, with agency-side brand work for Facebook, Nintendo, North Face, Robinhood, and PayPal. Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications. Open to developer marketing, developer relations, and technical product marketing roles.
 
 ## About this site
 
@@ -31,6 +31,7 @@ The throughline: she builds AI for marketers because she's spent two decades liv
 - [The Vault](/#vault): 2025 hacker house series at Eigen Labs (Denver, Berlin, Buenos Aires)
 - [What I'm building for you](/#system): The operating function under the events — home base, databases, agents, and documentation
 - [What I'm building for me](/#portfolios): The tools Amy builds — brand system, content engine, custom AI skills, AI agents, MCP servers, and self-built web properties
+- [Event estimator](/event-estimator/): A free, live tool Amy built for event hosts. Pick a format and an outcome (developer adoption or pipeline), forecast before the event, score after
 - [Dott](/#dott): The AI-native Event Portfolio Intelligence System Amy is building (Plan, Forecast, Prove, Score)
 
 ## At a glance
@@ -41,7 +42,7 @@ The throughline: she builds AI for marketers because she's spent two decades liv
 **Most recently:** Head of Field Marketing & Events at Eigen Labs (AI + developer infrastructure, through July 2026)
 **Building:** Dott — AI-native Event Portfolio Intelligence (Plan, Forecast, Prove, Score)
 **Certifications:** Agent Engineering, Marketing Engineering (Profound) · AI Capabilities & Limitations, AI Fluency, Intro to Agent Skills, Intro to Subagents (Anthropic Academy)
-**Fit:** (1) AI and agentic marketing operations / AI enablement, building AI agents and the systems around them into how a marketing or GTM team works and driving adoption; (2) technical product marketing, translating platform capability into developer-native narratives, launches, and technical content; (3) developer marketing, developer relations, and community, reach and adoption for a developer audience with the credibility to sit with builders as a peer.
+**Fit:** (1) developer marketing, developer relations, and community, reach and adoption for a developer audience with the credibility to sit with builders as a peer; (2) technical product marketing, translating platform capability into developer-native narratives, launches, and technical content; (3) AI and agentic marketing operations, the building behind the first two: AI agents and the systems around them, built into how a marketing team works and actually adopted.
 **Contact:** collab@lfgamy.com
 **Book a call:** https://calendly.com/lfgamy/30min
 **LinkedIn:** https://www.linkedin.com/in/amymayernik
