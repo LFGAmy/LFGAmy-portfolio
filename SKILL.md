@@ -43,6 +43,8 @@ Plan, forecast, prove, and score event portfolios. Build the operational infrast
 
 **Developer education:** Zero-Knowledge Proofs, Explained Like You're 5 ([eli5.zksync.io](https://eli5.zksync.io)), a zkSync book. Led the project and the creative to bring it to life, the activations around it, distribution to the developer community, and the zero-knowledge education built on it.
 
+**Major conference programs and community:** Builder breakfasts in 9 cities around the industry's biggest conferences (Denver, Mumbai, SF, NY, Cannes, Seoul, Singapore, Buenos Aires, Dubai), plus co-sponsored hackathons in Cannes, Seoul, and Singapore. Community meetups timed to product launches and launch weeks. Supported developer advocate and ambassador communities: zkStars at zkSync and Eigen Devs at Eigen Labs.
+
 ## How I work
 
 **Five things I build into every function — each one makes the next stronger:**
