@@ -458,6 +458,7 @@
   const bigweek = $('bigweek'), cohost = $('cohost'), buildup = $('buildup'), staffon = $('staffon');
   let cur = 'hackathon', mode = 'dev';
 
+  let overflowNote = () => '';
   function setLabel(id, text){ $(id).firstChild.textContent = text + ' '; }
 
   function applyMode(m){
@@ -532,6 +533,7 @@
       $('fillbtn').onclick = () => { ins.reg.value = Math.min(2000, need); render(); };
       const over = expected - cap;
       $('cap-warn').hidden = over <= 0;
+      if(over > 0) overflowNote = () => 'about ' + nfmt(over) + ' more people expected than the room holds. Cap registrations near ' + nfmt(need) + ' or plan for overflow.';
       if(over > 0) $('cap-warn').textContent = 'About ' + nfmt(expected) + ' expected for ' + nfmt(cap) + ' spots. Roughly ' + nfmt(over) + ' people won\'t fit, so the forecast counts ' + nfmt(cap) + '. Cap registrations or plan for overflow.';
     } else { $('fill-hint').textContent = ''; $('cap-warn').hidden = true; }
     $('reg-v').textContent = nfmt(reg);
@@ -606,7 +608,13 @@
   function planURL(){
     const q = new URLSearchParams();
     q.set('t', cur); q.set('g', mode);
-    KEYS.forEach(k => q.set(k, ins[k].value));
+    const use = ['reg','show','proj','ret','target','ctgt'];
+    if(buildup.checked) use.push('venue','prod','fnb','swag'); else use.push('budget');
+    if(PRESETS[cur].d.cap) use.push('cap');
+    if(mode === 'pipe') use.push('deal');
+    if(cohost.checked) use.push('share');
+    if(staffon.checked) use.push('sppl','shrs','srate');
+    use.forEach(k => q.set(k, ins[k].value));
     Object.entries(FLAGS).forEach(([k,el]) => { if(el.checked) q.set(k,'1'); });
     return location.origin + location.pathname + '?' + q.toString();
   }
@@ -642,6 +650,7 @@
       'Success: ' + g('l-target').replace('Target: ','') + ' ' + g('target-v') + ', at ' + g('ctgt-v') + ' or less each',
       'Budget: ' + g('budget-v') + (cohost.checked ? ' (my share ' + g('yourcost') + ')' : '') + (staffon.checked ? '. ' + g('staff-sum') : ''),
       (PRESETS[cur].d.cap ? 'Room: ' + g('cap-v') + ' spots. ' : '') + 'Registrations: ' + g('reg-v') + ' at ' + g('show-v') + ' show-up',
+      ...(!$('cap-warn').hidden ? ['Over capacity: ' + overflowNote()] : []),
       'Forecast: ' + g('c2') + ' attend, ' + g('c3') + ' ' + g('n3').toLowerCase() + ', ' + g('c4') + ' ' + g('n4').toLowerCase(),
       'Cost per attendee ' + g('t-rate') + '. ' + g('t-cost-k') + ' ' + g('t-cost') + ' (' + g('t-cost-state') + ').',
       'After the event, fill in the actual numbers and compare.',
