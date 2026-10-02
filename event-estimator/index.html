@@ -281,6 +281,7 @@
         <div class="tile"><div class="k" id="t-cost-k">Cost / outcome</div><div class="big" id="t-cost">$1,290</div><div class="cap" id="t-cost-c">budget ÷ the outcome</div><div class="state good" id="t-cost-state">on target</div></div>
       </div>
 
+      <p class="hint" id="bench" style="margin:10px 2px 0"></p>
       <div class="meter">
         <div class="gauge">
           <svg viewBox="0 0 84 84" aria-hidden="true">
@@ -345,10 +346,10 @@
     networking: {
       lReg:"RSVPs", lShow:"Show-up rate", sShow:"of RSVPs", showNote:true, mode:"comm",
       st1:["RSVP'd","invite link"], st2:["Attended","checked in"],
-      comm:{target:12, ctgt:1000},
-      dev:{proj:15, ret:40, target:8, ctgt:1500},
+      comm:{target:12, ctgt:800},
+      dev:{proj:15, ret:40, target:8, ctgt:1300},
       pipe:{target:6, ctgt:2500},
-      d:{reg:250,show:55,budget:12000}
+      d:{reg:250,show:55,budget:10000}
     },
     dinner: {
       lReg:"Invites accepted", lShow:"Show-up rate", sShow:"of accepted", showNote:true, mode:"pipe",
@@ -361,10 +362,10 @@
     meetup: {
       lReg:"RSVPs", lShow:"Show-up rate", sShow:"of RSVPs", showNote:true, mode:"comm",
       st1:["RSVP'd","invite link"], st2:["Attended","checked in"],
-      comm:{proj:65, ret:35, target:10, ctgt:700},
-      dev:{proj:25, ret:40, target:5, ctgt:1500},
-      pipe:{target:2, ctgt:3000},
-      d:{reg:80,show:60,budget:6000}
+      comm:{proj:65, ret:35, target:10, ctgt:400},
+      dev:{proj:25, ret:40, target:5, ctgt:1000},
+      pipe:{target:2, ctgt:2500},
+      d:{reg:80,show:60,budget:4000}
     },
     hackathon: {
       lReg:"Registrations", lShow:"Show-up rate", sShow:"of registered", showNote:true, mode:"dev",
@@ -385,7 +386,7 @@
       d:{reg:120,show:65,budget:12000}
     },
     conference: {
-      lReg:"Reach (booth · talk · side event)", lShow:"Conversations", sShow:"of reach", showNote:false, mode:"pipe",
+      lReg:"Reach (booth · talk · side event)", lShow:"Conversations", sShow:"of reach", showNote:false, mode:"pipe", perHead:"Cost / conversation",
       st1:["Reached","booth · talk · side event"], st2:["Conversations","real intent"],
       dev:{lShow:"Qualified dev conversations", st2:["Qualified dev conversations","real intent"],
         lProj:"Created a project", sProj:"of conversations", lRet:"Active at 30 days", sRet:"of those",
@@ -432,6 +433,11 @@
     ins.proj.value = L.proj; ins.ret.value = L.ret; ins.target.value = L.target; ins.ctgt.value = L.ctgt;
     document.querySelectorAll('.chip.out').forEach(c => c.setAttribute('aria-pressed', c.dataset.m===m ? 'true':'false'));
     $('deal-wrap').hidden = m !== 'pipe';
+    $('bench').textContent = {
+      comm: 'Rule of thumb: community events usually aim for under $100 a head. Cost per returning member runs higher because fewer people make it that far.',
+      dev: 'Rule of thumb: developer events often land at $250 to $500 per developer in the room. Cost per adopted builder runs higher.',
+      pipe: 'Rule of thumb: judge pipeline events on cost per opportunity and pipeline value, not cost per head. A dinner can cost more per guest and still win.'
+    }[m];
     $('comm-note').hidden = m !== 'comm';
     render();
   }
@@ -476,15 +482,13 @@
     $('cv3').textContent = conv(adopted,activated);
 
     $('t-adopt').textContent = nfmt(adopted);
+    $('t-rate-k').textContent = PRESETS[cur].perHead || 'Cost / attendee';
+    $('t-rate').textContent = attended>0 ? usd(spend/attended) : 'n/a';
     if(mode === 'pipe'){
-      $('t-rate-k').textContent = 'Cost / qualified conversation';
-      $('t-rate').textContent = activated>0 ? usd(spend/activated) : 'n/a';
-      $('t-rate-c').textContent = nfmt(activated) + ' qualified conversations';
+      $('t-rate-c').textContent = (activated>0 ? usd(spend/activated) : 'n/a') + ' per qualified conversation';
     } else {
       const rate = attended>0 ? Math.round(adopted/attended*100) : 0;
-      $('t-rate-k').textContent = 'Outcome rate';
-      $('t-rate').textContent = rate + '%';
-      $('t-rate-c').textContent = 'of everyone who showed up';
+      $('t-rate-c').textContent = rate + '% of attendees reached the outcome';
     }
     $('t-cost-c').textContent = cohost.checked ? 'your share ÷ the outcome' : 'budget ÷ the outcome';
     const cpo = adopted>0 ? spend/adopted : 0;
