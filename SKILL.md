@@ -39,7 +39,9 @@ Plan, forecast, prove, and score event portfolios. Build the operational infrast
 
 **Agency-side work** at world-renowned shops: Jack Morton Worldwide (Director of Experiential Marketing — led both the Facebook Oculus VR Tour and the Facebook Community Boost Tour, 180-person field team), On-Board Entertainment, A2 Squared, Motive Worldwide, Serotonin (Events Director — Robinhood, PayPal PYUSD developer activations, Crypto.com), and others.
 
-**Brand work** across categories: Oracle (Java Developer Campaign), Nintendo, PepsiCo (Mountain Dew Kickstart — 4-year, 50-state launch), North Face (Alex Honnold Speaker Series), Monster, White Claw, Firestone Walker, NBC Sports, Arizona Coyotes (NHL), and more.
+**Brand work** across categories: Oracle (Java Developer Campaign), Nintendo, Disney, PepsiCo (Mountain Dew Kickstart — 4-year, 50-state launch), North Face (Alex Honnold Speaker Series), Monster, White Claw, Firestone Walker (805 Beer launch), Reign Total Body Fuel, NBC Sports, Arizona Coyotes (NHL), and more.
+
+**Developer education:** Zero-Knowledge Proofs, Explained Like You're 5 ([eli5.zksync.io](https://eli5.zksync.io)), a zkSync book. Led the project and the creative to bring it to life, the activations around it, distribution to the developer community, and the zero-knowledge education built on it.
 
 ## How I work
 

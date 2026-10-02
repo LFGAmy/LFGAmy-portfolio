@@ -54,6 +54,8 @@ The throughline: she builds AI for marketers because she's spent two decades liv
 
 **Fintech & crypto ecosystem:** global field marketing at zkSync / Matter Labs (built the function from zero through the $15M→$75M ARR phase, 20+ annual events); Coinbase Cloud developer-ecosystem events; agency-side event programs for Robinhood, PayPal (PYUSD developer activations), and Crypto.com via Serotonin. Fluent with technical, regulated, and crypto-native audiences.
 
+**Developer education:** Zero-Knowledge Proofs, Explained Like You're 5 ([eli5.zksync.io](https://eli5.zksync.io)), a zkSync book. Led the project and the creative to bring it to life, the activations around it, distribution to the developer community, and the zero-knowledge education built on it.
+
 **AI & agentic marketing operations / AI enablement:** building AI agents and the systems around them into how a marketing or GTM team works and driving adoption; shipping production AI agents and agentic systems; MCP servers (remote, end to end: tool, resource, and prompt design, JSON-RPC over HTTP, deployment and domain wiring); prompt and skill libraries managed in version control with evals; LLM workflows (Opus / Sonnet / Haiku); marketing and workflow automation; instrumenting adoption and impact; coaching non-technical operators to self-sufficiency; documentation-first operating model.
 
 **Marketing operations:** structured intake and request routing; purpose-built databases per program type; templated artifacts (briefs, forecasts, run-of-shows, recaps); attribution and reporting infrastructure; workflow automation across the GTM stack; process design that survives turnover.
