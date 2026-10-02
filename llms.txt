@@ -31,7 +31,7 @@ The throughline: she builds AI for marketers because she's spent two decades liv
 - [The Vault](/#vault): 2025 hacker house series at Eigen Labs (Denver, Berlin, Buenos Aires)
 - [What I'm building for you](/#system): The operating function under the events — home base, databases, agents, and documentation
 - [What I'm building for me](/#portfolios): The tools Amy builds — brand system, content engine, custom AI skills, AI agents, MCP servers, and self-built web properties
-- [Event estimator](/event-estimator/): A free, live tool Amy built for event hosts. Pick a format and an outcome (developer adoption or pipeline), forecast before the event, score after
+- [Event estimator](/event-estimator/): A free, live tool Amy built for event hosts. Pick a format and what the event is for (community, developer adoption or pipeline), forecast before the event, score after
 - [Dott](/#dott): The AI-native Event Portfolio Intelligence System Amy is building (Plan, Forecast, Prove, Score)
 
 ## At a glance

@@ -148,6 +148,11 @@
   .tog input{width:16px;height:16px;accent-color:var(--pink-deep);cursor:pointer;margin:0}
   .share{margin-top:10px}
   [hidden]{display:none!important}
+  .pv{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:0 2px 10px rgba(120,90,40,.04)}
+  .pv-k{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--pink-deep);font-weight:700}
+  .pv-big{font-family:var(--fred);font-weight:700;font-size:33px;line-height:1;margin:8px 0 4px;font-variant-numeric:tabular-nums}
+  .pv-c{font-size:12px;color:var(--sub)}
+  .comm-note{margin:14px 0 0;font-family:var(--hand);font-size:21px;line-height:1.25;color:var(--pink-deep);font-weight:600}
   .next{margin-top:14px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--pink);border-radius:14px;padding:15px 18px}
   .next h4{font-family:var(--fred);font-weight:600;font-size:15px;margin:0 0 6px}
   .next p{margin:0;font-size:13px;color:#463f34}
@@ -197,8 +202,9 @@
     <button class="chip" data-t="conference">Conference activation</button>
     <button class="chip" data-t="partner">Partner co-hosted</button>
   </div>
-  <div class="seg" id="outs" role="group" aria-label="Outcome">
-    <span class="seglbl">Outcome</span>
+  <div class="seg" id="outs" role="group" aria-label="What this event is for">
+    <span class="seglbl">What's this event for?</span>
+    <button class="chip out" data-m="comm">Community</button>
     <button class="chip out" data-m="dev">Developer adoption</button>
     <button class="chip out" data-m="pipe">Pipeline</button>
   </div>
@@ -245,14 +251,19 @@
       </div>
       <div class="ctrl">
         <div class="top"><label for="ctgt" id="l-ctgt">Target: cost per outcome</label><span class="val" id="ctgt-v">$1,600</span></div>
-        <input type="range" id="ctgt" min="100" max="5000" step="50" value="1600">
+        <input type="range" id="ctgt" min="100" max="15000" step="50" value="1600">
+      </div>
+      <div class="ctrl" id="deal-wrap" hidden>
+        <div class="top"><label for="deal">Average opportunity size <span class="sub">optional</span></label><span class="val" id="deal-v">$25,000</span></div>
+        <input type="range" id="deal" min="0" max="250000" step="1000" value="25000">
+        <p class="hint">Set to $0 to hide pipeline value. Adjust to your own numbers.</p>
       </div>
     </div>
 
     <div>
       <div class="panel">
-        <h3>The attribution chain</h3>
-        <p class="ph">Each step is a real signal you can instrument: an event link, a project created, a first success, a return visit.</p>
+        <h3>The forecast chain</h3>
+        <p class="ph">Each step is a number you can check after the event in your own tools: check-ins, community joins, signups, projects, opportunities.</p>
         <div class="funnel">
           <div class="frow"><div class="flabel"><span class="fname" id="n1">Registered </span><small id="ss1">event link</small></div><div class="fbar s1" id="b1"></div><div class="fnum" id="c1">200</div></div>
           <div class="fconv"><span id="cv1">70%</span></div>
@@ -285,6 +296,12 @@
           <div><span class="state good" id="g-state">on track</span></div>
         </div>
       </div>
+      <div class="pv" id="pv" hidden>
+        <div class="pv-k">Forecast pipeline</div>
+        <div class="pv-big" id="pv-big">$100,000</div>
+        <div class="pv-c" id="pv-c">opportunities × average size · $2.50 of pipeline per $1 spent</div>
+      </div>
+      <p class="comm-note" id="comm-note" hidden>Community nights also build trust that won't show up in a count. Track who comes back, and let the rest be the point.</p>
     </div>
   </div>
 
@@ -294,8 +311,8 @@
   </div>
 
   <div class="honest">
-    <h4>How this stays honest</h4>
-    <p>The outcome is reported as <b>influenced, not sourced</b>. Coverage is stated, not assumed: someone counts only when the event link and the outcome signal actually connect. The model never returns a verdict the data can't support. Reach and share of voice sit on the awareness layer and are measured separately. This chain tracks attendance to outcome. <span style="color:var(--faint)">Method: Plan → Forecast → Prove → Score, the operating model behind Dott.</span></p>
+    <h4>How to use this honestly</h4>
+    <p>This is a forecast, not tracking. Nothing here connects to your data, and nothing you enter is saved. After the event, check each step in your own tools: RSVPs and check-ins from your event page, joins from Discord or Slack, signups or projects from your product, opportunities from your CRM. Count an outcome as <b>influenced, not sourced</b>, and only when you can actually tie it back to the event, for example with a tagged event link or a check-in list. Reach and share of voice are a separate layer. <span style="color:var(--faint)">Method: Plan → Forecast → Prove → Score, the operating model behind Dott.</span></p>
   </div>
 
 
@@ -315,49 +332,52 @@
   const usd = n => '$' + Math.round(n).toLocaleString('en-US');
 
   // dev = developer adoption path (the original chain). pipe = qualified conversations, then opportunities.
+  const COMM = {lProj:"Joined the community", sProj:"of attendees", lRet:"Came back", sRet:"within 60 days",
+    st3:["Joined the community","Discord · Slack · repo"], st4:["Came back","within 60 days"],
+    outK:"Returning members", outC:"came back within 60 days", costK:"Cost / returning member", proj:30, ret:35};
+  const DEVX = {lProj:"Created a project", sProj:"of attendees", lRet:"Active at 30 days", sRet:"of those",
+    st3:["Created a project","activation"], st4:["Active at 30 days","adoption"],
+    outK:"Adopted builders", outC:"active 30 days out", costK:"Cost / adopted builder", proj:30, ret:45};
   const PIPE = {lProj:"Qualified conversations", sProj:"of attendees", lRet:"Opportunities", sRet:"of qualified conversations",
     st3:["Qualified conversations","real buying intent"], st4:["Opportunities","in your pipeline"],
     outK:"Opportunities", outC:"opened from the event", costK:"Cost / opportunity", proj:15, ret:20};
   const PRESETS = {
     networking: {
-      lReg:"RSVPs", lShow:"Show-up rate", sShow:"of RSVPs", showNote:true, mode:"pipe",
+      lReg:"RSVPs", lShow:"Show-up rate", sShow:"of RSVPs", showNote:true, mode:"comm",
       st1:["RSVP'd","invite link"], st2:["Attended","checked in"],
-      dev:{lProj:"Created a project", sProj:"of attendees", lRet:"Active at 30 days", sRet:"of those",
-        st3:["Created a project","activation"], st4:["Active at 30 days","adoption"],
-        outK:"Adopted builders", outC:"active 30 days out", costK:"Cost / adopted", proj:15, ret:40, target:8, ctgt:1500},
+      comm:{target:12, ctgt:1000},
+      dev:{proj:15, ret:40, target:8, ctgt:1500},
       pipe:{target:6, ctgt:2500},
       d:{reg:250,show:55,budget:12000}
     },
     dinner: {
       lReg:"Invites accepted", lShow:"Show-up rate", sShow:"of accepted", showNote:true, mode:"pipe",
       st1:["Accepted","invite"], st2:["Attended","seated"],
-      dev:{lProj:"Created a project", sProj:"of guests", lRet:"Active at 30 days", sRet:"of those",
-        st3:["Created a project","activation"], st4:["Active at 30 days","adoption"],
-        outK:"Adopted builders", outC:"active 30 days out", costK:"Cost / adopted", proj:30, ret:50, target:3, ctgt:3000},
+      comm:{sProj:"of guests", target:2, ctgt:4500},
+      dev:{sProj:"of guests", proj:30, ret:50, target:3, ctgt:3000},
       pipe:{target:3, ctgt:5000, proj:40, ret:30},
       d:{reg:30,show:80,budget:9000}
     },
     meetup: {
-      lReg:"RSVPs", lShow:"Show-up rate", sShow:"of RSVPs", showNote:true, mode:"dev",
+      lReg:"RSVPs", lShow:"Show-up rate", sShow:"of RSVPs", showNote:true, mode:"comm",
       st1:["RSVP'd","invite link"], st2:["Attended","checked in"],
-      dev:{lProj:"Joined the community", sProj:"of attendees", lRet:"Came back", sRet:"within 60 days",
-        st3:["Joined the community","chat · repo"], st4:["Repeat attendee","60 days"],
-        outK:"Repeat members", outC:"came back within 60 days", costK:"Cost / member", proj:65, ret:35, target:10, ctgt:700},
+      comm:{proj:65, ret:35, target:10, ctgt:700},
+      dev:{proj:25, ret:40, target:5, ctgt:1500},
       pipe:{target:2, ctgt:3000},
       d:{reg:80,show:60,budget:6000}
     },
     hackathon: {
       lReg:"Registrations", lShow:"Show-up rate", sShow:"of registered", showNote:true, mode:"dev",
       st1:["Registered","event link"], st2:["Attended","checked in"],
-      dev:{lProj:"Created a project", sProj:"of attendees", lRet:"Still active at 30 days", sRet:"of those",
-        st3:["Created a project","activation"], st4:["Active at 30 days","adoption"],
-        outK:"Adopted builders", outC:"active 30 days out", costK:"Cost / adopted", proj:40, ret:55, target:30, ctgt:1600},
+      comm:{target:12, ctgt:3500},
+      dev:{lRet:"Still active at 30 days", proj:40, ret:55, target:30, ctgt:1600},
       pipe:{target:5, ctgt:8000},
       d:{reg:200,show:70,budget:40000}
     },
     workshop: {
       lReg:"Registrations", lShow:"Show-up rate", sShow:"of registered", showNote:true, mode:"dev",
       st1:["Registered","signup link"], st2:["Attended","checked in"],
+      comm:{target:8, ctgt:1600},
       dev:{lProj:"Completed a build", sProj:"of attendees", lRet:"Activated", sRet:"within 14 days",
         st3:["Completed a build","activation"], st4:["Activated","14 days"],
         outK:"Activated devs", outC:"shipped and stayed, 14 days", costK:"Cost / activated", proj:55, ret:50, target:20, ctgt:750},
@@ -365,27 +385,29 @@
       d:{reg:120,show:65,budget:12000}
     },
     conference: {
-      lReg:"Reach (booth · talk · side event)", lShow:"Conversations", sShow:"of reach", showNote:false, mode:"dev",
+      lReg:"Reach (booth · talk · side event)", lShow:"Conversations", sShow:"of reach", showNote:false, mode:"pipe",
       st1:["Reached","booth · talk · side event"], st2:["Conversations","real intent"],
       dev:{lShow:"Qualified dev conversations", st2:["Qualified dev conversations","real intent"],
         lProj:"Created a project", sProj:"of conversations", lRet:"Active at 30 days", sRet:"of those",
         st3:["Created a project","activation"], st4:["Active at 30 days","adoption"],
         outK:"Developers onboarded", outC:"new, active 30 days out", costK:"Cost / onboarded", proj:35, ret:45, target:26, ctgt:2500},
+      comm:{sProj:"of conversations", target:15, ctgt:3500},
       pipe:{sProj:"of conversations", target:7, ctgt:9000, proj:20},
       d:{reg:800,show:22,budget:60000}
     },
     partner: {
-      lReg:"Combined audience reached", lShow:"Attended", sShow:"of the combined list", showNote:false, mode:"dev", cohost:true,
+      lReg:"Combined audience reached", lShow:"Attended", sShow:"of the combined list", showNote:false, mode:"pipe", cohost:true,
       st1:["Reached","partner + owned lists"], st2:["Attended","joined the event"],
       dev:{lProj:"Partner-sourced signups", sProj:"of attendees", lRet:"Activated", sRet:"of signups",
         st3:["Partner-sourced signups","new accounts"], st4:["Activated","first real use"],
         outK:"Partner-sourced activations", outC:"activated from the partner audience", costK:"Cost / activation", proj:30, ret:50, target:22, ctgt:1300},
+      comm:{target:15, ctgt:1500},
       pipe:{target:5, ctgt:5000},
       d:{reg:400,show:40,budget:25000}
     }
   };
 
-  const ins = {reg:$('reg'), show:$('show'), proj:$('proj'), ret:$('ret'), budget:$('budget'), target:$('target'), ctgt:$('ctgt'), share:$('share')};
+  const ins = {reg:$('reg'), show:$('show'), proj:$('proj'), ret:$('ret'), budget:$('budget'), target:$('target'), ctgt:$('ctgt'), share:$('share'), deal:$('deal')};
   const bigweek = $('bigweek'), cohost = $('cohost');
   let cur = 'hackathon', mode = 'dev';
 
@@ -394,7 +416,8 @@
   function applyMode(m){
     mode = m;
     const p = PRESETS[cur];
-    const L = Object.assign({}, m === 'pipe' ? PIPE : {}, p[m]);
+    const BASE = {comm:COMM, dev:DEVX, pipe:PIPE};
+    const L = Object.assign({}, BASE[m], p[m]);
     const lShow = L.lShow || p.lShow;
     setLabel('l-show', lShow);
     $('s-show').textContent = p.sShow;
@@ -408,6 +431,8 @@
     $('t-cost-k').textContent = L.costK;
     ins.proj.value = L.proj; ins.ret.value = L.ret; ins.target.value = L.target; ins.ctgt.value = L.ctgt;
     document.querySelectorAll('.chip.out').forEach(c => c.setAttribute('aria-pressed', c.dataset.m===m ? 'true':'false'));
+    $('deal-wrap').hidden = m !== 'pipe';
+    $('comm-note').hidden = m !== 'comm';
     render();
   }
 
@@ -468,6 +493,17 @@
     if(adopted>0 && cpo<=ctgt){ cs.className='state good'; cs.textContent='on target'; }
     else if(adopted>0){ cs.className='state warn'; cs.textContent=usd(cpo-ctgt)+' over'; }
     else { cs.className='state warn'; cs.textContent='no outcome'; }
+
+    const deal = +ins.deal.value;
+    $('deal-v').textContent = usd(deal);
+    const pvOn = mode === 'pipe' && deal > 0;
+    $('pv').hidden = !pvOn;
+    if(pvOn){
+      const pv = adopted*deal;
+      $('pv-big').textContent = usd(pv);
+      const ratio = spend>0 ? pv/spend : 0;
+      $('pv-c').textContent = nfmt(adopted) + (adopted===1?' opportunity × ':' opportunities × ') + usd(deal) + ' · $' + ratio.toFixed(ratio<10?1:0) + ' of pipeline per $1 ' + (cohost.checked ? 'of your share' : 'spent');
+    }
 
     const att = target>0 ? Math.round(adopted/target*100) : 0;
     $('m-att').textContent = att + '%';
