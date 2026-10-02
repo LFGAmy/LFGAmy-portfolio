@@ -158,6 +158,13 @@
   .next p{margin:0;font-size:13px;color:#463f34}
   .next a{color:var(--pink-deep);font-weight:600}
   .foot a{color:inherit}
+  .grp{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#5b5147;font-weight:700;margin:22px 0 14px;padding-top:16px;border-top:1px dashed var(--line)}
+  .grp.first{margin-top:4px;padding-top:0;border-top:0}
+  .share .top{margin-top:10px}
+  .capwarn{margin:8px 0 0;font-size:12px;font-weight:600;color:#B26B1B;background:#FBEEDD;border-radius:8px;padding:7px 10px}
+  .fillbtn{font:inherit;font-weight:700;color:var(--pink-deep);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline}
+  .copybtn{margin-top:10px;font-family:var(--body);font-size:12.5px;font-weight:700;color:#fff;background:var(--pink-deep);border:0;border-radius:999px;padding:8px 16px;cursor:pointer}
+  .copybtn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
   .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:-14px 0 22px;padding-bottom:12px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11.5px;letter-spacing:.04em}
   .topbar a{color:var(--pink-deep);font-weight:700;text-decoration:none}
   .topbar a:hover{text-decoration:underline}
@@ -211,33 +218,35 @@
 
   <div class="rig">
     <div class="panel">
-      <h3 id="pn-title">Inputs</h3>
-      <p class="ph" id="pn-ph">Pick a format above, then move anything.</p>
+      <h3 id="pn-title">Plan your event</h3>
+      <p class="ph" id="pn-ph">Work top to bottom: decide what success looks like, then your budget and room, then your audience.</p>
 
+      <div class="grp first">1 · What success looks like</div>
       <div class="ctrl">
-        <div class="top"><label for="reg" id="l-reg">Registrations</label><span class="val" id="reg-v">200</span></div>
-        <input type="range" id="reg" min="20" max="2000" step="10" value="200">
+        <div class="top"><label for="target" id="l-target">Target: outcome</label><span class="val" id="target-v">40</span></div>
+        <input type="range" id="target" min="1" max="400" step="1" value="40">
       </div>
       <div class="ctrl">
-        <div class="top"><label for="show" id="l-show">Show-up rate <span class="sub" id="s-show">of registered</span></label><span class="val" id="show-v">70%</span></div>
-        <input type="range" id="show" min="10" max="95" step="1" value="70">
-        <div id="show-note">
-          <p class="hint">Typical free event: about 70% show up (median no-show is 28%, <a href="https://web.pheedloop.com/blog/event-data-lab-report-06" target="_blank" rel="noopener" style="color:inherit">PheedLoop, 860+ events</a>). Big weeks like Tech Week: I plan for 30 to 50%.</p>
-          <label class="tog"><input type="checkbox" id="bigweek"> Big-week event <span class="sub" style="font-weight:400;color:var(--faint)">sets show-up to 40%</span></label>
-          <p class="hint quiet">Numbers only. No attendee lists needed.</p>
-        </div>
+        <div class="top"><label for="ctgt" id="l-ctgt">Target: cost per outcome</label><span class="val" id="ctgt-v">$1,600</span></div>
+        <input type="range" id="ctgt" min="50" max="15000" step="50" value="1600">
       </div>
-      <div class="ctrl">
-        <div class="top"><label for="proj" id="l-proj">Created a project <span class="sub" id="s-proj">of attendees</span></label><span class="val" id="proj-v">40%</span></div>
-        <input type="range" id="proj" min="5" max="90" step="1" value="40">
-      </div>
-      <div class="ctrl">
-        <div class="top"><label for="ret" id="l-ret">Active at 30 days <span class="sub" id="s-ret">of those</span></label><span class="val" id="ret-v">55%</span></div>
-        <input type="range" id="ret" min="10" max="90" step="1" value="55">
-      </div>
+
+      <div class="grp">2 · Budget and room</div>
       <div class="ctrl">
         <div class="top"><label for="budget">Event budget</label><span class="val" id="budget-v">$40,000</span></div>
-        <input type="range" id="budget" min="2000" max="150000" step="1000" value="40000">
+        <input type="range" id="budget" min="1000" max="150000" step="500" value="40000">
+        <label class="tog"><input type="checkbox" id="buildup"> Build up the budget <span class="sub" style="font-weight:400;color:var(--faint)">fixed costs plus per-head costs</span></label>
+        <div class="share" id="bu-wrap" hidden>
+          <div class="top"><label for="venue">Venue or sponsorship <span class="sub">fixed</span></label><span class="val" id="venue-v">$0</span></div>
+          <input type="range" id="venue" min="0" max="100000" step="500" value="0">
+          <div class="top"><label for="prod">Production, staff, prizes <span class="sub">fixed</span></label><span class="val" id="prod-v">$0</span></div>
+          <input type="range" id="prod" min="0" max="100000" step="500" value="0">
+          <div class="top"><label for="fnb">Food and drink <span class="sub">per attendee</span></label><span class="val" id="fnb-v">$0</span></div>
+          <input type="range" id="fnb" min="0" max="400" step="5" value="0">
+          <div class="top"><label for="swag">Swag <span class="sub">per attendee</span></label><span class="val" id="swag-v">$0</span></div>
+          <input type="range" id="swag" min="0" max="150" step="1" value="0">
+          <p class="hint" id="bu-sum"></p>
+        </div>
         <label class="tog"><input type="checkbox" id="cohost"> Co-hosted?</label>
         <div class="share" id="share-wrap" hidden>
           <div class="top"><label for="share">Your share of the cost</label><span class="val" id="share-v">50%</span></div>
@@ -245,13 +254,36 @@
           <p class="hint">Cost per outcome uses your share only: <b id="yourcost">$20,000</b>.</p>
         </div>
       </div>
+      <div class="ctrl" id="cap-wrap">
+        <div class="top"><label for="cap">Room capacity <span class="sub">people the space holds</span></label><span class="val" id="cap-v">100</span></div>
+        <input type="range" id="cap" min="10" max="2000" step="1" value="100">
+      </div>
+
+      <div class="grp">3 · Audience</div>
       <div class="ctrl">
-        <div class="top"><label for="target" id="l-target">Forecast: outcome target</label><span class="val" id="target-v">40</span></div>
-        <input type="range" id="target" min="2" max="400" step="1" value="40">
+        <div class="top"><label for="show" id="l-show">Show-up rate <span class="sub" id="s-show">of registered</span></label><span class="val" id="show-v">70%</span></div>
+        <input type="range" id="show" min="10" max="95" step="1" value="70">
+        <div id="show-note">
+          <p class="hint">Typical free event: about 70% show up (median no-show is 28%, <a href="https://web.pheedloop.com/blog/event-data-lab-report-06" target="_blank" rel="noopener" style="color:inherit">PheedLoop, 860+ events</a>). Big weeks like Tech Week: I plan for 30 to 50%.</p>
+          <label class="tog"><input type="checkbox" id="bigweek"> Big-week event <span class="sub" style="font-weight:400;color:var(--faint)">sets show-up to 40%</span></label>
+        </div>
       </div>
       <div class="ctrl">
-        <div class="top"><label for="ctgt" id="l-ctgt">Target: cost per outcome</label><span class="val" id="ctgt-v">$1,600</span></div>
-        <input type="range" id="ctgt" min="100" max="15000" step="50" value="1600">
+        <div class="top"><label for="reg" id="l-reg">Registrations</label><span class="val" id="reg-v">200</span></div>
+        <input type="range" id="reg" min="10" max="2000" step="5" value="200">
+        <p class="hint" id="fill-hint"></p>
+        <p class="capwarn" id="cap-warn" hidden></p>
+        <p class="hint quiet">Numbers only. No attendee lists needed.</p>
+      </div>
+
+      <div class="grp">4 · What you expect to happen</div>
+      <div class="ctrl">
+        <div class="top"><label for="proj" id="l-proj">Created a project <span class="sub" id="s-proj">of attendees</span></label><span class="val" id="proj-v">40%</span></div>
+        <input type="range" id="proj" min="5" max="90" step="1" value="40">
+      </div>
+      <div class="ctrl">
+        <div class="top"><label for="ret" id="l-ret">Active at 30 days <span class="sub" id="s-ret">of those</span></label><span class="val" id="ret-v">55%</span></div>
+        <input type="range" id="ret" min="10" max="90" step="1" value="55">
       </div>
       <div class="ctrl" id="deal-wrap" hidden>
         <div class="top"><label for="deal">Average opportunity size <span class="sub">optional</span></label><span class="val" id="deal-v">$25,000</span></div>
@@ -309,6 +341,7 @@
   <div class="next">
     <h4>Write this forecast down. After the event, score it against what happened.</h4>
     <p>Screenshot the numbers above or paste them into your event brief. The gap between the forecast and the result is what tells you which formats to run again. Doing that across a whole calendar of events is what I'm building <a href="https://usedott.com" target="_blank" rel="noopener">Dott</a> for.</p>
+    <button class="copybtn" id="copyfc" type="button">Copy my forecast</button> <span class="hint" id="copy-ok" style="margin-left:8px"></span>
   </div>
 
   <div class="honest">
@@ -349,7 +382,7 @@
       comm:{target:12, ctgt:800},
       dev:{proj:15, ret:40, target:8, ctgt:1300},
       pipe:{target:6, ctgt:2500},
-      d:{reg:250,show:55,budget:10000}
+      d:{reg:250,show:55,budget:10000,cap:150,bu:[3000,1500,30,10]}
     },
     dinner: {
       lReg:"Invites accepted", lShow:"Show-up rate", sShow:"of accepted", showNote:true, mode:"pipe",
@@ -357,7 +390,7 @@
       comm:{sProj:"of guests", target:2, ctgt:4500},
       dev:{sProj:"of guests", proj:30, ret:50, target:3, ctgt:3000},
       pipe:{target:3, ctgt:5000, proj:40, ret:30},
-      d:{reg:30,show:80,budget:9000}
+      d:{reg:30,show:80,budget:9000,cap:24,bu:[1500,300,250,50]}
     },
     meetup: {
       lReg:"RSVPs", lShow:"Show-up rate", sShow:"of RSVPs", showNote:true, mode:"comm",
@@ -365,7 +398,7 @@
       comm:{proj:65, ret:35, target:10, ctgt:400},
       dev:{proj:25, ret:40, target:5, ctgt:1000},
       pipe:{target:2, ctgt:2500},
-      d:{reg:80,show:60,budget:4000}
+      d:{reg:80,show:60,budget:4000,cap:60,bu:[1000,500,40,12]}
     },
     hackathon: {
       lReg:"Registrations", lShow:"Show-up rate", sShow:"of registered", showNote:true, mode:"dev",
@@ -373,7 +406,7 @@
       comm:{target:12, ctgt:3500},
       dev:{lRet:"Still active at 30 days", proj:40, ret:55, target:30, ctgt:1600},
       pipe:{target:5, ctgt:8000},
-      d:{reg:200,show:70,budget:40000}
+      d:{reg:200,show:70,budget:40000,cap:150,bu:[10000,20000,50,20]}
     },
     workshop: {
       lReg:"Registrations", lShow:"Show-up rate", sShow:"of registered", showNote:true, mode:"dev",
@@ -383,7 +416,7 @@
         st3:["Completed a build","activation"], st4:["Activated","14 days"],
         outK:"Activated devs", outC:"shipped and stayed, 14 days", costK:"Cost / activated", proj:55, ret:50, target:20, ctgt:750},
       pipe:{target:3, ctgt:4000},
-      d:{reg:120,show:65,budget:12000}
+      d:{reg:120,show:65,budget:12000,cap:80,bu:[4000,3000,45,20]}
     },
     conference: {
       lReg:"Reach (booth · talk · side event)", lShow:"Conversations", sShow:"of reach", showNote:false, mode:"pipe", perHead:"Cost / conversation",
@@ -394,7 +427,7 @@
         outK:"Developers onboarded", outC:"new, active 30 days out", costK:"Cost / onboarded", proj:35, ret:45, target:26, ctgt:2500},
       comm:{sProj:"of conversations", target:15, ctgt:3500},
       pipe:{sProj:"of conversations", target:7, ctgt:9000, proj:20},
-      d:{reg:800,show:22,budget:60000}
+      d:{reg:800,show:22,budget:60000,cap:0,bu:[40000,12000,0,45]}
     },
     partner: {
       lReg:"Combined audience reached", lShow:"Attended", sShow:"of the combined list", showNote:false, mode:"pipe", cohost:true,
@@ -404,12 +437,12 @@
         outK:"Partner-sourced activations", outC:"activated from the partner audience", costK:"Cost / activation", proj:30, ret:50, target:22, ctgt:1300},
       comm:{target:15, ctgt:1500},
       pipe:{target:5, ctgt:5000},
-      d:{reg:400,show:40,budget:25000}
+      d:{reg:400,show:40,budget:25000,cap:200,bu:[8000,5000,50,25]}
     }
   };
 
-  const ins = {reg:$('reg'), show:$('show'), proj:$('proj'), ret:$('ret'), budget:$('budget'), target:$('target'), ctgt:$('ctgt'), share:$('share'), deal:$('deal')};
-  const bigweek = $('bigweek'), cohost = $('cohost');
+  const ins = {reg:$('reg'), show:$('show'), proj:$('proj'), ret:$('ret'), budget:$('budget'), target:$('target'), ctgt:$('ctgt'), share:$('share'), deal:$('deal'), cap:$('cap'), venue:$('venue'), prod:$('prod'), fnb:$('fnb'), swag:$('swag')};
+  const bigweek = $('bigweek'), cohost = $('cohost'), buildup = $('buildup');
   let cur = 'hackathon', mode = 'dev';
 
   function setLabel(id, text){ $(id).firstChild.textContent = text + ' '; }
@@ -424,7 +457,8 @@
     $('s-show').textContent = p.sShow;
     setLabel('l-proj', L.lProj); $('s-proj').textContent = L.sProj;
     setLabel('l-ret', L.lRet); $('s-ret').textContent = L.sRet;
-    $('l-target').textContent = 'Forecast: ' + L.outK.toLowerCase() + ' target';
+    $('l-target').textContent = 'Target: ' + L.outK.toLowerCase();
+    $('l-ctgt').textContent = 'Target: ' + L.costK.replace('Cost / ','cost per ');
     const stages = [p.st1, L.st2 || p.st2, L.st3, L.st4];
     stages.forEach((st,i)=>{ $('n'+(i+1)).firstChild.textContent = st[0] + ' '; $('ss'+(i+1)).textContent = st[1]; });
     $('t-adopt-k').textContent = L.outK;
@@ -447,6 +481,9 @@
     const p = PRESETS[key];
     $('l-reg').textContent = p.lReg;
     ins.reg.value = p.d.reg; ins.show.value = p.d.show; ins.budget.value = p.d.budget;
+    ins.cap.value = p.d.cap || 100; $('cap-wrap').hidden = !p.d.cap;
+    [ins.venue.value, ins.prod.value, ins.fnb.value, ins.swag.value] = p.d.bu;
+    buildup.checked = false; $('bu-wrap').hidden = true; ins.budget.disabled = false;
     $('show-note').hidden = !p.showNote;
     bigweek.checked = false;
     cohost.checked = !!p.cohost; ins.share.value = 50; $('share-wrap').hidden = !cohost.checked;
@@ -455,9 +492,29 @@
   }
 
   function render(){
-    const reg=+ins.reg.value, show=+ins.show.value, proj=+ins.proj.value, ret=+ins.ret.value, budget=+ins.budget.value, target=+ins.target.value, ctgt=+ins.ctgt.value;
+    const reg=+ins.reg.value, show=+ins.show.value, proj=+ins.proj.value, ret=+ins.ret.value, target=+ins.target.value, ctgt=+ins.ctgt.value;
+    const capOn = !!PRESETS[cur].d.cap, cap = +ins.cap.value;
+    const expected = Math.round(reg*show/100);
+    const attended = capOn ? Math.min(expected, cap) : expected;
+    let budget = +ins.budget.value;
+    if(buildup.checked){
+      const fixed = +ins.venue.value + +ins.prod.value, per = +ins.fnb.value + +ins.swag.value;
+      budget = fixed + per*attended;
+      ins.budget.value = Math.min(150000, Math.max(1000, Math.round(budget/500)*500));
+      $('bu-sum').textContent = 'Total ' + usd(budget) + ': ' + usd(fixed) + ' fixed + ' + usd(per) + ' per head × ' + nfmt(attended) + ' expected attendees.';
+      ['venue','prod','fnb','swag'].forEach(k => $(k+'-v').textContent = usd(+ins[k].value));
+    }
     const share = cohost.checked ? +ins.share.value : 100;
     const spend = budget*share/100;
+    $('cap-v').textContent = nfmt(cap);
+    if(capOn){
+      const need = Math.ceil(cap/(show/100));
+      $('fill-hint').innerHTML = 'To fill ' + nfmt(cap) + ' spots at ' + show + '% show-up, aim for about <b>' + nfmt(need) + '</b> registrations. <button class="fillbtn" type="button" id="fillbtn">Use ' + nfmt(need) + '</button>';
+      $('fillbtn').onclick = () => { ins.reg.value = Math.min(2000, need); render(); };
+      const over = expected - cap;
+      $('cap-warn').hidden = over <= 0;
+      if(over > 0) $('cap-warn').textContent = 'About ' + nfmt(expected) + ' expected for ' + nfmt(cap) + ' spots. Roughly ' + nfmt(over) + ' people won\'t fit, so the forecast counts ' + nfmt(cap) + '. Cap registrations or plan for overflow.';
+    } else { $('fill-hint').textContent = ''; $('cap-warn').hidden = true; }
     $('reg-v').textContent = nfmt(reg);
     $('show-v').textContent = show + '%';
     $('proj-v').textContent = proj + '%';
@@ -468,7 +525,6 @@
     $('target-v').textContent = nfmt(target);
     $('ctgt-v').textContent = usd(ctgt);
 
-    const attended = Math.round(reg*show/100);
     const activated = Math.round(attended*proj/100);
     const adopted = Math.round(activated*ret/100);
     const counts = [reg, attended, activated, adopted];
@@ -525,6 +581,26 @@
   ins.show.addEventListener('input', () => { bigweek.checked = false; });
   bigweek.addEventListener('change', () => { ins.show.value = bigweek.checked ? 40 : PRESETS[cur].d.show; render(); });
   cohost.addEventListener('change', () => { $('share-wrap').hidden = !cohost.checked; render(); });
+  buildup.addEventListener('change', () => { $('bu-wrap').hidden = !buildup.checked; ins.budget.disabled = buildup.checked; render(); });
+  $('copyfc').addEventListener('click', () => {
+    const g = id => $(id).textContent.trim();
+    const goal = document.querySelector('.chip.out[aria-pressed="true"]').textContent;
+    const fmt = document.querySelector('.chip[data-t][aria-pressed="true"]').textContent;
+    const lines = [
+      'Event forecast: ' + fmt + ' (' + goal + ')',
+      'Success: ' + g('l-target').replace('Target: ','') + ' ' + g('target-v') + ', at ' + g('ctgt-v') + ' or less each',
+      'Budget: ' + g('budget-v') + (cohost.checked ? ' (my share ' + g('yourcost') + ')' : ''),
+      (PRESETS[cur].d.cap ? 'Room: ' + g('cap-v') + ' spots. ' : '') + 'Registrations: ' + g('reg-v') + ' at ' + g('show-v') + ' show-up',
+      'Forecast: ' + g('c2') + ' attend, ' + g('c3') + ' ' + g('n3').toLowerCase() + ', ' + g('c4') + ' ' + g('n4').toLowerCase(),
+      'Cost per attendee ' + g('t-rate') + '. ' + g('t-cost-k') + ' ' + g('t-cost') + ' (' + g('t-cost-state') + ').',
+      'After the event, fill in the actual numbers and compare.',
+      'Made with lfgamy.com/event-estimator'
+    ];
+    const txt = lines.join('\n');
+    const done = () => { $('copy-ok').textContent = 'Copied. Paste it into your event brief.'; };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, () => { window.prompt('Copy your forecast:', txt); }); }
+    else { window.prompt('Copy your forecast:', txt); }
+  });
   applyPreset('networking');
 
   // Cursor sparkle trail (matches lfgamy.com), off for reduced-motion
