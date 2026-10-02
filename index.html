@@ -3499,6 +3499,9 @@
   .os-icon { width: 46px; height: 46px; border-radius: 13px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 14px; border: 2px solid var(--charcoal); }
   .os-tile h4 { font-family: 'Fredoka', sans-serif; font-size: 18px; font-weight: 600; color: var(--charcoal); margin: 0 0 6px; }
   .os-tile p { font-size: 13.5px; color: var(--medium-gray); line-height: 1.55; margin: 0 0 14px; }
+  .os-cta { font-size: 13px; font-weight: 700; color: var(--fox-orange); margin: -4px 0 12px; }
+  a.os-tile:hover .os-cta { text-decoration: underline; }
+  a.os-tile, a.os-tile p, a.os-tile h4 { font-weight: inherit; } a.os-tile { font-weight: 400; } a.os-tile h4 { font-weight: 600; }
   .os-tag { display: inline-block; align-self: flex-start; margin-top: auto; font-size: 11px; font-weight: 600; color: var(--medium-gray); background: var(--light-gray); padding: 4px 11px; border-radius: 999px; }
 
 </style>
@@ -3547,6 +3550,7 @@
       <div class="nav-group-title">🛠 The Builder</div>
       <ul>
         <li><a data-page="portfolios">What I'm building for me</a></li>
+        <li><a href="/event-estimator/">Event estimator <span style="font-size:.85em;opacity:.7">↗</span></a></li>
       </ul>
     </div>
 
@@ -4833,7 +4837,8 @@
           <div class="os-icon" style="background: var(--fox-orange);">🧮</div>
           <h4>Event estimator</h4>
           <p>A free, live tool for anyone hosting an event. Pick a format and the outcome you care about, set the forecast before the event, and score it after.</p>
-          <span class="os-tag">Live tool · try it</span>
+          <span class="os-cta">Open the estimator →</span>
+          <span class="os-tag">Live tool</span>
         </a>
         <div class="os-tile">
           <div class="os-icon" style="background: var(--soft-pink);">🎨</div>
@@ -4938,9 +4943,18 @@
       if (targetPage) {
         targetPage.classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        try { history.replaceState(null, '', target === 'introduction' ? location.pathname : '#' + target); } catch (err) {}
       }
     });
   });
+
+  // Deep links: lfgamy.com/#portfolios opens that page
+  (function(){
+    const h = decodeURIComponent(location.hash.slice(1));
+    if (!h) return;
+    const l = Array.from(links).find(a => a.dataset.page === h);
+    if (l) l.click();
+  })();
 
   // Focus Mode toggle
   const focusBtn = document.getElementById('focusModeToggle');
