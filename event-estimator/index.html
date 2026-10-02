@@ -158,6 +158,8 @@
   .next p{margin:0;font-size:13px;color:#463f34}
   .next a{color:var(--pink-deep);font-weight:600}
   .foot a{color:inherit}
+  @media(min-width:761px){.results{position:sticky;top:16px}}
+  .copybtn.alt{background:#fff;color:var(--pink-deep);box-shadow:inset 0 0 0 1.5px var(--pink-deep)}
   .grp{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#5b5147;font-weight:700;margin:22px 0 14px;padding-top:16px;border-top:1px dashed var(--line)}
   .grp.first{margin-top:4px;padding-top:0;border-top:0}
   .share .top{margin-top:10px}
@@ -253,6 +255,16 @@
           <input type="range" id="share" min="5" max="95" step="5" value="50">
           <p class="hint">Cost per outcome uses your share only: <b id="yourcost">$20,000</b>.</p>
         </div>
+        <label class="tog"><input type="checkbox" id="staffon"> Include staff time <span class="sub" style="font-weight:400;color:var(--faint)">the cost budgets leave out</span></label>
+        <div class="share" id="staff-wrap" hidden>
+          <div class="top"><label for="sppl">People working the event</label><span class="val" id="sppl-v">3</span></div>
+          <input type="range" id="sppl" min="1" max="30" step="1" value="3">
+          <div class="top"><label for="shrs">Hours each <span class="sub">planning plus on-site</span></label><span class="val" id="shrs-v">20</span></div>
+          <input type="range" id="shrs" min="1" max="200" step="1" value="20">
+          <div class="top"><label for="srate">Hourly cost <span class="sub">adjust to your own numbers</span></label><span class="val" id="srate-v">$75</span></div>
+          <input type="range" id="srate" min="10" max="300" step="5" value="75">
+          <p class="hint" id="staff-sum"></p>
+        </div>
       </div>
       <div class="ctrl" id="cap-wrap">
         <div class="top"><label for="cap">Room capacity <span class="sub">people the space holds</span></label><span class="val" id="cap-v">100</span></div>
@@ -292,7 +304,7 @@
       </div>
     </div>
 
-    <div>
+    <div class="results" id="results">
       <div class="panel">
         <h3>The forecast chain</h3>
         <p class="ph">Each step is a number you can check after the event in your own tools: check-ins, community joins, signups, projects, opportunities.</p>
@@ -335,14 +347,15 @@
         <div class="pv-c" id="pv-c">opportunities × average size · $2.50 of pipeline per $1 spent</div>
       </div>
       <p class="comm-note" id="comm-note" hidden>Community nights also build trust that won't show up in a count. Track who comes back, and let the rest be the point.</p>
+      <div class="next" id="nextbox">
+        <h4>Write this forecast down. After the event, score it against what happened.</h4>
+        <p>Copy it into your event brief, or save the link to come back after the event. The gap between the forecast and the result is what tells you which formats to run again. Doing that across a whole calendar of events is what I'm building <a href="https://usedott.com" target="_blank" rel="noopener">Dott</a> for.</p>
+        <button class="copybtn" id="copyfc" type="button">Copy my forecast</button> <button class="copybtn alt" id="copylink" type="button">Copy link to this plan</button> <span class="hint" id="copy-ok" style="margin-left:8px"></span>
+      </div>
     </div>
   </div>
 
-  <div class="next">
-    <h4>Write this forecast down. After the event, score it against what happened.</h4>
-    <p>Screenshot the numbers above or paste them into your event brief. The gap between the forecast and the result is what tells you which formats to run again. Doing that across a whole calendar of events is what I'm building <a href="https://usedott.com" target="_blank" rel="noopener">Dott</a> for.</p>
-    <button class="copybtn" id="copyfc" type="button">Copy my forecast</button> <span class="hint" id="copy-ok" style="margin-left:8px"></span>
-  </div>
+
 
   <div class="honest">
     <h4>How to use this honestly</h4>
@@ -441,8 +454,8 @@
     }
   };
 
-  const ins = {reg:$('reg'), show:$('show'), proj:$('proj'), ret:$('ret'), budget:$('budget'), target:$('target'), ctgt:$('ctgt'), share:$('share'), deal:$('deal'), cap:$('cap'), venue:$('venue'), prod:$('prod'), fnb:$('fnb'), swag:$('swag')};
-  const bigweek = $('bigweek'), cohost = $('cohost'), buildup = $('buildup');
+  const ins = {reg:$('reg'), show:$('show'), proj:$('proj'), ret:$('ret'), budget:$('budget'), target:$('target'), ctgt:$('ctgt'), share:$('share'), deal:$('deal'), cap:$('cap'), venue:$('venue'), prod:$('prod'), fnb:$('fnb'), swag:$('swag'), sppl:$('sppl'), shrs:$('shrs'), srate:$('srate')};
+  const bigweek = $('bigweek'), cohost = $('cohost'), buildup = $('buildup'), staffon = $('staffon');
   let cur = 'hackathon', mode = 'dev';
 
   function setLabel(id, text){ $(id).firstChild.textContent = text + ' '; }
@@ -484,6 +497,7 @@
     ins.cap.value = p.d.cap || 100; $('cap-wrap').hidden = !p.d.cap;
     [ins.venue.value, ins.prod.value, ins.fnb.value, ins.swag.value] = p.d.bu;
     buildup.checked = false; $('bu-wrap').hidden = true; ins.budget.disabled = false;
+    staffon.checked = false; $('staff-wrap').hidden = true;
     $('show-note').hidden = !p.showNote;
     bigweek.checked = false;
     cohost.checked = !!p.cohost; ins.share.value = 50; $('share-wrap').hidden = !cohost.checked;
@@ -505,7 +519,12 @@
       ['venue','prod','fnb','swag'].forEach(k => $(k+'-v').textContent = usd(+ins[k].value));
     }
     const share = cohost.checked ? +ins.share.value : 100;
-    const spend = budget*share/100;
+    const cash = budget*share/100;
+    const staffCost = staffon.checked ? (+ins.sppl.value)*(+ins.shrs.value)*(+ins.srate.value) : 0;
+    const spend = cash + staffCost;
+    ['sppl','shrs'].forEach(k => $(k+'-v').textContent = nfmt(+ins[k].value));
+    $('srate-v').textContent = usd(+ins.srate.value);
+    if(staffon.checked) $('staff-sum').textContent = 'Staff time ' + usd(staffCost) + ' (' + ins.sppl.value + ' × ' + ins.shrs.value + ' hrs × ' + usd(+ins.srate.value) + '). Full cost ' + usd(spend) + ' vs ' + usd(cash) + ' cash.';
     $('cap-v').textContent = nfmt(cap);
     if(capOn){
       const need = Math.ceil(cap/(show/100));
@@ -546,7 +565,7 @@
       const rate = attended>0 ? Math.round(adopted/attended*100) : 0;
       $('t-rate-c').textContent = rate + '% of attendees reached the outcome';
     }
-    $('t-cost-c').textContent = cohost.checked ? 'your share ÷ the outcome' : 'budget ÷ the outcome';
+    $('t-cost-c').textContent = (cohost.checked ? 'your share' : 'budget') + (staffon.checked ? ' + staff time' : '') + ' ÷ the outcome';
     const cpo = adopted>0 ? spend/adopted : 0;
     $('t-cost').textContent = adopted>0 ? usd(cpo) : 'n/a';
     const cs = $('t-cost-state');
@@ -581,6 +600,38 @@
   ins.show.addEventListener('input', () => { bigweek.checked = false; });
   bigweek.addEventListener('change', () => { ins.show.value = bigweek.checked ? 40 : PRESETS[cur].d.show; render(); });
   cohost.addEventListener('change', () => { $('share-wrap').hidden = !cohost.checked; render(); });
+  staffon.addEventListener('change', () => { $('staff-wrap').hidden = !staffon.checked; render(); });
+  const KEYS = ['reg','show','proj','ret','budget','target','ctgt','share','deal','cap','venue','prod','fnb','swag','sppl','shrs','srate'];
+  const FLAGS = {bw:bigweek, co:cohost, bu:buildup, st:staffon};
+  function planURL(){
+    const q = new URLSearchParams();
+    q.set('t', cur); q.set('g', mode);
+    KEYS.forEach(k => q.set(k, ins[k].value));
+    Object.entries(FLAGS).forEach(([k,el]) => { if(el.checked) q.set(k,'1'); });
+    return location.origin + location.pathname + '?' + q.toString();
+  }
+  function loadURL(){
+    const q = new URLSearchParams(location.search);
+    if(!q.has('t') || !PRESETS[q.get('t')]) return;
+    applyPreset(q.get('t'));
+    if(['comm','dev','pipe'].includes(q.get('g'))) applyMode(q.get('g'));
+    KEYS.forEach(k => { if(q.has(k) && !isNaN(+q.get(k))) ins[k].value = q.get(k); });
+    Object.entries(FLAGS).forEach(([k,el]) => { el.checked = q.get(k) === '1'; });
+    $('share-wrap').hidden = !cohost.checked; $('bu-wrap').hidden = !buildup.checked; ins.budget.disabled = buildup.checked; $('staff-wrap').hidden = !staffon.checked;
+    render();
+  }
+  function copyText(txt, msg){
+    const done = () => { $('copy-ok').textContent = msg; };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, () => { window.prompt('Copy this:', txt); }); }
+    else { window.prompt('Copy this:', txt); }
+  }
+  $('copylink').addEventListener('click', () => copyText(planURL(), 'Link copied. Open it after the event to compare.'));
+  function stickTop(){
+    const r = $('results'); if(!r) return;
+    const h = r.offsetHeight, vh = window.innerHeight;
+    r.style.top = (h + 32 <= vh ? 16 : vh - h - 16) + 'px';
+  }
+  window.addEventListener('resize', stickTop);
   buildup.addEventListener('change', () => { $('bu-wrap').hidden = !buildup.checked; ins.budget.disabled = buildup.checked; render(); });
   $('copyfc').addEventListener('click', () => {
     const g = id => $(id).textContent.trim();
@@ -589,19 +640,20 @@
     const lines = [
       'Event forecast: ' + fmt + ' (' + goal + ')',
       'Success: ' + g('l-target').replace('Target: ','') + ' ' + g('target-v') + ', at ' + g('ctgt-v') + ' or less each',
-      'Budget: ' + g('budget-v') + (cohost.checked ? ' (my share ' + g('yourcost') + ')' : ''),
+      'Budget: ' + g('budget-v') + (cohost.checked ? ' (my share ' + g('yourcost') + ')' : '') + (staffon.checked ? '. ' + g('staff-sum') : ''),
       (PRESETS[cur].d.cap ? 'Room: ' + g('cap-v') + ' spots. ' : '') + 'Registrations: ' + g('reg-v') + ' at ' + g('show-v') + ' show-up',
       'Forecast: ' + g('c2') + ' attend, ' + g('c3') + ' ' + g('n3').toLowerCase() + ', ' + g('c4') + ' ' + g('n4').toLowerCase(),
       'Cost per attendee ' + g('t-rate') + '. ' + g('t-cost-k') + ' ' + g('t-cost') + ' (' + g('t-cost-state') + ').',
       'After the event, fill in the actual numbers and compare.',
       'Made with lfgamy.com/event-estimator'
     ];
-    const txt = lines.join('\n');
-    const done = () => { $('copy-ok').textContent = 'Copied. Paste it into your event brief.'; };
-    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done, () => { window.prompt('Copy your forecast:', txt); }); }
-    else { window.prompt('Copy your forecast:', txt); }
+    lines.splice(lines.length-1, 0, 'Plan link: ' + planURL());
+    copyText(lines.join('\n'), 'Copied. Paste it into your event brief.');
   });
   applyPreset('networking');
+  loadURL();
+  stickTop();
+  document.querySelectorAll('input[type=checkbox], .chip').forEach(el => el.addEventListener('click', () => setTimeout(stickTop, 0)));
 
   // Cursor sparkle trail (matches lfgamy.com), off for reduced-motion
   if(!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)){
