@@ -160,6 +160,17 @@
   .foot a{color:inherit}
   @media(min-width:761px){.results{position:sticky;top:16px}}
   .copybtn.alt{background:#fff;color:var(--pink-deep);box-shadow:inset 0 0 0 1.5px var(--pink-deep)}
+  .ctrl .val.edit{cursor:text;border-bottom:1px dotted var(--pink);padding:0 1px}
+  .ctrl .val.edit:hover,.ctrl .val.edit:focus{background:var(--pink-whisper);outline:none}
+  .valin{width:96px;font-family:var(--mono);font-size:13px;font-weight:700;color:var(--pink-deep);text-align:right;border:1.5px solid var(--pink);border-radius:6px;padding:1px 6px;background:#fff}
+  .mbar{display:none}
+  @media(max-width:760px){
+    body{padding-bottom:64px}
+    .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:10px;align-items:center;justify-content:space-between;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,253,248,.97);border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(120,90,40,.08);font-size:12px;transition:transform .2s}
+    .mbar.away{transform:translateY(110%)}
+    .mbar b{font-family:var(--fred);font-size:18px;font-weight:700;display:block;line-height:1.1}
+    .mbar span{color:var(--sub)}
+  }
   .grp{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#5b5147;font-weight:700;margin:22px 0 14px;padding-top:16px;border-top:1px dashed var(--line)}
   .grp.first{margin-top:4px;padding-top:0;border-top:0}
   .share .top{margin-top:10px}
@@ -230,19 +241,19 @@
       </div>
       <div class="ctrl">
         <div class="top"><label for="ctgt" id="l-ctgt">Target: cost per outcome</label><span class="val" id="ctgt-v">$1,600</span></div>
-        <input type="range" id="ctgt" min="50" max="15000" step="50" value="1600">
+        <input type="range" id="ctgt" min="10" max="20000" step="10" value="1600">
       </div>
 
       <div class="grp">2 · Budget and room</div>
       <div class="ctrl">
         <div class="top"><label for="budget">Event budget</label><span class="val" id="budget-v">$40,000</span></div>
-        <input type="range" id="budget" min="1000" max="150000" step="500" value="40000">
+        <input type="range" id="budget" min="500" max="300000" step="100" value="40000">
         <label class="tog"><input type="checkbox" id="buildup"> Build up the budget <span class="sub" style="font-weight:400;color:var(--faint)">fixed costs plus per-head costs</span></label>
         <div class="share" id="bu-wrap" hidden>
           <div class="top"><label for="venue">Venue or sponsorship <span class="sub">fixed</span></label><span class="val" id="venue-v">$0</span></div>
-          <input type="range" id="venue" min="0" max="100000" step="500" value="0">
+          <input type="range" id="venue" min="0" max="200000" step="100" value="0">
           <div class="top"><label for="prod">Production, staff, prizes <span class="sub">fixed</span></label><span class="val" id="prod-v">$0</span></div>
-          <input type="range" id="prod" min="0" max="100000" step="500" value="0">
+          <input type="range" id="prod" min="0" max="200000" step="100" value="0">
           <div class="top"><label for="fnb">Food and drink <span class="sub">per attendee</span></label><span class="val" id="fnb-v">$0</span></div>
           <input type="range" id="fnb" min="0" max="400" step="5" value="0">
           <div class="top"><label for="swag">Swag <span class="sub">per attendee</span></label><span class="val" id="swag-v">$0</span></div>
@@ -282,7 +293,7 @@
       </div>
       <div class="ctrl">
         <div class="top"><label for="reg" id="l-reg">Registrations</label><span class="val" id="reg-v">200</span></div>
-        <input type="range" id="reg" min="10" max="2000" step="5" value="200">
+        <input type="range" id="reg" min="10" max="3000" step="1" value="200">
         <p class="hint" id="fill-hint"></p>
         <p class="capwarn" id="cap-warn" hidden></p>
         <p class="hint quiet">Numbers only. No attendee lists needed.</p>
@@ -299,7 +310,7 @@
       </div>
       <div class="ctrl" id="deal-wrap" hidden>
         <div class="top"><label for="deal">Average opportunity size <span class="sub">optional</span></label><span class="val" id="deal-v">$25,000</span></div>
-        <input type="range" id="deal" min="0" max="250000" step="1000" value="25000">
+        <input type="range" id="deal" min="0" max="500000" step="500" value="25000">
         <p class="hint">Set to $0 to hide pipeline value. Adjust to your own numbers.</p>
       </div>
     </div>
@@ -373,6 +384,12 @@
 
 </div>
 
+<div class="mbar" id="mbar" aria-live="polite">
+  <div><span id="mb-k">Outcome</span><b id="mb-out">0</b></div>
+  <div><span>Cost / attendee</span><b id="mb-cpa">$0</b></div>
+  <div><span>Vs target</span><b id="mb-att">0%</b></div>
+</div>
+
 <script>
   const $ = id => document.getElementById(id);
   const nfmt = n => n.toLocaleString('en-US');
@@ -417,7 +434,7 @@
       lReg:"Registrations", lShow:"Show-up rate", sShow:"of registered", showNote:true, mode:"dev",
       st1:["Registered","event link"], st2:["Attended","checked in"],
       comm:{target:12, ctgt:3500},
-      dev:{lRet:"Still active at 30 days", proj:40, ret:55, target:30, ctgt:1600},
+      dev:{lRet:"Still active at 30 days", proj:40, ret:25, target:14, ctgt:3000},
       pipe:{target:5, ctgt:8000},
       d:{reg:200,show:70,budget:40000,cap:150,bu:[10000,20000,50,20]}
     },
@@ -515,7 +532,7 @@
     if(buildup.checked){
       const fixed = +ins.venue.value + +ins.prod.value, per = +ins.fnb.value + +ins.swag.value;
       budget = fixed + per*attended;
-      ins.budget.value = Math.min(150000, Math.max(1000, Math.round(budget/500)*500));
+      ins.budget.value = Math.min(300000, Math.max(500, Math.round(budget)));
       $('bu-sum').textContent = 'Total ' + usd(budget) + ': ' + usd(fixed) + ' fixed + ' + usd(per) + ' per head × ' + nfmt(attended) + ' expected attendees.';
       ['venue','prod','fnb','swag'].forEach(k => $(k+'-v').textContent = usd(+ins[k].value));
     }
@@ -594,6 +611,9 @@
     if(att>=100){ gs.className='state good'; gs.textContent='on track'; }
     else { gs.className='state warn'; gs.textContent='below plan'; }
     $('m-note').textContent = nfmt(adopted) + ' vs a forecast of ' + nfmt(target) + '. Set the target before the event, score against it after.';
+    $('mb-k').textContent = $('t-adopt-k').textContent; $('mb-out').textContent = nfmt(adopted);
+    $('mb-cpa').textContent = $('t-rate').textContent; $('mb-att').textContent = att + '%';
+    $('mb-att').style.color = att>=100 ? '#3F7A54' : '#B26B1B';
   }
 
   document.querySelectorAll('.chip[data-t]').forEach(c => c.addEventListener('click', () => applyPreset(c.dataset.t)));
@@ -659,6 +679,33 @@
     lines.splice(lines.length-1, 0, 'Plan link: ' + planURL());
     copyText(lines.join('\n'), 'Copied. Paste it into your event brief.');
   });
+  // Click a value to type an exact number; sliders stay for playing around
+  KEYS.forEach(k => {
+    const v = $(k+'-v'); if(!v) return;
+    v.classList.add('edit'); v.tabIndex = 0; v.setAttribute('role','button'); v.title = 'Click to type a number';
+    const open = () => {
+      if(ins[k].disabled || v.querySelector('input')) return;
+      const inp = document.createElement('input');
+      inp.type = 'number'; inp.className = 'valin'; inp.min = ins[k].min; inp.max = ins[k].max; inp.step = 'any';
+      inp.value = ins[k].value; inp.setAttribute('aria-label', 'Type a value');
+      v.textContent = ''; v.appendChild(inp); inp.focus(); inp.select();
+      let done = false;
+      const commit = ok => {
+        if(done) return; done = true;
+        const n = parseFloat(inp.value);
+        if(ok && !isNaN(n)){ if(!ins[k].dataset.step) ins[k].dataset.step = ins[k].step; ins[k].step = 'any'; ins[k].value = Math.round(Math.min(+ins[k].max, Math.max(+ins[k].min, n))); if(k==='show') bigweek.checked = false; }
+        render();
+      };
+      inp.addEventListener('keydown', e => { e.stopPropagation(); if(e.key==='Enter'){ commit(true); v.focus(); } if(e.key==='Escape'){ commit(false); v.focus(); } });
+      inp.addEventListener('blur', () => commit(true));
+    };
+    ins[k].addEventListener('pointerdown', () => { if(ins[k].dataset.step) ins[k].step = ins[k].dataset.step; });
+    v.addEventListener('click', open);
+    v.addEventListener('keydown', e => { if(e.key==='Enter' || e.key===' '){ e.preventDefault(); open(); } });
+  });
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(es => es.forEach(e => $('mbar').classList.toggle('away', e.isIntersecting)), {threshold:0.15}).observe($('results'));
+  }
   applyPreset('networking');
   loadURL();
   stickTop();
