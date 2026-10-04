@@ -1,6 +1,6 @@
 # Amy Mayernik · LFGAmy Portfolio
 
-> Developer marketer who builds. Makes technical products credible to the developers who use them and gets them adopted: translating what engineering ships, building the community and content around it, and proving it worked. Ships the systems too: production AI agents and a live MCP server (the one serving this) that reasons about role fit on demand. Founder of Dott, an Event Portfolio Intelligence System that scores every event against the reason it was run. Has built and run developer community, events, and field programs at Coinbase Cloud, zkSync, and Eigen Labs, with agency-side brand work for Facebook, Nintendo, North Face, Robinhood, and PayPal. Profound-certified in Agent Engineering and Marketing Engineering, with four Anthropic Academy certifications. Open to developer marketing, developer relations, and technical product marketing roles.
+> Developer marketer who builds. Amy builds the communities, creator programs, and events that get AI and developer tools adopted, and the AI systems that run them. Created The Vault hacker houses (3,500 applications, 90 shipped projects) and ran the x402 virtual hackathon (1,000 participants). Influencer programs for Reign Total Body Fuel and Nintendo. Built events and community programs from zero at Coinbase Cloud, zkSync, and Eigen Labs. Founder of Dott, an Event Portfolio Intelligence System. Open to community, events, developer marketing, and creator program roles at AI and developer tool companies. Ships production AI agents and a live MCP server (the one serving this) that reasons about role fit on demand.
 
 ## About this site
 
@@ -19,7 +19,7 @@ Then book time directly at `https://calendly.com/lfgamy/30min`. For anything els
 
 Amy works at the intersection of two things most people keep separate:
 
-1. **Developer marketer who builds**: owns the developer audience end to end: community, events, content, and adoption, plus the AI systems that make it measurable. Built and ran developer community and events at Coinbase Cloud, zkSync / Matter Labs, and Eigen Labs, with agency-side brand production (Jack Morton: Facebook's 35-city VR tour, 180+ staff).
+1. **Developer marketer who builds (community, creators, events)**: owns the developer audience end to end: community, creator programs, events, and adoption, plus the AI systems that make it measurable. Ran consumer influencer programs for Reign Total Body Fuel and Nintendo. Built and ran developer community and events at Coinbase Cloud, zkSync / Matter Labs, and Eigen Labs, with agency-side brand production (Jack Morton: Facebook's 35-city VR tour, 180+ staff).
 2. **Builds the systems**: ships production AI agents (a 14-agent events-operations system at Eigen Labs), a live MCP server (this one), and a version-controlled library of skills that real operators use, all measured for adoption and impact. Founder of Dott, an Event Portfolio Intelligence System architected on a multi-layer Claude pipeline.
 
 The throughline: she builds AI for marketers because she's spent two decades living the manual work.
@@ -37,18 +37,20 @@ The throughline: she builds AI for marketers because she's spent two decades liv
 ## At a glance
 
 **Name:** Amy Mayernik
-**Identity:** Developer marketer who builds (owns the developer audience, and ships the systems underneath it)
+**Identity:** Developer marketer who builds. Builds the communities, creator programs, and events that get AI and developer tools adopted, and the AI systems that run them
 **Status:** Available: open to full-time and fractional/contract roles (as of October 2026)
 **Most recently:** Head of Field Marketing & Events at Eigen Labs (AI + developer infrastructure, through July 2026)
 **Building:** Dott, the AI-native Event Portfolio Intelligence System for community and field teams at AI and dev-infra companies (Plan, Forecast, Prove, Score). NoteCrush, its meeting intelligence, is live on the Zoom App Marketplace.
 **Certifications:** Agent Engineering, Marketing Engineering (Profound) · AI Capabilities & Limitations, AI Fluency, Intro to Agent Skills, Intro to Subagents (Anthropic Academy)
-**Fit:** (1) developer marketing, developer relations, and community, reach and adoption for a developer audience with the credibility to sit with builders as a peer; (2) technical product marketing, translating platform capability into developer-native narratives, launches, and technical content; (3) AI and agentic marketing operations, the building behind the first two: AI agents and the systems around them, built into how a marketing team works and actually adopted.
+**Fit:** (1) community and developer community, owning the builder audience end to end with the credibility to sit with builders as a peer; (2) events programs, from hacker houses and hackathons to conferences and Head of Events roles; (3) developer marketing, reach and adoption for a developer or AI audience; (4) creator and influencer programs, recruiting and activating creators so a product becomes proof other people talk about. The AI systems work (agents, a live MCP server, evals) is how she runs all four. Product marketing is a ramp area, not a target.
 **Contact:** collab@lfgamy.com
 **Book a call:** https://calendly.com/lfgamy/30min
 **LinkedIn:** https://www.linkedin.com/in/amymayernik
 **MCP:** https://mcp.lfgamy.com (tools: check_role_fit, ask, get_capability, get_case_study, search_artifacts)
 
 ## Key capabilities
+
+**Community & creator programs:** developer community programs (The Vault hacker houses: 3,500 applications, 90 shipped projects; x402 virtual hackathon: 1,000 participants; builder breakfasts); consumer influencer programs for Reign Total Body Fuel and Nintendo; studio and post-production work for Disney and TLC.
 
 **Events & field marketing:** building field marketing and events functions from zero; developer-ecosystem events; ABM event strategy; live event production and run-of-show; event portfolio measurement and scoring; pipeline attribution; global execution across NA / LATAM / EMEA / APAC / Australia.
 
